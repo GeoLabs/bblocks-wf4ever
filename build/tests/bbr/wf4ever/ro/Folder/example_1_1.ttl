@@ -1,0 +1,9 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+
+<file:///github/workspace/workflow/> a ro:Folder ;
+    dcterms:description "Contains workflow definitions and configurations" ;
+    dcterms:title "Workflow Folder" ;
+    ro:hasEntry <file:///github/workspace/workflow/.ro/entry-config>,
+        <file:///github/workspace/workflow/.ro/entry-ndvi-cwl> .
+

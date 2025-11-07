@@ -1,0 +1,115 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.wfprov.WorkflowRun",
+  "name": "wfprov:WorkflowRun",
+  "abstract": "An execution instance of a workflow. A WorkflowRun is a special type of ProcessRun that represents the execution of a complete workflow (wfdesc:Workflow), containing multiple ProcessRuns for its sub-processes.",
+  "highlighted": true,
+  "status": "under-development",
+  "dateTimeAddition": "2025-11-07T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-11-07",
+  "sources": [
+    {
+      "title": "Workflow Provenance Ontology - WorkflowRun",
+      "link": "http://purl.org/wf4ever/wfprov#WorkflowRun"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.bbr.wf4ever.wfdesc.Workflow",
+    "ogc.bbr.wf4ever.wfprov.ProcessRun"
+  ],
+  "tags": [
+    "wfprov",
+    "workflow-run",
+    "execution",
+    "provenance"
+  ],
+  "group": "Wf4Ever - wfprov",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/WorkflowRun/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/WorkflowRun/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/WorkflowRun/",
+  "rdfData": [],
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/wfprov/WorkflowRun/",
+  "description": "# wfprov:WorkflowRun\n\n## Description\n\nA **WorkflowRun** represents an execution instance of a complete workflow. It is a specialized type of ProcessRun that represents the execution of a `wfdesc:Workflow`, containing multiple ProcessRuns for its sub-processes.\n\n## Class Hierarchy\n\nInherits all properties from `wfprov:ProcessRun`.\n\n## Relations\n\n- Extends `wfprov:ProcessRun`\n- Must be linked to a `wfdesc:Workflow` via `describedByWorkflow`\n- Contains `wfprov:ProcessRun` via `hadSubProcessRun`\n- Can be executed by a `wfprov:WorkflowEngine` via `wasEnactedBy`\n",
+  "examples": [
+    {
+      "title": "Simple workflow run",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "simple-workflow-run.json",
+          "code": "{\n  \"@id\": \"#simple-workflow-run-1\",\n  \"@type\": \"WorkflowRun\",\n  \"describedByWorkflow\": \"#simple-workflow\",\n  \"describedByProcess\": \"#simple-workflow\",\n  \"startedAtTime\": \"2025-11-07T09:00:00Z\",\n  \"endedAtTime\": \"2025-11-07T09:05:00Z\",\n  \"hadSubProcessRun\": [\n    { \"@id\": \"#process-run-1\" }\n  ],\n  \"wasEnactedBy\": \"#workflow-engine\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld\",\n  \"@id\": \"#simple-workflow-run-1\",\n  \"@type\": \"WorkflowRun\",\n  \"describedByWorkflow\": \"#simple-workflow\",\n  \"describedByProcess\": \"#simple-workflow\",\n  \"startedAtTime\": \"2025-11-07T09:00:00Z\",\n  \"endedAtTime\": \"2025-11-07T09:05:00Z\",\n  \"hadSubProcessRun\": [\n    {\n      \"@id\": \"#process-run-1\"\n    }\n  ],\n  \"wasEnactedBy\": \"#workflow-engine\"\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<file:///github/workspace/#process-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#simple-workflow-run-1> .\n\n<file:///github/workspace/#simple-workflow-run-1> a wfprov:WorkflowRun ;\n    wfprov:describedByProcess <file:///github/workspace/#simple-workflow> ;\n    wfprov:describedByWorkflow <file:///github/workspace/#simple-workflow> ;\n    prov:endedAtTime \"2025-11-07T09:05:00+00:00\"^^xsd:dateTime ;\n    prov:startedAtTime \"2025-11-07T09:00:00+00:00\"^^xsd:dateTime ;\n    prov:wasAssociatedWith <file:///github/workspace/#workflow-engine> .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_1_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "Complex workflow run with multiple processes",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "ndvi-workflow-run.json",
+          "code": "{\n  \"@id\": \"#ndvi-workflow-run-1\",\n  \"@type\": \"WorkflowRun\",\n  \"describedByWorkflow\": \"#ndvi-workflow\",\n  \"describedByProcess\": \"#ndvi-workflow\",\n  \"usedInput\": [\n    { \"@id\": \"artifact/landsat_scene.tif\" }\n  ],\n  \"startedAtTime\": \"2025-11-07T10:00:00Z\",\n  \"endedAtTime\": \"2025-11-07T10:15:00Z\",\n  \"hadSubProcessRun\": [\n    { \"@id\": \"#extract-bands-run-1\" },\n    { \"@id\": \"#ndvi-calc-run-1\" },\n    { \"@id\": \"#reproject-run-1\" }\n  ],\n  \"wasEnactedBy\": \"#zoo-wps-engine\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_2_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld\",\n  \"@id\": \"#ndvi-workflow-run-1\",\n  \"@type\": \"WorkflowRun\",\n  \"describedByWorkflow\": \"#ndvi-workflow\",\n  \"describedByProcess\": \"#ndvi-workflow\",\n  \"usedInput\": [\n    {\n      \"@id\": \"artifact/landsat_scene.tif\"\n    }\n  ],\n  \"startedAtTime\": \"2025-11-07T10:00:00Z\",\n  \"endedAtTime\": \"2025-11-07T10:15:00Z\",\n  \"hadSubProcessRun\": [\n    {\n      \"@id\": \"#extract-bands-run-1\"\n    },\n    {\n      \"@id\": \"#ndvi-calc-run-1\"\n    },\n    {\n      \"@id\": \"#reproject-run-1\"\n    }\n  ],\n  \"wasEnactedBy\": \"#zoo-wps-engine\"\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_2_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<file:///github/workspace/#extract-bands-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .\n\n<file:///github/workspace/#ndvi-calc-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .\n\n<file:///github/workspace/#reproject-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .\n\n<file:///github/workspace/#ndvi-workflow-run-1> a wfprov:WorkflowRun ;\n    wfprov:describedByProcess <file:///github/workspace/#ndvi-workflow> ;\n    wfprov:describedByWorkflow <file:///github/workspace/#ndvi-workflow> ;\n    wfprov:usedInput <file:///github/workspace/artifact/landsat_scene.tif> ;\n    prov:endedAtTime \"2025-11-07T10:15:00+00:00\"^^xsd:dateTime ;\n    prov:startedAtTime \"2025-11-07T10:00:00+00:00\"^^xsd:dateTime ;\n    prov:wasAssociatedWith <file:///github/workspace/#zoo-wps-engine> .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_2_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "KindGrove Mangrove Analysis Execution",
+      "description": "Real CWL workflow execution for mangrove biomass analysis in Myanmar (UUID f02b8997...)",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/kindgrove-run.json",
+          "code": "{\n  \"@id\": \"urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c\",\n  \"@type\": \"WorkflowRun\",\n  \"label\": \"KindGrove Mangrove Analysis - Myanmar Region\",\n  \"describedByWorkflow\": \"https://github.com/starling-foundries/KindGrove#mangrove-analysis\",\n  \"describedByProcess\": \"https://github.com/starling-foundries/KindGrove#mangrove-analysis\",\n  \"startedAtTime\": \"2025-11-03T15:14:02.032122\",\n  \"endedAtTime\": \"2025-11-03T15:14:17.039961\",\n  \"wasEnactedBy\": \"urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60\",\n  \"usedInput\": [\n    { \"@id\": \"urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d\" },\n    { \"@id\": \"urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258\" },\n    { \"@id\": \"urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea\" },\n    { \"@id\": \"urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb\" },\n    { \"@id\": \"urn:uuid:fd57ac88-8716-40ed-8945-f83914857523\" },\n    { \"@id\": \"urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6\" },\n    { \"@id\": \"urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b\" }\n  ],\n  \"hadSubProcessRun\": [\n    { \"@id\": \"#subprocess-1\" },\n    { \"@id\": \"#subprocess-2\" }\n  ]\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_3_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld\",\n  \"@id\": \"urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c\",\n  \"@type\": \"WorkflowRun\",\n  \"label\": \"KindGrove Mangrove Analysis - Myanmar Region\",\n  \"describedByWorkflow\": \"https://github.com/starling-foundries/KindGrove#mangrove-analysis\",\n  \"describedByProcess\": \"https://github.com/starling-foundries/KindGrove#mangrove-analysis\",\n  \"startedAtTime\": \"2025-11-03T15:14:02.032122\",\n  \"endedAtTime\": \"2025-11-03T15:14:17.039961\",\n  \"wasEnactedBy\": \"urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60\",\n  \"usedInput\": [\n    {\n      \"@id\": \"urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d\"\n    },\n    {\n      \"@id\": \"urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258\"\n    },\n    {\n      \"@id\": \"urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea\"\n    },\n    {\n      \"@id\": \"urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb\"\n    },\n    {\n      \"@id\": \"urn:uuid:fd57ac88-8716-40ed-8945-f83914857523\"\n    },\n    {\n      \"@id\": \"urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6\"\n    },\n    {\n      \"@id\": \"urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b\"\n    }\n  ],\n  \"hadSubProcessRun\": [\n    {\n      \"@id\": \"#subprocess-1\"\n    },\n    {\n      \"@id\": \"#subprocess-2\"\n    }\n  ]\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_3_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<file:///github/workspace/#subprocess-1> wfprov:wasPartOfWorkflowRun <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .\n\n<file:///github/workspace/#subprocess-2> wfprov:wasPartOfWorkflowRun <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .\n\n<urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> a wfprov:WorkflowRun ;\n    wfprov:describedByProcess <https://github.com/starling-foundries/KindGrove#mangrove-analysis> ;\n    wfprov:describedByWorkflow <https://github.com/starling-foundries/KindGrove#mangrove-analysis> ;\n    wfprov:label \"KindGrove Mangrove Analysis - Myanmar Region\" ;\n    wfprov:usedInput <urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d>,\n        <urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6>,\n        <urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb>,\n        <urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258>,\n        <urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea>,\n        <urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b>,\n        <urn:uuid:fd57ac88-8716-40ed-8945-f83914857523> ;\n    prov:endedAtTime \"2025-11-03T15:14:17.039961\"^^xsd:dateTime ;\n    prov:startedAtTime \"2025-11-03T15:14:02.032122\"^^xsd:dateTime ;\n    prov:wasAssociatedWith <urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wfprov/WorkflowRun/example_3_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: An execution instance of a workflow\nallOf:\n- $ref: https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/ProcessRun/schema.yaml\n- type: object\n  properties:\n    '@type':\n      const: WorkflowRun\n    describedByWorkflow:\n      type: string\n      format: uri\n      description: Links to the workflow description (wfdesc:Workflow) that was executed\n      x-jsonld-id: http://purl.org/wf4ever/wfprov#describedByWorkflow\n      x-jsonld-type: '@id'\n    hadSubProcessRun:\n      type: array\n      items:\n        type: object\n        properties:\n          '@id':\n            type: string\n            format: uri\n        required:\n        - '@id'\n      description: The process runs that were part of this workflow execution\n      x-jsonld-reverse: wfprov:wasPartOfWorkflowRun\n      x-jsonld-type: '@id'\n      x-jsonld-container: '@set'\n    wasEnactedBy:\n      type: string\n      format: uri\n      description: The workflow engine that executed this workflow\n      x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith\n      x-jsonld-type: '@id'\nx-jsonld-extra-terms:\n  WorkflowRun: http://purl.org/wf4ever/wfprov#WorkflowRun\nx-jsonld-vocab: http://purl.org/wf4ever/wfprov#\nx-jsonld-prefixes:\n  wfprov: http://purl.org/wf4ever/wfprov#\n  prov: http://www.w3.org/ns/prov#\n  wfdesc: http://purl.org/wf4ever/wfdesc#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/wfprov/WorkflowRun"
+}

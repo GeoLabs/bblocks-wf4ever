@@ -1,0 +1,93 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.ro.ResearchObject",
+  "name": "ro:ResearchObject",
+  "abstract": "A Research Object that bundles resources, data, methods, and contextual information. It provides a structured way to package research outputs with their provenance, making them portable, shareable, and preservable.",
+  "highlighted": true,
+  "status": "under-development",
+  "dateTimeAddition": "2025-11-07T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-11-07",
+  "sources": [
+    {
+      "title": "Research Object Ontology - ResearchObject",
+      "link": "http://purl.org/wf4ever/ro#ResearchObject"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.bbr.wf4ever.ro.Resource",
+    "ogc.bbr.wf4ever.ro.Manifest"
+  ],
+  "tags": [
+    "ro",
+    "research-object",
+    "aggregation"
+  ],
+  "group": "Wf4Ever - ro",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/ResearchObject/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/ResearchObject/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/ResearchObject/",
+  "rdfData": [],
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/ro/ResearchObject/",
+  "description": "# ro:ResearchObject\n\n## Description\n\nA **ResearchObject** groups together resources, data, methods, and contextual information. It provides a structured way to package research results with their provenance, making them portable, shareable, and preservable.\n\n## Relations\n\n- Aggregates `ro:Resource` via `ore:aggregates`\n- Has a `ro:Manifest` via `ro:manifest`\n- Can contain a `ro:Folder` to organize resources\n- Can have `ro:AggregatedAnnotation` to annotate resources\n",
+  "examples": [
+    {
+      "title": "NDVI Research Object",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "ndvi-ro.json",
+          "code": "{\n  \"@id\": \"./\",\n  \"@type\": \"ResearchObject\",\n  \"title\": \"NDVI Computation Research Object\",\n  \"description\": \"Complete workflow and data for NDVI computation from Landsat imagery\",\n  \"aggregates\": [\n    { \"@id\": \"workflow/ndvi.cwl\" },\n    { \"@id\": \"data/input/\" },\n    { \"@id\": \"data/output/\" },\n    { \"@id\": \"README.md\" }\n  ],\n  \"manifest\": \".ro/manifest.json\",\n  \"created\": \"2025-11-07T10:00:00Z\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/ResearchObject/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/context.jsonld\",\n  \"@id\": \"./\",\n  \"@type\": \"ResearchObject\",\n  \"title\": \"NDVI Computation Research Object\",\n  \"description\": \"Complete workflow and data for NDVI computation from Landsat imagery\",\n  \"aggregates\": [\n    {\n      \"@id\": \"workflow/ndvi.cwl\"\n    },\n    {\n      \"@id\": \"data/input/\"\n    },\n    {\n      \"@id\": \"data/output/\"\n    },\n    {\n      \"@id\": \"README.md\"\n    }\n  ],\n  \"manifest\": \".ro/manifest.json\",\n  \"created\": \"2025-11-07T10:00:00Z\"\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/ResearchObject/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ore: <http://www.openarchives.org/ore/terms/> .\n@prefix ro: <http://purl.org/wf4ever/ro#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<file:///github/workspace/> a ro:ResearchObject ;\n    dcterms:created \"2025-11-07T10:00:00+00:00\"^^xsd:dateTime ;\n    dcterms:description \"Complete workflow and data for NDVI computation from Landsat imagery\" ;\n    dcterms:title \"NDVI Computation Research Object\" ;\n    ro:manifest <file:///github/workspace/.ro/manifest.json> ;\n    ore:aggregates <file:///github/workspace/README.md>,\n        <file:///github/workspace/data/input/>,\n        <file:///github/workspace/data/output/>,\n        <file:///github/workspace/workflow/ndvi.cwl> .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/ResearchObject/example_1_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "KindGrove Research Object",
+      "description": "Complete research object from real cwltool execution with --provenance (BagIt format, conforming to CWLProv 0.6.0)",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/kindgrove-ro.json",
+          "code": "{\n  \"@id\": \"arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/\",\n  \"@type\": \"ResearchObject\",\n  \"title\": \"KindGrove Mangrove Analysis Research Object\",\n  \"description\": \"Complete research object containing workflow definition, execution provenance, input parameters, and output results for mangrove biomass analysis in Myanmar using Sentinel-2 imagery\",\n  \"conformsTo\": \"https://w3id.org/cwl/prov/0.6.0\",\n  \"created\": \"2025-11-03T15:14:17.166945\",\n  \"createdBy\": \"urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60\",\n  \"aggregates\": [\n    {\n      \"@id\": \"../workflow/packed.cwl\",\n      \"name\": \"Workflow definition\",\n      \"mediatype\": \"text/x+yaml; charset=\\\"UTF-8\\\"\"\n    },\n    {\n      \"@id\": \"../workflow/primary-job.json\",\n      \"name\": \"Job parameters\",\n      \"mediatype\": \"application/json\"\n    },\n    {\n      \"@id\": \"../workflow/primary-output.json\",\n      \"name\": \"Workflow outputs\",\n      \"mediatype\": \"application/json\"\n    },\n    {\n      \"@id\": \"../metadata/provenance/primary.cwlprov.jsonld\",\n      \"name\": \"Execution provenance\",\n      \"mediatype\": \"application/ld+json\",\n      \"conformsTo\": [\n        \"http://www.w3.org/TR/2013/REC-prov-o-20130430/\",\n        \"https://w3id.org/cwl/prov/0.6.0\"\n      ]\n    },\n    {\n      \"@id\": \"urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439\",\n      \"name\": \"Output data file\"\n    }\n  ],\n  \"manifest\": \"../metadata/manifest.json\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/ResearchObject/example_2_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/context.jsonld\",\n  \"@id\": \"arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/\",\n  \"@type\": \"ResearchObject\",\n  \"title\": \"KindGrove Mangrove Analysis Research Object\",\n  \"description\": \"Complete research object containing workflow definition, execution provenance, input parameters, and output results for mangrove biomass analysis in Myanmar using Sentinel-2 imagery\",\n  \"conformsTo\": \"https://w3id.org/cwl/prov/0.6.0\",\n  \"created\": \"2025-11-03T15:14:17.166945\",\n  \"createdBy\": \"urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60\",\n  \"aggregates\": [\n    {\n      \"@id\": \"../workflow/packed.cwl\",\n      \"name\": \"Workflow definition\",\n      \"mediatype\": \"text/x+yaml; charset=\\\"UTF-8\\\"\"\n    },\n    {\n      \"@id\": \"../workflow/primary-job.json\",\n      \"name\": \"Job parameters\",\n      \"mediatype\": \"application/json\"\n    },\n    {\n      \"@id\": \"../workflow/primary-output.json\",\n      \"name\": \"Workflow outputs\",\n      \"mediatype\": \"application/json\"\n    },\n    {\n      \"@id\": \"../metadata/provenance/primary.cwlprov.jsonld\",\n      \"name\": \"Execution provenance\",\n      \"mediatype\": \"application/ld+json\",\n      \"conformsTo\": [\n        \"http://www.w3.org/TR/2013/REC-prov-o-20130430/\",\n        \"https://w3id.org/cwl/prov/0.6.0\"\n      ]\n    },\n    {\n      \"@id\": \"urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439\",\n      \"name\": \"Output data file\"\n    }\n  ],\n  \"manifest\": \"../metadata/manifest.json\"\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/ResearchObject/example_2_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ore: <http://www.openarchives.org/ore/terms/> .\n@prefix ro: <http://purl.org/wf4ever/ro#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/> a ro:ResearchObject ;\n    dcterms:created \"2025-11-03T15:14:17.166945\"^^xsd:dateTime ;\n    dcterms:description \"Complete research object containing workflow definition, execution provenance, input parameters, and output results for mangrove biomass analysis in Myanmar using Sentinel-2 imagery\" ;\n    dcterms:title \"KindGrove Mangrove Analysis Research Object\" ;\n    ro:conformsTo \"https://w3id.org/cwl/prov/0.6.0\" ;\n    ro:createdBy \"urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60\" ;\n    ro:manifest <file:///github/metadata/manifest.json> ;\n    ore:aggregates <file:///github/metadata/provenance/primary.cwlprov.jsonld>,\n        <file:///github/workflow/packed.cwl>,\n        <file:///github/workflow/primary-job.json>,\n        <file:///github/workflow/primary-output.json>,\n        <urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> .\n\n<file:///github/metadata/provenance/primary.cwlprov.jsonld> ro:conformsTo \"http://www.w3.org/TR/2013/REC-prov-o-20130430/\",\n        \"https://w3id.org/cwl/prov/0.6.0\" ;\n    ro:mediatype \"application/ld+json\" ;\n    ro:name \"Execution provenance\" .\n\n<file:///github/workflow/packed.cwl> ro:mediatype \"text/x+yaml; charset=\\\"UTF-8\\\"\" ;\n    ro:name \"Workflow definition\" .\n\n<file:///github/workflow/primary-job.json> ro:mediatype \"application/json\" ;\n    ro:name \"Job parameters\" .\n\n<file:///github/workflow/primary-output.json> ro:mediatype \"application/json\" ;\n    ro:name \"Workflow outputs\" .\n\n<urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> ro:name \"Output data file\" .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/ResearchObject/example_2_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A Research Object bundling resources and contextual information\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Unique identifier for the research object\n  '@type':\n    const: ResearchObject\n    description: Type must be ResearchObject\n  title:\n    type: string\n    description: Title of the research object\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the research object\n    x-jsonld-id: http://purl.org/dc/terms/description\n  aggregates:\n    type: array\n    items:\n      type: object\n      properties:\n        '@id':\n          type: string\n          format: uri\n      required:\n      - '@id'\n    description: Resources aggregated in this research object\n    x-jsonld-id: http://www.openarchives.org/ore/terms/aggregates\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  manifest:\n    type: string\n    format: uri\n    description: The manifest describing this research object\n    x-jsonld-id: http://purl.org/wf4ever/ro#manifest\n    x-jsonld-type: '@id'\n  created:\n    type: string\n    format: date-time\n    description: Creation date of the research object\n    x-jsonld-id: http://purl.org/dc/terms/created\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\nrequired:\n- '@id'\n- '@type'\nx-jsonld-extra-terms:\n  ResearchObject: http://purl.org/wf4ever/ro#ResearchObject\nx-jsonld-vocab: http://purl.org/wf4ever/ro#\nx-jsonld-prefixes:\n  ro: http://purl.org/wf4ever/ro#\n  dcterms: http://purl.org/dc/terms/\n  ore: http://www.openarchives.org/ore/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/ro/ResearchObject"
+}

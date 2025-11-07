@@ -1,0 +1,23 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///github/workspace/#subprocess-1> wfprov:wasPartOfWorkflowRun <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .
+
+<file:///github/workspace/#subprocess-2> wfprov:wasPartOfWorkflowRun <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .
+
+<urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> a wfprov:WorkflowRun ;
+    wfprov:describedByProcess <https://github.com/starling-foundries/KindGrove#mangrove-analysis> ;
+    wfprov:describedByWorkflow <https://github.com/starling-foundries/KindGrove#mangrove-analysis> ;
+    wfprov:label "KindGrove Mangrove Analysis - Myanmar Region" ;
+    wfprov:usedInput <urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d>,
+        <urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6>,
+        <urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb>,
+        <urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258>,
+        <urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea>,
+        <urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b>,
+        <urn:uuid:fd57ac88-8716-40ed-8945-f83914857523> ;
+    prov:endedAtTime "2025-11-03T15:14:17.039961"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-03T15:14:02.032122"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> .
+

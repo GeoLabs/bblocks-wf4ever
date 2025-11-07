@@ -1,0 +1,14 @@
+{
+  "@id": "workflow/",
+  "@type": "Folder",
+  "name": "Workflow Folder",
+  "description": "Contains workflow definitions and configurations",
+  "hasEntry": [
+    {
+      "@id": "workflow/.ro/entry-ndvi-cwl"
+    },
+    {
+      "@id": "workflow/.ro/entry-config"
+    }
+  ]
+}

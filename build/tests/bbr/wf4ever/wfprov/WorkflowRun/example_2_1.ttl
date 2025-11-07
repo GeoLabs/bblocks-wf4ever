@@ -1,0 +1,18 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///github/workspace/#extract-bands-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .
+
+<file:///github/workspace/#ndvi-calc-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .
+
+<file:///github/workspace/#reproject-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .
+
+<file:///github/workspace/#ndvi-workflow-run-1> a wfprov:WorkflowRun ;
+    wfprov:describedByProcess <file:///github/workspace/#ndvi-workflow> ;
+    wfprov:describedByWorkflow <file:///github/workspace/#ndvi-workflow> ;
+    wfprov:usedInput <file:///github/workspace/artifact/landsat_scene.tif> ;
+    prov:endedAtTime "2025-11-07T10:15:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-07T10:00:00+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <file:///github/workspace/#zoo-wps-engine> .
+

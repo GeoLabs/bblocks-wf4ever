@@ -1,0 +1,13 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<file:///github/workspace/#process-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#simple-workflow-run-1> .
+
+<file:///github/workspace/#simple-workflow-run-1> a wfprov:WorkflowRun ;
+    wfprov:describedByProcess <file:///github/workspace/#simple-workflow> ;
+    wfprov:describedByWorkflow <file:///github/workspace/#simple-workflow> ;
+    prov:endedAtTime "2025-11-07T09:05:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-07T09:00:00+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <file:///github/workspace/#workflow-engine> .
+

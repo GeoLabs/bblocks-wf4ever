@@ -1,0 +1,9 @@
+path	@id
+/@id	
+/@type	
+/describedByParameter	http://purl.org/wf4ever/wfprov#describedByParameter
+/value	http://www.w3.org/ns/prov#value
+/wasOutputFrom	http://www.w3.org/ns/prov#wasGeneratedBy
+/checksum	
+/checksum/algorithm	
+/checksum/value	http://www.w3.org/ns/prov#value

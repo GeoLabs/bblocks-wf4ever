@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "Parameter": "wfdesc:Parameter",
+    "name": "rdfs:label",
+    "description": "rdfs:comment",
+    "Output": "wfdesc:Output",
+    "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@version": 1.1
+  }
+}

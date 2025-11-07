@@ -1,0 +1,91 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.ro.Folder",
+  "name": "ro:Folder",
+  "abstract": "A folder that organizes resources within a Research Object. Folders provide hierarchical structure, similar to filesystem directories, allowing logical grouping of related resources.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-11-07T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-11-07",
+  "sources": [
+    {
+      "title": "Research Object Ontology - Folder",
+      "link": "http://purl.org/wf4ever/ro#Folder"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.bbr.wf4ever.ro.Resource"
+  ],
+  "tags": [
+    "ro",
+    "folder",
+    "organization"
+  ],
+  "group": "Wf4Ever - ro",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/Folder/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/Folder/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/Folder/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/Folder/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/Folder/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/Folder/",
+  "rdfData": [],
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/ro/Folder/",
+  "description": "# ro:Folder\n\n## Description\n\nA **Folder** organizes resources within a Research Object. Folders provide a hierarchical structure, similar to file system directories, allowing logical grouping of related resources.\n\n## Relations\n\n- Contains `ro:FolderEntry` via `ro:hasEntry`\n- Can be aggregated in a `ro:ResearchObject`\n- Can contain other Folders (recursive structure)\n",
+  "examples": [
+    {
+      "title": "Workflow folder",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "workflow-folder.json",
+          "code": "{\n  \"@id\": \"workflow/\",\n  \"@type\": \"Folder\",\n  \"name\": \"Workflow Folder\",\n  \"description\": \"Contains workflow definitions and configurations\",\n  \"hasEntry\": [\n    { \"@id\": \"workflow/.ro/entry-ndvi-cwl\" },\n    { \"@id\": \"workflow/.ro/entry-config\" }\n  ]\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/Folder/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/Folder/context.jsonld\",\n  \"@id\": \"workflow/\",\n  \"@type\": \"Folder\",\n  \"name\": \"Workflow Folder\",\n  \"description\": \"Contains workflow definitions and configurations\",\n  \"hasEntry\": [\n    {\n      \"@id\": \"workflow/.ro/entry-ndvi-cwl\"\n    },\n    {\n      \"@id\": \"workflow/.ro/entry-config\"\n    }\n  ]\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/Folder/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ro: <http://purl.org/wf4ever/ro#> .\n\n<file:///github/workspace/workflow/> a ro:Folder ;\n    dcterms:description \"Contains workflow definitions and configurations\" ;\n    dcterms:title \"Workflow Folder\" ;\n    ro:hasEntry <file:///github/workspace/workflow/.ro/entry-config>,\n        <file:///github/workspace/workflow/.ro/entry-ndvi-cwl> .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/Folder/example_1_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "KindGrove Outputs Folder",
+      "description": "Output directory from real mangrove analysis workflow execution",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/kindgrove-folder.json",
+          "code": "{\n  \"@id\": \"urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539\",\n  \"@type\": \"Folder\",\n  \"name\": \"outputs\",\n  \"description\": \"Output directory containing mangrove analysis results\",\n  \"hasEntry\": [\n    {\n      \"@id\": \"urn:uuid:cef10a06-9879-4354-8543-833951388c61\",\n      \"entryName\": \"biomass_map.tif\"\n    },\n    {\n      \"@id\": \"urn:uuid:f03ce803-f175-437f-bc7a-3888a62c1d4e\",\n      \"entryName\": \"statistics.json\"\n    }\n  ]\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/Folder/example_2_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/Folder/context.jsonld\",\n  \"@id\": \"urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539\",\n  \"@type\": \"Folder\",\n  \"name\": \"outputs\",\n  \"description\": \"Output directory containing mangrove analysis results\",\n  \"hasEntry\": [\n    {\n      \"@id\": \"urn:uuid:cef10a06-9879-4354-8543-833951388c61\",\n      \"entryName\": \"biomass_map.tif\"\n    },\n    {\n      \"@id\": \"urn:uuid:f03ce803-f175-437f-bc7a-3888a62c1d4e\",\n      \"entryName\": \"statistics.json\"\n    }\n  ]\n}",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/Folder/example_2_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ro: <http://purl.org/wf4ever/ro#> .\n\n<urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539> a ro:Folder ;\n    dcterms:description \"Output directory containing mangrove analysis results\" ;\n    dcterms:title \"outputs\" ;\n    ro:hasEntry <urn:uuid:cef10a06-9879-4354-8543-833951388c61>,\n        <urn:uuid:f03ce803-f175-437f-bc7a-3888a62c1d4e> .\n\n<urn:uuid:cef10a06-9879-4354-8543-833951388c61> ro:entryName \"biomass_map.tif\" .\n\n<urn:uuid:f03ce803-f175-437f-bc7a-3888a62c1d4e> ro:entryName \"statistics.json\" .\n\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/ro/Folder/example_2_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A folder organizing resources in a Research Object\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Unique identifier for the folder\n  '@type':\n    const: Folder\n    description: Type must be Folder\n  name:\n    type: string\n    description: Name of the folder\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the folder\n    x-jsonld-id: http://purl.org/dc/terms/description\n  hasEntry:\n    type: array\n    items:\n      type: object\n      properties:\n        '@id':\n          type: string\n          format: uri\n      required:\n      - '@id'\n    description: Entries contained in this folder\n    x-jsonld-id: http://purl.org/wf4ever/ro#hasEntry\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\nrequired:\n- '@id'\n- '@type'\nx-jsonld-extra-terms:\n  Folder: http://purl.org/wf4ever/ro#Folder\nx-jsonld-vocab: http://purl.org/wf4ever/ro#\nx-jsonld-prefixes:\n  ro: http://purl.org/wf4ever/ro#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/ro/Folder"
+}
