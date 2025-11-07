@@ -1,0 +1,16 @@
+- title: Geospatial Input
+  snippets:
+    - language: json
+      code: |
+        {
+          "@type": "Input",
+          "@id": "http://example.org/workflow/input/image",
+          "name": "sourceImage",
+          "description": "Source satellite image in GeoTIFF format"
+        }
+
+- title: KindGrove Bounding Box Input
+  description: Northern latitude boundary for Sentinel-2 image query from real CWL execution
+  snippets:
+    - language: json
+      ref: examples/kindgrove-input.json

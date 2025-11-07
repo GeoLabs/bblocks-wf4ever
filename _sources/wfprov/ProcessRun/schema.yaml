@@ -1,0 +1,47 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: An execution instance of a process
+type: object
+properties:
+  '@id':
+    type: string
+    format: uri
+    description: Unique identifier for the process run
+  '@type':
+    oneOf:
+      - const: ProcessRun
+      - const: WorkflowRun
+    description: Type of execution (ProcessRun or WorkflowRun for workflow executions)
+  describedByProcess:
+    type: string
+    format: uri
+    description: Links to the process description (wfdesc:Process) that was executed
+  usedInput:
+    type: array
+    items:
+      type: object
+      properties:
+        '@id':
+          type: string
+          format: uri
+      required:
+        - '@id'
+    description: Input artifacts used by this process run
+  startedAtTime:
+    type: string
+    format: date-time
+    description: Start time of the execution
+  endedAtTime:
+    type: string
+    format: date-time
+    description: End time of the execution
+  wasPartOfWorkflowRun:
+    type: string
+    format: uri
+    description: The workflow run that this process run was part of
+  wasEnactedBy:
+    type: string
+    format: uri
+    description: The workflow engine that enacted this process run
+required:
+  - '@id'
+  - describedByProcess

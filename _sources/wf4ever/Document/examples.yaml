@@ -1,0 +1,4 @@
+- title: PDF Report Document
+  snippets:
+    - language: json
+      ref: report.json

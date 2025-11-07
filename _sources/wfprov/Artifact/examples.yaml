@@ -1,0 +1,16 @@
+- title: Simple artifact
+  snippets:
+    - language: json
+      ref: simple-artifact.json
+
+- title: Output artifact with metadata
+  snippets:
+    - language: json
+      ref: output-artifact.json
+
+- title: KindGrove Output Artifact
+  description: Real output artifact from mangrove analysis workflow execution (content-addressable storage)
+  snippets:
+    - language: json
+      ref: examples/kindgrove-artifact.json
+

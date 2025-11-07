@@ -83,3 +83,9 @@ wfprov:wasEnactedBy a owl:ObjectProperty ;
     rdfs:domain wfprov:WorkflowRun ;
     rdfs:range wfprov:WorkflowEngine ;
     rdfs:subPropertyOf prov:wasAssociatedWith .
+
+wfprov:describedByParameter a owl:ObjectProperty ;
+    rdfs:label "described by parameter"@en ;
+    rdfs:comment "This property associates a wfprov:Artifact to the wfdesc:Parameter description."@en ;
+    rdfs:domain wfprov:Artifact ;
+    rdfs:range wfdesc:Parameter .

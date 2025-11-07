@@ -1,0 +1,20 @@
+- title: Simple Process - NDVI Calculator
+  snippets:
+    - language: json
+      ref: ndvi-process.json
+
+- title: Geospatial Reprojection Process
+  snippets:
+    - language: json
+      ref: reproject-process.json
+
+- title: Multi-Output Statistics Process
+  snippets:
+    - language: json
+      ref: stats-process.json
+
+- title: KindGrove Mangrove Analysis Process
+  description: Real CWL workflow for analyzing mangrove biomass using Sentinel-2 satellite imagery (Myanmar region)
+  snippets:
+    - language: json
+      ref: examples/kindgrove-process.json

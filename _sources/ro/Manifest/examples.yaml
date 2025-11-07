@@ -1,0 +1,10 @@
+- title: Simple manifest
+  snippets:
+    - language: json
+      ref: simple-manifest.json
+
+- title: KindGrove Research Object Manifest
+  description: RO manifest from real CWL provenance (arcp URI scheme, CWLProv 0.6.0)
+  snippets:
+    - language: json
+      ref: examples/kindgrove-manifest.json

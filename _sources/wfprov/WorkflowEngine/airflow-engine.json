@@ -1,0 +1,7 @@
+{
+  "@id": "#airflow-engine",
+  "@type": "WorkflowEngine",
+  "name": "Apache Airflow",
+  "version": "2.7.0",
+  "description": "Platform to programmatically author, schedule and monitor workflows"
+}

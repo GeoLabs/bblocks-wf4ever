@@ -1,0 +1,39 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: A Research Object bundling resources and contextual information
+type: object
+properties:
+  '@id':
+    type: string
+    format: uri
+    description: Unique identifier for the research object
+  '@type':
+    const: ResearchObject
+    description: Type must be ResearchObject
+  title:
+    type: string
+    description: Title of the research object
+  description:
+    type: string
+    description: Description of the research object
+  aggregates:
+    type: array
+    items:
+      type: object
+      properties:
+        '@id':
+          type: string
+          format: uri
+      required:
+        - '@id'
+    description: Resources aggregated in this research object
+  manifest:
+    type: string
+    format: uri
+    description: The manifest describing this research object
+  created:
+    type: string
+    format: date-time
+    description: Creation date of the research object
+required:
+  - '@id'
+  - '@type'

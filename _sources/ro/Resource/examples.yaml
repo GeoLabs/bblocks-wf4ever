@@ -1,0 +1,4 @@
+- title: Simple resource
+  snippets:
+    - language: json
+      ref: simple-resource.json

@@ -1,0 +1,11 @@
+- title: Basic Semantic Annotation
+  description: Simple semantic annotation linking a resource to an RDF graph
+  snippets:
+    - language: json
+      ref: examples/basic-semantic-annotation.json
+
+- title: Multi-resource Annotation
+  description: Semantic annotation describing multiple related resources
+  snippets:
+    - language: json
+      ref: examples/multi-resource-annotation.json

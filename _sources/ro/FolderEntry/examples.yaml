@@ -1,0 +1,9 @@
+- title: Workflow entry
+  snippets:
+    - language: json
+      ref: cwl-entry.json
+
+- title: Output data entry
+  snippets:
+    - language: json
+      ref: output-entry.json

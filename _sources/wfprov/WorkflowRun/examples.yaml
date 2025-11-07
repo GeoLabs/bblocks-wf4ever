@@ -1,0 +1,15 @@
+- title: Simple workflow run
+  snippets:
+    - language: json
+      ref: simple-workflow-run.json
+
+- title: Complex workflow run with multiple processes
+  snippets:
+    - language: json
+      ref: ndvi-workflow-run.json
+
+- title: KindGrove Mangrove Analysis Execution
+  description: Real CWL workflow execution for mangrove biomass analysis in Myanmar (UUID f02b8997...)
+  snippets:
+    - language: json
+      ref: examples/kindgrove-run.json

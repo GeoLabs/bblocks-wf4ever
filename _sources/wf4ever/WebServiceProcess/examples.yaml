@@ -1,0 +1,4 @@
+- title: OGC API Processes Service
+  snippets:
+    - language: json
+      ref: ogcapi-process.json

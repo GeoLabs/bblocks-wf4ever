@@ -43,7 +43,12 @@ ro:FolderEntry a owl:Class ;
 ro:AggregatedAnnotation a owl:Class ;
     rdfs:label "Aggregated Annotation"@en ;
     rdfs:comment "An annotation about a resource in a research object."@en ;
-    rdfs:subClassOf ro:Resource .
+    rdfs:subClassOf ro:SemanticAnnotation ,
+                    ore:AggregatedResource .
+
+ro:SemanticAnnotation a owl:Class ;
+    rdfs:label "Semantic Annotation"@en ;
+    rdfs:comment "An annotation with an RDF Graph body containing semantic information."@en .
 
 ro:Manifest a owl:Class ;
     rdfs:label "Manifest"@en ;

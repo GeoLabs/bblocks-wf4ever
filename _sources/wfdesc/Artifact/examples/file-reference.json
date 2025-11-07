@@ -1,0 +1,14 @@
+{
+  "@type": "Artifact",
+  "@id": "urn:sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+  "name": "landsat_scene", 
+  "value": "https://example.org/data/landsat_LC08_L2_127045_20251103.tif",
+  "mediaType": "image/tiff",
+  "size": 1073741824,
+  "checksum": {
+    "algorithm": "SHA-1", 
+    "value": "e71003c6b7dd4093ce139ac0c51a6ba38d54a439"
+  },
+  "description": "Landsat 8 Level 2 surface reflectance imagery for Myanmar mangrove analysis",
+  "createdAt": "2025-11-03T10:00:00Z"
+}

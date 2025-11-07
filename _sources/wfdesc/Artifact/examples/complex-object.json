@@ -1,0 +1,21 @@
+{
+  "@type": "Artifact",
+  "@id": "#bbox-myanmar",
+  "name": "analysis_bbox",
+  "value": {
+    "type": "Polygon", 
+    "coordinates": [[
+      [95.15, 15.9],
+      [95.35, 15.9], 
+      [95.35, 16.1],
+      [95.15, 16.1],
+      [95.15, 15.9]
+    ]],
+    "crs": {
+      "type": "name",
+      "properties": {"name": "EPSG:4326"}
+    }
+  },
+  "mediaType": "application/geo+json",
+  "description": "Geographic bounding box for Myanmar mangrove biomass analysis area"
+}

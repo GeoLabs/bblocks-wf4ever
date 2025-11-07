@@ -1,0 +1,6 @@
+{
+  "@id": "data/workflow_definition.cwl",
+  "@type": "Resource",
+  "name": "NDVI Workflow Definition",
+  "description": "CWL workflow for computing NDVI from satellite imagery"
+}

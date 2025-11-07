@@ -1,0 +1,8 @@
+{
+  "@id": "#semantic-annotation-1",
+  "@type": "SemanticAnnotation",
+  "annotatesResource": "data/results.csv",
+  "body": ".ro/annotations/metadata-1.ttl",
+  "created": "2025-11-07T10:00:00Z",
+  "creator": "https://orcid.org/0000-0002-1825-0097"
+}
