@@ -70,34 +70,6 @@ In CWLProv (Common Workflow Language Provenance), files are dual-typed to combin
 - Can be aggregated in `ro:Folder` via `ro:FolderEntry`
 
 
-## Examples
-
-### Simple JSON File
-#### json
-```json
-{
-  "@id": "id:4d15cb37-a4a3-4170-a7aa-529399cb4753",
-  "@type": ["wfprov:Artifact", "File"],
-  "basename": "catalog.json",
-  "format": "application/json"
-}
-
-```
-
-
-### GeoTIFF File with Checksum
-#### json
-```json
-{
-  "@id": "id:04c0ef72-14c0-4248-b042-6dec318c56c5",
-  "@type": ["wfprov:Artifact", "File"],
-  "basename": "mangrove_mask.tif",
-  "format": "image/tiff",
-  "checksum": "sha1:0999fb93da76020eefac9eb02b1921cf7096b5fc"
-}
-
-```
-
 ## Schema
 
 ```yaml

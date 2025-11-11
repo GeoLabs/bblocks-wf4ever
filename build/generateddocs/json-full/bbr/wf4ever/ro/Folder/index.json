@@ -18,7 +18,7 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "dependsOn": [
+  "profileOf": [
     "ogc.bbr.wf4ever.ro.Resource"
   ],
   "tags": [

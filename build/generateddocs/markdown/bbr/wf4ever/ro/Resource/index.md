@@ -21,43 +21,6 @@ A **Resource** represents a resource that can be aggregated in a Research Object
 - Can be referenced by a `ro:FolderEntry`
 - Can be the target of a `ro:AggregatedAnnotation`
 
-## Examples
-
-### Simple resource
-#### json
-```json
-{
-  "@id": "data/workflow_definition.cwl",
-  "@type": "Resource",
-  "name": "NDVI Workflow Definition",
-  "description": "CWL workflow for computing NDVI from satellite imagery"
-}
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/Resource/context.jsonld",
-  "@id": "data/workflow_definition.cwl",
-  "@type": "Resource",
-  "name": "NDVI Workflow Definition",
-  "description": "CWL workflow for computing NDVI from satellite imagery"
-}
-```
-
-#### ttl
-```ttl
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ro: <http://purl.org/wf4ever/ro#> .
-
-<file:///github/workspace/data/workflow_definition.cwl> a ro:Resource ;
-    dcterms:description "CWL workflow for computing NDVI from satellite imagery" ;
-    dcterms:title "NDVI Workflow Definition" .
-
-
-```
-
 ## Schema
 
 ```yaml

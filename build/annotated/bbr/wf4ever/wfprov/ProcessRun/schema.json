@@ -1,6 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "An execution instance of a process (based on prov:Activity)",
+  "allOf": [
+    {
+      "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#/$defs/Activity"
+    }
+  ],
   "type": "object",
   "properties": {
     "id": {

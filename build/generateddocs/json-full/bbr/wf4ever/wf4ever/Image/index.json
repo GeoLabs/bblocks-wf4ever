@@ -18,7 +18,7 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "dependsOn": [
+  "profileOf": [
     "ogc.bbr.wf4ever.wfdesc.Artifact"
   ],
   "tags": [
@@ -36,21 +36,7 @@
   "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/wf4ever/Image/",
   "rdfData": [],
   "validationPassed": true,
-  "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/wf4ever/Image/",
   "description": "# wf4ever:Image\n\nAn image artifact - visual representation (PNG, JPEG, GeoTIFF).\n",
-  "examples": [
-    {
-      "title": "PNG Visualization",
-      "snippets": [
-        {
-          "language": "json",
-          "ref": "visualization.json",
-          "code": "{\"@id\": \"#viz\", \"@type\": \"Image\", \"format\": \"image/png\", \"width\": 1920, \"height\": 1080}\n",
-          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/wf4ever/Image/example_1_1.json"
-        }
-      ]
-    }
-  ],
   "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: An image artifact\ntype: object\nproperties:\n  '@type':\n    oneOf:\n    - const: Image\n    - type: array\n      contains:\n        const: Image\n  format:\n    type: string\n    description: Image format (e.g., \"image/png\", \"image/tiff\")\n  width:\n    type: integer\n  height:\n    type: integer\nrequired:\n- '@type'\n",
   "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
   "gitPath": "_sources/wf4ever/Image"

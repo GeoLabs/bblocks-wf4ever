@@ -1,6 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "A data entity used or generated during workflow execution (based on prov:Entity)",
+  "allOf": [
+    {
+      "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#/$defs/Entity"
+    }
+  ],
   "type": "object",
   "properties": {
     "id": {

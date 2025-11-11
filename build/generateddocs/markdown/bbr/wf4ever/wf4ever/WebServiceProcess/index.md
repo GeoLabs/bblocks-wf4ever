@@ -13,15 +13,6 @@ A web service process - a process description whose enactment involves making a 
 
 A process whose enactment involves making a web service call (e.g., OGC API Processes, WPS).
 
-## Examples
-
-### OGC API Processes Service
-#### json
-```json
-{"@id": "#ndvi-service", "@type": "WebServiceProcess", "endpoint": "https://zoo-project.org/ogcapi/processes/ndvi", "method": "POST"}
-
-```
-
 ## Schema
 
 ```yaml

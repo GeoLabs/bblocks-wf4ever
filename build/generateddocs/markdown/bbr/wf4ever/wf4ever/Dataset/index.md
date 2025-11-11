@@ -25,27 +25,6 @@ A **Dataset** is a specialization of `wfdesc:Artifact` representing a collection
 - `spatialCoverage` : Spatial extent (bounding box, region)
 
 
-## Examples
-
-### Remote Sensing Dataset
-#### json
-```json
-{
-  "@id": "#sentinel2-dataset",
-  "@type": "Dataset",
-  "title": "Sentinel-2 Imagery - Myanmar Mangroves",
-  "description": "Multispectral satellite imagery",
-  "temporalCoverage": "2025-08-01/2025-11-01",
-  "spatialCoverage": {
-    "west": 95.15,
-    "south": 15.9,
-    "east": 95.35,
-    "north": 16.1
-  }
-}
-
-```
-
 ## Schema
 
 ```yaml

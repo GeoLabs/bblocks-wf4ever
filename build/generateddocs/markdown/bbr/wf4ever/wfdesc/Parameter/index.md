@@ -34,43 +34,6 @@ Parameters are typically not used directly but through their subclasses (Input, 
 - **Artifact**: Describes the type of data associated with a parameter
 - **Process**: The class that has parameters
 
-## Examples
-
-### Simple Parameter
-#### json
-```json
-{
-  "@type": "Parameter",
-  "@id": "http://example.org/workflow/param1",
-  "name": "dataParameter",
-  "description": "A generic parameter for data flow"
-}
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/Parameter/context.jsonld",
-  "@type": "Parameter",
-  "@id": "http://example.org/workflow/param1",
-  "name": "dataParameter",
-  "description": "A generic parameter for data flow"
-}
-```
-
-#### ttl
-```ttl
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
-
-<http://example.org/workflow/param1> a wfdesc:Parameter ;
-    rdfs:label "dataParameter" ;
-    rdfs:comment "A generic parameter for data flow" .
-
-
-```
-
 ## Schema
 
 ```yaml

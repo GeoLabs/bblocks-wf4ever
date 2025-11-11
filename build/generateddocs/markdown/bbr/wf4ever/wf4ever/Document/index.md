@@ -13,15 +13,6 @@ A document artifact - textual or formatted content such as PDF, HTML, or text fi
 
 A document artifact representing textual or formatted content.
 
-## Examples
-
-### PDF Report Document
-#### json
-```json
-{"@id": "#report", "@type": "Document", "title": "Workflow Report", "format": "application/pdf"}
-
-```
-
 ## Schema
 
 ```yaml

@@ -40,40 +40,6 @@ For `ro:SemanticAnnotation`, the graph body merely needs to **mention** the anno
 - Provenance graphs describing resource creation
 - Quality assessments with structured vocabularies
 
-## Examples
-
-### Basic Semantic Annotation
-#### json
-```json
-{
-  "@id": "#semantic-annotation-1",
-  "@type": "SemanticAnnotation",
-  "annotatesResource": "data/results.csv",
-  "body": ".ro/annotations/metadata-1.ttl",
-  "created": "2025-11-07T10:00:00Z",
-  "creator": "https://orcid.org/0000-0002-1825-0097"
-}
-
-```
-
-
-### Multi-resource Annotation
-#### json
-```json
-{
-  "@id": ".ro/annotations/provenance-annotation",
-  "@type": "SemanticAnnotation",
-  "annotatesResource": [
-    "workflow/ndvi-calculation.cwl",
-    "data/ndvi-result.tif"
-  ],
-  "body": ".ro/annotations/provenance-graph.ttl",
-  "created": "2025-11-07T14:30:00Z",
-  "creator": "https://orcid.org/0000-0002-1825-0097"
-}
-
-```
-
 ## Schema
 
 ```yaml

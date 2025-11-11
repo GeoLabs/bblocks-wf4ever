@@ -13,15 +13,6 @@ An image artifact - visual representation such as PNG, JPEG, or raster geospatia
 
 An image artifact - visual representation (PNG, JPEG, GeoTIFF).
 
-## Examples
-
-### PNG Visualization
-#### json
-```json
-{"@id": "#viz", "@type": "Image", "format": "image/png", "width": 1920, "height": 1080}
-
-```
-
 ## Schema
 
 ```yaml
