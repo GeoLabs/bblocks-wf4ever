@@ -1,6 +1,0 @@
-{
-  "@id": "id:4d15cb37-a4a3-4170-a7aa-529399cb4753",
-  "@type": ["wfprov:Artifact", "File"],
-  "basename": "catalog.json",
-  "format": "application/json"
-}

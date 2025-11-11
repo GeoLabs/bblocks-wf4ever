@@ -1,9 +1,0 @@
-- title: Single resource annotation
-  snippets:
-    - language: json
-      ref: workflow-annotation.json
-
-- title: Multi-resource annotation
-  snippets:
-    - language: json
-      ref: multi-annotation.json

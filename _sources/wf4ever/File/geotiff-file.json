@@ -1,7 +1,0 @@
-{
-  "@id": "id:04c0ef72-14c0-4248-b042-6dec318c56c5",
-  "@type": ["wfprov:Artifact", "File"],
-  "basename": "mangrove_mask.tif",
-  "format": "image/tiff",
-  "checksum": "sha1:0999fb93da76020eefac9eb02b1921cf7096b5fc"
-}

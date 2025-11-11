@@ -1,5 +1,0 @@
-- title: Remote Sensing Dataset
-  description: Sentinel-2 imagery dataset for Myanmar mangrove analysis
-  snippets:
-    - language: json
-      ref: sentinel2-dataset.json
