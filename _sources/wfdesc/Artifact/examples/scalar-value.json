@@ -1,7 +1,0 @@
-{
-  "@type": "Artifact",
-  "@id": "#threshold-value", 
-  "name": "threshold",
-  "value": 0.75,
-  "description": "Statistical analysis threshold parameter"
-}

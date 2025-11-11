@@ -1,7 +1,0 @@
-{
-  "@id": "#zoo-wps-engine",
-  "@type": "WorkflowEngine",
-  "name": "ZOO-Project WPS",
-  "version": "1.9.0",
-  "description": "Open source WPS server with workflow execution capabilities"
-}
