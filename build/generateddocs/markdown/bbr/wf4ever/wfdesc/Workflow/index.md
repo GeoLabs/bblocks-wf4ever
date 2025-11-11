@@ -1,5 +1,5 @@
 
-# wfdesc:Workflow (Schema)
+# wfdesc:Workflow (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.Workflow` *v1.0*
 
@@ -54,7 +54,7 @@ Process1 --> Process2 --> Process3
 
 ## Nested Workflows
 
-Workflows can contain other workflows as sub-processes.
+Workflows can contain other workflows as sub-processes using the `hasSubWorkflow` property, which is a specialization of `hasSubProcess`. This allows for hierarchical workflow composition and modular design.
 
 ## Workflow as a Black Box
 
@@ -874,11 +874,23 @@ Links to the schema:
     "name": "rdfs:label",
     "description": "rdfs:comment",
     "hasInput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasInput",
       "@type": "@id",
       "@container": "@set"
     },
     "hasOutput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasOutput",
       "@type": "@id",
       "@container": "@set"
@@ -899,6 +911,28 @@ Links to the schema:
       "@container": "@set"
     },
     "hasDataLink": {
+      "@context": {
+        "hasSource": {
+          "@context": {
+            "hasArtifact": {
+              "@id": "wfdesc:hasArtifact",
+              "@type": "@id"
+            }
+          },
+          "@id": "wfdesc:hasSource",
+          "@type": "@id"
+        },
+        "hasSink": {
+          "@context": {
+            "hasArtifact": {
+              "@id": "wfdesc:hasArtifact",
+              "@type": "@id"
+            }
+          },
+          "@id": "wfdesc:hasSink",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasDataLink",
       "@type": "@id",
       "@container": "@set"

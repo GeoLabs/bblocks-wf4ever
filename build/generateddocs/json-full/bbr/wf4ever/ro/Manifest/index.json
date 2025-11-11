@@ -6,10 +6,10 @@
   "abstract": "A manifest that describes the structure and contents of a Research Object. The manifest provides metadata about the Research Object, its aggregated resources, annotations, and organizational structure.",
   "status": "under-development",
   "dateTimeAddition": "2025-11-07T00:00:00Z",
-  "itemClass": "schema",
+  "itemClass": "datatype",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-07",
+  "dateOfLastChange": "2025-11-11",
   "sources": [
     {
       "title": "Research Object Ontology - Manifest",

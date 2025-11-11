@@ -2,13 +2,15 @@
   "@context": {
     "@vocab": "http://purl.org/wf4ever/wfprov#",
     "Artifact": "wfprov:Artifact",
+    "id": "@id",
+    "type": "@type",
     "describedByParameter": {
       "@id": "wfprov:describedByParameter",
       "@type": "@id"
     },
     "value": "prov:value",
     "wasOutputFrom": {
-      "@id": "prov:wasGeneratedBy",
+      "@id": "wfprov:wasOutputFrom",
       "@type": "@id"
     },
     "wfprov": "http://purl.org/wf4ever/wfprov#",

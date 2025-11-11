@@ -3,7 +3,7 @@ path	@id
 /@id	
 /name	http://www.w3.org/2000/01/rdf-schema#label
 /description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasArtifact	
+/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasArtifact/@type	
 /hasArtifact/@id	
 /hasArtifact/value	

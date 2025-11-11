@@ -1,5 +1,5 @@
 
-# wf4ever:Dataset (Schema)
+# wf4ever:Dataset (Datatype)
 
 `ogc.bbr.wf4ever.wf4ever.Dataset` *v1.0*
 

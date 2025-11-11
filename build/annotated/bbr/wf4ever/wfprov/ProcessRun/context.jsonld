@@ -8,6 +8,8 @@
       "@type": "@id",
       "@container": "@set"
     },
+    "id": "@id",
+    "type": "@type",
     "describedByProcess": {
       "@id": "wfprov:describedByProcess",
       "@type": "@id"
@@ -27,6 +29,10 @@
     },
     "wasPartOfWorkflowRun": {
       "@id": "wfprov:wasPartOfWorkflowRun",
+      "@type": "@id"
+    },
+    "wasEnactedBy": {
+      "@id": "prov:wasAssociatedWith",
       "@type": "@id"
     },
     "wfprov": "http://purl.org/wf4ever/wfprov#",

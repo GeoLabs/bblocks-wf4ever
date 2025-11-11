@@ -1,5 +1,5 @@
 
-# ro:ResearchObject (Schema)
+# ro:ResearchObject (Datatype)
 
 `ogc.bbr.wf4ever.ro.ResearchObject` *v1.0*
 
@@ -18,122 +18,79 @@ A **ResearchObject** groups together resources, data, methods, and contextual in
 ## Relations
 
 - Aggregates `ro:Resource` via `ore:aggregates`
-- Has a `ro:Manifest` via `ro:manifest`
+- Has a `ro:Manifest` via `ore:isDescribedBy` (from ORE standard)
 - Can contain a `ro:Folder` to organize resources
 - Can have `ro:AggregatedAnnotation` to annotate resources
 
+## Example
+
+See the real-world example from a CWLProv 0.6.0 execution showing a complete Research Object with workflow definition, provenance traces, and content-addressed data files from a mangrove biomass analysis.
+
 ## Examples
 
-### NDVI Research Object
-#### json
-```json
-{
-  "@id": "./",
-  "@type": "ResearchObject",
-  "title": "NDVI Computation Research Object",
-  "description": "Complete workflow and data for NDVI computation from Landsat imagery",
-  "aggregates": [
-    { "@id": "workflow/ndvi.cwl" },
-    { "@id": "data/input/" },
-    { "@id": "data/output/" },
-    { "@id": "README.md" }
-  ],
-  "manifest": ".ro/manifest.json",
-  "created": "2025-11-07T10:00:00Z"
-}
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/context.jsonld",
-  "@id": "./",
-  "@type": "ResearchObject",
-  "title": "NDVI Computation Research Object",
-  "description": "Complete workflow and data for NDVI computation from Landsat imagery",
-  "aggregates": [
-    {
-      "@id": "workflow/ndvi.cwl"
-    },
-    {
-      "@id": "data/input/"
-    },
-    {
-      "@id": "data/output/"
-    },
-    {
-      "@id": "README.md"
-    }
-  ],
-  "manifest": ".ro/manifest.json",
-  "created": "2025-11-07T10:00:00Z"
-}
-```
-
-#### ttl
-```ttl
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ore: <http://www.openarchives.org/ore/terms/> .
-@prefix ro: <http://purl.org/wf4ever/ro#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<file:///github/workspace/> a ro:ResearchObject ;
-    dcterms:created "2025-11-07T10:00:00+00:00"^^xsd:dateTime ;
-    dcterms:description "Complete workflow and data for NDVI computation from Landsat imagery" ;
-    dcterms:title "NDVI Computation Research Object" ;
-    ro:manifest <file:///github/workspace/.ro/manifest.json> ;
-    ore:aggregates <file:///github/workspace/README.md>,
-        <file:///github/workspace/data/input/>,
-        <file:///github/workspace/data/output/>,
-        <file:///github/workspace/workflow/ndvi.cwl> .
-
-
-```
-
-
-### KindGrove Research Object
+### Mangrove Workflow Research Object
 #### json
 ```json
 {
   "@id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/",
   "@type": "ResearchObject",
-  "title": "KindGrove Mangrove Analysis Research Object",
-  "description": "Complete research object containing workflow definition, execution provenance, input parameters, and output results for mangrove biomass analysis in Myanmar using Sentinel-2 imagery",
   "conformsTo": "https://w3id.org/cwl/prov/0.6.0",
-  "created": "2025-11-03T15:14:17.166945",
-  "createdBy": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+  "manifest": "metadata/manifest.json",
+  "createdOn": "2025-11-03T15:14:17.166945",
+  "createdBy": {
+    "uri": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+    "name": "cwltool 3.1.20251031082601"
+  },
   "aggregates": [
     {
-      "@id": "../workflow/packed.cwl",
-      "name": "Workflow definition",
-      "mediatype": "text/x+yaml; charset=\"UTF-8\""
-    },
-    {
-      "@id": "../workflow/primary-job.json",
-      "name": "Job parameters",
-      "mediatype": "application/json"
-    },
-    {
-      "@id": "../workflow/primary-output.json",
-      "name": "Workflow outputs",
-      "mediatype": "application/json"
+      "@id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+      "bundledAs": {
+        "uri": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+        "folder": "/data/e7/",
+        "filename": "e71003c6b7dd4093ce139ac0c51a6ba38d54a439"
+      },
+      "mediatype": "text/plain; charset='UTF-8'"
     },
     {
       "@id": "../metadata/provenance/primary.cwlprov.jsonld",
-      "name": "Execution provenance",
       "mediatype": "application/ld+json",
       "conformsTo": [
         "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
         "https://w3id.org/cwl/prov/0.6.0"
+      ],
+      "createdOn": "2025-11-03T15:14:17.167324",
+      "createdBy": {
+        "uri": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+        "name": "cwltool 3.1.20251031082601"
+      }
+    },
+    {
+      "@id": "../workflow/packed.cwl",
+      "mediatype": "text/x+yaml; charset=\"UTF-8\"",
+      "conformsTo": "https://w3id.org/cwl/",
+      "createdOn": "2025-11-03T15:14:17.167396",
+      "createdBy": {
+        "uri": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+        "name": "cwltool 3.1.20251031082601"
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "@id": "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84",
+      "about": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
+      "content": [
+        "provenance/primary.cwlprov.nt",
+        "provenance/primary.cwlprov.json",
+        "provenance/primary.cwlprov.jsonld"
       ]
     },
     {
-      "@id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
-      "name": "Output data file"
+      "@id": "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999",
+      "about": "../workflow/packed.cwl",
+      "content": null
     }
-  ],
-  "manifest": "../metadata/manifest.json"
+  ]
 }
 
 ```
@@ -144,80 +101,107 @@ A **ResearchObject** groups together resources, data, methods, and contextual in
   "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/context.jsonld",
   "@id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/",
   "@type": "ResearchObject",
-  "title": "KindGrove Mangrove Analysis Research Object",
-  "description": "Complete research object containing workflow definition, execution provenance, input parameters, and output results for mangrove biomass analysis in Myanmar using Sentinel-2 imagery",
   "conformsTo": "https://w3id.org/cwl/prov/0.6.0",
-  "created": "2025-11-03T15:14:17.166945",
-  "createdBy": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+  "manifest": "metadata/manifest.json",
+  "createdOn": "2025-11-03T15:14:17.166945",
+  "createdBy": {
+    "uri": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+    "name": "cwltool 3.1.20251031082601"
+  },
   "aggregates": [
     {
-      "@id": "../workflow/packed.cwl",
-      "name": "Workflow definition",
-      "mediatype": "text/x+yaml; charset=\"UTF-8\""
-    },
-    {
-      "@id": "../workflow/primary-job.json",
-      "name": "Job parameters",
-      "mediatype": "application/json"
-    },
-    {
-      "@id": "../workflow/primary-output.json",
-      "name": "Workflow outputs",
-      "mediatype": "application/json"
+      "@id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+      "bundledAs": {
+        "uri": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+        "folder": "/data/e7/",
+        "filename": "e71003c6b7dd4093ce139ac0c51a6ba38d54a439"
+      },
+      "mediatype": "text/plain; charset='UTF-8'"
     },
     {
       "@id": "../metadata/provenance/primary.cwlprov.jsonld",
-      "name": "Execution provenance",
       "mediatype": "application/ld+json",
       "conformsTo": [
         "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
         "https://w3id.org/cwl/prov/0.6.0"
+      ],
+      "createdOn": "2025-11-03T15:14:17.167324",
+      "createdBy": {
+        "uri": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+        "name": "cwltool 3.1.20251031082601"
+      }
+    },
+    {
+      "@id": "../workflow/packed.cwl",
+      "mediatype": "text/x+yaml; charset=\"UTF-8\"",
+      "conformsTo": "https://w3id.org/cwl/",
+      "createdOn": "2025-11-03T15:14:17.167396",
+      "createdBy": {
+        "uri": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+        "name": "cwltool 3.1.20251031082601"
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "@id": "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84",
+      "about": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
+      "content": [
+        "provenance/primary.cwlprov.nt",
+        "provenance/primary.cwlprov.json",
+        "provenance/primary.cwlprov.jsonld"
       ]
     },
     {
-      "@id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
-      "name": "Output data file"
+      "@id": "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999",
+      "about": "../workflow/packed.cwl",
+      "content": null
     }
-  ],
-  "manifest": "../metadata/manifest.json"
+  ]
 }
 ```
 
 #### ttl
 ```ttl
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ore: <http://www.openarchives.org/ore/terms/> .
 @prefix ro: <http://purl.org/wf4ever/ro#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/> a ro:ResearchObject ;
-    dcterms:created "2025-11-03T15:14:17.166945"^^xsd:dateTime ;
-    dcterms:description "Complete research object containing workflow definition, execution provenance, input parameters, and output results for mangrove biomass analysis in Myanmar using Sentinel-2 imagery" ;
-    dcterms:title "KindGrove Mangrove Analysis Research Object" ;
+    ro:annotations <urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84>,
+        <urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999> ;
     ro:conformsTo "https://w3id.org/cwl/prov/0.6.0" ;
-    ro:createdBy "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ;
-    ro:manifest <file:///github/metadata/manifest.json> ;
+    ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
+            ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
+    ro:createdOn "2025-11-03T15:14:17.166945" ;
+    ro:manifest <file:///github/workspace/metadata/manifest.json> ;
     ore:aggregates <file:///github/metadata/provenance/primary.cwlprov.jsonld>,
         <file:///github/workflow/packed.cwl>,
-        <file:///github/workflow/primary-job.json>,
-        <file:///github/workflow/primary-output.json>,
         <urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> .
 
 <file:///github/metadata/provenance/primary.cwlprov.jsonld> ro:conformsTo "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
         "https://w3id.org/cwl/prov/0.6.0" ;
-    ro:mediatype "application/ld+json" ;
-    ro:name "Execution provenance" .
+    ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
+            ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
+    ro:createdOn "2025-11-03T15:14:17.167324" ;
+    ro:mediatype "application/ld+json" .
 
-<file:///github/workflow/packed.cwl> ro:mediatype "text/x+yaml; charset=\"UTF-8\"" ;
-    ro:name "Workflow definition" .
+<file:///github/workflow/packed.cwl> ro:conformsTo "https://w3id.org/cwl/" ;
+    ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
+            ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
+    ro:createdOn "2025-11-03T15:14:17.167396" ;
+    ro:mediatype "text/x+yaml; charset=\"UTF-8\"" .
 
-<file:///github/workflow/primary-job.json> ro:mediatype "application/json" ;
-    ro:name "Job parameters" .
+<urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> ro:bundledAs [ ro:filename "e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ;
+            ro:folder "/data/e7/" ;
+            ro:uri "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ] ;
+    ro:mediatype "text/plain; charset='UTF-8'" .
 
-<file:///github/workflow/primary-output.json> ro:mediatype "application/json" ;
-    ro:name "Workflow outputs" .
+<urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84> ro:about "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c" ;
+    ro:content "provenance/primary.cwlprov.json",
+        "provenance/primary.cwlprov.jsonld",
+        "provenance/primary.cwlprov.nt" .
 
-<urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> ro:name "Output data file" .
+<urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999> ro:about "../workflow/packed.cwl" .
 
 
 ```

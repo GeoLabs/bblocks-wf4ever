@@ -1,16 +1,16 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-description: An execution instance of a process
+description: An execution instance of a process (based on prov:Activity)
 type: object
 properties:
-  '@id':
+  id:
     type: string
     format: uri
     description: Unique identifier for the process run
-  '@type':
-    oneOf:
-    - const: ProcessRun
-    - const: WorkflowRun
-    description: Type of execution (ProcessRun or WorkflowRun for workflow executions)
+    x-jsonld-id: '@id'
+  type:
+    type: string
+    description: Type indicator (Activity or sub-type)
+    x-jsonld-id: '@type'
   describedByProcess:
     type: string
     format: uri
@@ -22,11 +22,11 @@ properties:
     items:
       type: object
       properties:
-        '@id':
+        id:
           type: string
           format: uri
       required:
-      - '@id'
+      - id
     description: Input artifacts used by this process run
     x-jsonld-id: http://purl.org/wf4ever/wfprov#usedInput
     x-jsonld-type: '@id'
@@ -53,9 +53,10 @@ properties:
     type: string
     format: uri
     description: The workflow engine that enacted this process run
+    x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith
+    x-jsonld-type: '@id'
 required:
-- '@id'
-- describedByProcess
+- id
 x-jsonld-extra-terms:
   ProcessRun: http://purl.org/wf4ever/wfprov#ProcessRun
   WorkflowRun: http://purl.org/wf4ever/wfprov#WorkflowRun

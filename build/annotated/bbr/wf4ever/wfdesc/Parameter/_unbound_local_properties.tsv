@@ -1,7 +1,6 @@
 path
 /@type
 /@id
-/hasArtifact
 /hasArtifact/@type
 /hasArtifact/@id
 /hasArtifact/value

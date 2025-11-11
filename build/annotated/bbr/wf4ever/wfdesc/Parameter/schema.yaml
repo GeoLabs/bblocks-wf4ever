@@ -33,6 +33,8 @@ properties:
         x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#comment
     required:
     - '@type'
+    x-jsonld-id: http://purl.org/wf4ever/wfdesc#hasArtifact
+    x-jsonld-type: '@id'
 x-jsonld-extra-terms:
   Parameter: http://purl.org/wf4ever/wfdesc#Parameter
 x-jsonld-prefixes:

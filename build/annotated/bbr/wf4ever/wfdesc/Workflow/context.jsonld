@@ -6,11 +6,23 @@
     "name": "rdfs:label",
     "description": "rdfs:comment",
     "hasInput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasInput",
       "@type": "@id",
       "@container": "@set"
     },
     "hasOutput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasOutput",
       "@type": "@id",
       "@container": "@set"
@@ -31,6 +43,28 @@
       "@container": "@set"
     },
     "hasDataLink": {
+      "@context": {
+        "hasSource": {
+          "@context": {
+            "hasArtifact": {
+              "@id": "wfdesc:hasArtifact",
+              "@type": "@id"
+            }
+          },
+          "@id": "wfdesc:hasSource",
+          "@type": "@id"
+        },
+        "hasSink": {
+          "@context": {
+            "hasArtifact": {
+              "@id": "wfdesc:hasArtifact",
+              "@type": "@id"
+            }
+          },
+          "@id": "wfdesc:hasSink",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasDataLink",
       "@type": "@id",
       "@container": "@set"

@@ -1,5 +1,5 @@
 
-# wfprov:WorkflowRun (Schema)
+# wfprov:WorkflowRun (Datatype)
 
 `ogc.bbr.wf4ever.wfprov.WorkflowRun` *v1.0*
 
@@ -26,211 +26,117 @@ Inherits all properties from `wfprov:ProcessRun`.
 - Contains `wfprov:ProcessRun` via `hadSubProcessRun`
 - Can be executed by a `wfprov:WorkflowEngine` via `wasEnactedBy`
 
+## Example
+
+See the real-world example from a CWLProv execution showing complete workflow provenance with temporal information (startedAtTime, endedAtTime), associated agents (cwltool), and artifacts used/generated during execution.
+
 ## Examples
 
-### Simple workflow run
+### Mangrove Workflow Run with Provenance
 #### json
 ```json
 {
-  "@id": "#simple-workflow-run-1",
-  "@type": "WorkflowRun",
-  "describedByWorkflow": "#simple-workflow",
-  "describedByProcess": "#simple-workflow",
-  "startedAtTime": "2025-11-07T09:00:00Z",
-  "endedAtTime": "2025-11-07T09:05:00Z",
-  "hadSubProcessRun": [
-    { "@id": "#process-run-1" }
-  ],
-  "wasEnactedBy": "#workflow-engine"
-}
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld",
-  "@id": "#simple-workflow-run-1",
-  "@type": "WorkflowRun",
-  "describedByWorkflow": "#simple-workflow",
-  "describedByProcess": "#simple-workflow",
-  "startedAtTime": "2025-11-07T09:00:00Z",
-  "endedAtTime": "2025-11-07T09:05:00Z",
-  "hadSubProcessRun": [
-    {
-      "@id": "#process-run-1"
-    }
-  ],
-  "wasEnactedBy": "#workflow-engine"
-}
-```
-
-#### ttl
-```ttl
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<file:///github/workspace/#process-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#simple-workflow-run-1> .
-
-<file:///github/workspace/#simple-workflow-run-1> a wfprov:WorkflowRun ;
-    wfprov:describedByProcess <file:///github/workspace/#simple-workflow> ;
-    wfprov:describedByWorkflow <file:///github/workspace/#simple-workflow> ;
-    prov:endedAtTime "2025-11-07T09:05:00+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-07T09:00:00+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <file:///github/workspace/#workflow-engine> .
-
-
-```
-
-
-### Complex workflow run with multiple processes
-#### json
-```json
-{
-  "@id": "#ndvi-workflow-run-1",
-  "@type": "WorkflowRun",
-  "describedByWorkflow": "#ndvi-workflow",
-  "describedByProcess": "#ndvi-workflow",
-  "usedInput": [
-    { "@id": "artifact/landsat_scene.tif" }
-  ],
-  "startedAtTime": "2025-11-07T10:00:00Z",
-  "endedAtTime": "2025-11-07T10:15:00Z",
-  "hadSubProcessRun": [
-    { "@id": "#extract-bands-run-1" },
-    { "@id": "#ndvi-calc-run-1" },
-    { "@id": "#reproject-run-1" }
-  ],
-  "wasEnactedBy": "#zoo-wps-engine"
-}
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld",
-  "@id": "#ndvi-workflow-run-1",
-  "@type": "WorkflowRun",
-  "describedByWorkflow": "#ndvi-workflow",
-  "describedByProcess": "#ndvi-workflow",
-  "usedInput": [
-    {
-      "@id": "artifact/landsat_scene.tif"
-    }
-  ],
-  "startedAtTime": "2025-11-07T10:00:00Z",
-  "endedAtTime": "2025-11-07T10:15:00Z",
-  "hadSubProcessRun": [
-    {
-      "@id": "#extract-bands-run-1"
-    },
-    {
-      "@id": "#ndvi-calc-run-1"
-    },
-    {
-      "@id": "#reproject-run-1"
-    }
-  ],
-  "wasEnactedBy": "#zoo-wps-engine"
-}
-```
-
-#### ttl
-```ttl
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<file:///github/workspace/#extract-bands-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .
-
-<file:///github/workspace/#ndvi-calc-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .
-
-<file:///github/workspace/#reproject-run-1> wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> .
-
-<file:///github/workspace/#ndvi-workflow-run-1> a wfprov:WorkflowRun ;
-    wfprov:describedByProcess <file:///github/workspace/#ndvi-workflow> ;
-    wfprov:describedByWorkflow <file:///github/workspace/#ndvi-workflow> ;
-    wfprov:usedInput <file:///github/workspace/artifact/landsat_scene.tif> ;
-    prov:endedAtTime "2025-11-07T10:15:00+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-07T10:00:00+00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <file:///github/workspace/#zoo-wps-engine> .
-
-
-```
-
-
-### KindGrove Mangrove Analysis Execution
-#### json
-```json
-{
-  "@id": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
-  "@type": "WorkflowRun",
-  "label": "KindGrove Mangrove Analysis - Myanmar Region",
-  "describedByWorkflow": "https://github.com/starling-foundries/KindGrove#mangrove-analysis",
-  "describedByProcess": "https://github.com/starling-foundries/KindGrove#mangrove-analysis",
+  "id": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
+  "type": "WorkflowRun",
+  "label": "Run of workflow/packed.cwl#main",
+  "describedByWorkflow": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main",
   "startedAtTime": "2025-11-03T15:14:02.032122",
-  "endedAtTime": "2025-11-03T15:14:17.039961",
-  "wasEnactedBy": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
-  "usedInput": [
-    { "@id": "urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d" },
-    { "@id": "urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258" },
-    { "@id": "urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea" },
-    { "@id": "urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb" },
-    { "@id": "urn:uuid:fd57ac88-8716-40ed-8945-f83914857523" },
-    { "@id": "urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6" },
-    { "@id": "urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b" }
+  "endedAtTime": "2025-11-03T15:14:17.060218",
+  "wasAssociatedWith": [
+    {
+      "id": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+      "type": "WorkflowEngine",
+      "label": "cwltool 3.1.20251031082601"
+    },
+    {
+      "id": "urn:uuid:2dee96f7-ed94-4ef7-8562-6f26cdecd46f",
+      "type": "Agent",
+      "label": "Container execution of image r2d-2ftmp-2frepo2cwl-5fzbz5cbsp-2frepo1762182696"
+    }
   ],
-  "hadSubProcessRun": [
-    { "@id": "#subprocess-1" },
-    { "@id": "#subprocess-2" }
+  "used": [
+    {
+      "id": "urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d",
+      "value": 20.0,
+      "hadRole": "cloud_cover_max"
+    },
+    {
+      "id": "urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258",
+      "value": 90,
+      "hadRole": "days_back"
+    },
+    {
+      "id": "urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea",
+      "value": 95.35,
+      "hadRole": "east"
+    },
+    {
+      "id": "urn:uuid:fd57ac88-8716-40ed-8945-f83914857523",
+      "value": 16.1,
+      "hadRole": "north"
+    }
+  ],
+  "generated": [
+    {
+      "id": "urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539",
+      "type": "Artifact",
+      "basename": "outputs"
+    }
   ]
 }
 
+
 ```
 
 #### jsonld
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/WorkflowRun/context.jsonld",
-  "@id": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
-  "@type": "WorkflowRun",
-  "label": "KindGrove Mangrove Analysis - Myanmar Region",
-  "describedByWorkflow": "https://github.com/starling-foundries/KindGrove#mangrove-analysis",
-  "describedByProcess": "https://github.com/starling-foundries/KindGrove#mangrove-analysis",
+  "id": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
+  "type": "WorkflowRun",
+  "label": "Run of workflow/packed.cwl#main",
+  "describedByWorkflow": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main",
   "startedAtTime": "2025-11-03T15:14:02.032122",
-  "endedAtTime": "2025-11-03T15:14:17.039961",
-  "wasEnactedBy": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
-  "usedInput": [
+  "endedAtTime": "2025-11-03T15:14:17.060218",
+  "wasAssociatedWith": [
     {
-      "@id": "urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d"
+      "id": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+      "type": "WorkflowEngine",
+      "label": "cwltool 3.1.20251031082601"
     },
     {
-      "@id": "urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258"
-    },
-    {
-      "@id": "urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea"
-    },
-    {
-      "@id": "urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb"
-    },
-    {
-      "@id": "urn:uuid:fd57ac88-8716-40ed-8945-f83914857523"
-    },
-    {
-      "@id": "urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6"
-    },
-    {
-      "@id": "urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b"
+      "id": "urn:uuid:2dee96f7-ed94-4ef7-8562-6f26cdecd46f",
+      "type": "Agent",
+      "label": "Container execution of image r2d-2ftmp-2frepo2cwl-5fzbz5cbsp-2frepo1762182696"
     }
   ],
-  "hadSubProcessRun": [
+  "used": [
     {
-      "@id": "#subprocess-1"
+      "id": "urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d",
+      "value": 20.0,
+      "hadRole": "cloud_cover_max"
     },
     {
-      "@id": "#subprocess-2"
+      "id": "urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258",
+      "value": 90,
+      "hadRole": "days_back"
+    },
+    {
+      "id": "urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea",
+      "value": 95.35,
+      "hadRole": "east"
+    },
+    {
+      "id": "urn:uuid:fd57ac88-8716-40ed-8945-f83914857523",
+      "value": 16.1,
+      "hadRole": "north"
+    }
+  ],
+  "generated": [
+    {
+      "id": "urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539",
+      "type": "Artifact",
+      "basename": "outputs"
     }
   ]
 }
@@ -241,25 +147,40 @@ Inherits all properties from `wfprov:ProcessRun`.
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<file:///github/workspace/#subprocess-1> wfprov:wasPartOfWorkflowRun <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .
-
-<file:///github/workspace/#subprocess-2> wfprov:wasPartOfWorkflowRun <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .
 
 <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> a wfprov:WorkflowRun ;
-    wfprov:describedByProcess <https://github.com/starling-foundries/KindGrove#mangrove-analysis> ;
-    wfprov:describedByWorkflow <https://github.com/starling-foundries/KindGrove#mangrove-analysis> ;
-    wfprov:label "KindGrove Mangrove Analysis - Myanmar Region" ;
-    wfprov:usedInput <urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d>,
-        <urn:uuid:5007bfea-1116-4751-96b1-ff453b3ce5e6>,
-        <urn:uuid:6daa697b-40e3-499b-ade7-b404d089febb>,
+    wfprov:describedByWorkflow <arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main> ;
+    wfprov:generated <urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539> ;
+    wfprov:label "Run of workflow/packed.cwl#main" ;
+    wfprov:used <urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d>,
         <urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258>,
         <urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea>,
-        <urn:uuid:dc628f49-ccaa-479d-9a39-0eb1eb293d6b>,
         <urn:uuid:fd57ac88-8716-40ed-8945-f83914857523> ;
-    prov:endedAtTime "2025-11-03T15:14:17.039961"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-03T15:14:02.032122"^^xsd:dateTime ;
-    prov:wasAssociatedWith <urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> .
+    wfprov:wasAssociatedWith <urn:uuid:2dee96f7-ed94-4ef7-8562-6f26cdecd46f>,
+        <urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> ;
+    prov:endedAtTime "2025-11-03T15:14:17.060218"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-03T15:14:02.032122"^^xsd:dateTime .
+
+<urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d> wfprov:hadRole "cloud_cover_max" ;
+    wfprov:value 2e+01 .
+
+<urn:uuid:2dee96f7-ed94-4ef7-8562-6f26cdecd46f> a wfprov:Agent ;
+    wfprov:label "Container execution of image r2d-2ftmp-2frepo2cwl-5fzbz5cbsp-2frepo1762182696" .
+
+<urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> a wfprov:WorkflowEngine ;
+    wfprov:label "cwltool 3.1.20251031082601" .
+
+<urn:uuid:83c8708e-ccbd-494e-b939-1298b65b1539> a wfprov:Artifact ;
+    wfprov:basename "outputs" .
+
+<urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258> wfprov:hadRole "days_back" ;
+    wfprov:value 90 .
+
+<urn:uuid:ced76ef7-e660-4798-9442-06c17a45bbea> wfprov:hadRole "east" ;
+    wfprov:value 9.535e+01 .
+
+<urn:uuid:fd57ac88-8716-40ed-8945-f83914857523> wfprov:hadRole "north" ;
+    wfprov:value 1.61e+01 .
 
 
 ```
@@ -273,8 +194,6 @@ allOf:
 - $ref: https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/ProcessRun/schema.yaml
 - type: object
   properties:
-    '@type':
-      const: WorkflowRun
     describedByWorkflow:
       type: string
       format: uri
@@ -286,11 +205,11 @@ allOf:
       items:
         type: object
         properties:
-          '@id':
+          id:
             type: string
             format: uri
         required:
-        - '@id'
+        - id
       description: The process runs that were part of this workflow execution
       x-jsonld-reverse: wfprov:wasPartOfWorkflowRun
       x-jsonld-type: '@id'
@@ -301,6 +220,8 @@ allOf:
       description: The workflow engine that executed this workflow
       x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith
       x-jsonld-type: '@id'
+  required:
+  - describedByWorkflow
 x-jsonld-extra-terms:
   WorkflowRun: http://purl.org/wf4ever/wfprov#WorkflowRun
 x-jsonld-vocab: http://purl.org/wf4ever/wfprov#
@@ -330,6 +251,8 @@ Links to the schema:
       "@type": "@id",
       "@container": "@set"
     },
+    "id": "@id",
+    "type": "@type",
     "describedByProcess": {
       "@id": "wfprov:describedByProcess",
       "@type": "@id"
@@ -351,6 +274,10 @@ Links to the schema:
       "@id": "wfprov:wasPartOfWorkflowRun",
       "@type": "@id"
     },
+    "wasEnactedBy": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
     "describedByWorkflow": {
       "@id": "wfprov:describedByWorkflow",
       "@type": "@id"
@@ -359,10 +286,6 @@ Links to the schema:
       "@reverse": "wfprov:wasPartOfWorkflowRun",
       "@type": "@id",
       "@container": "@set"
-    },
-    "wasEnactedBy": {
-      "@id": "prov:wasAssociatedWith",
-      "@type": "@id"
     },
     "wfprov": "http://purl.org/wf4ever/wfprov#",
     "prov": "http://www.w3.org/ns/prov#",

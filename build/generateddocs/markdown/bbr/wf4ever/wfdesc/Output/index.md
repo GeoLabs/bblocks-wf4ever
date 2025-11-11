@@ -1,5 +1,5 @@
 
-# wfdesc:Output (Schema)
+# wfdesc:Output (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.Output` *v1.0*
 
@@ -153,6 +153,10 @@ Links to the schema:
     "Parameter": "wfdesc:Parameter",
     "name": "rdfs:label",
     "description": "rdfs:comment",
+    "hasArtifact": {
+      "@id": "wfdesc:hasArtifact",
+      "@type": "@id"
+    },
     "Output": "wfdesc:Output",
     "wfdesc": "http://purl.org/wf4ever/wfdesc#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",

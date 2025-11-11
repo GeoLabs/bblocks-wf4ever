@@ -1,5 +1,5 @@
 
-# wfdesc:Parameter (Schema)
+# wfdesc:Parameter (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.Parameter` *v1.0*
 
@@ -20,19 +20,18 @@ A **Parameter** is the base class for describing parameters of workflow processe
 ```
 wfdesc:Parameter (base class)
 ├── wfdesc:Input (input parameter)
-├── wfdesc:Output (output parameter)
-└── wfdesc:Configuration (configuration parameter)
+└── wfdesc:Output (output parameter)
 ```
 
 ## Usage
 
-Parameters are typically not used directly but through their subclasses (Input, Output, Configuration). They represent the interface points of a Process.
+Parameters are typically not used directly but through their subclasses (Input, Output). They represent the interface points of a Process and can be associated with Artifacts that describe the data types.
 
 ## Related Classes
 
 - **Input**: A parameter that receives data into a process
 - **Output**: A parameter that produces data from a process
-- **Configuration**: A parameter that configures process behavior
+- **Artifact**: Describes the type of data associated with a parameter
 - **Process**: The class that has parameters
 
 ## Examples
@@ -110,6 +109,8 @@ properties:
         x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#comment
     required:
     - '@type'
+    x-jsonld-id: http://purl.org/wf4ever/wfdesc#hasArtifact
+    x-jsonld-type: '@id'
 x-jsonld-extra-terms:
   Parameter: http://purl.org/wf4ever/wfdesc#Parameter
 x-jsonld-prefixes:
@@ -132,6 +133,10 @@ Links to the schema:
     "Parameter": "wfdesc:Parameter",
     "name": "rdfs:label",
     "description": "rdfs:comment",
+    "hasArtifact": {
+      "@id": "wfdesc:hasArtifact",
+      "@type": "@id"
+    },
     "wfdesc": "http://purl.org/wf4ever/wfdesc#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "@version": 1.1

@@ -8,7 +8,7 @@ path	@id
 /hasInput/@id	
 /hasInput/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasInput/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasInput/hasArtifact	
+/hasInput/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasInput/hasArtifact/@type	
 /hasInput/hasArtifact/@id	
 /hasInput/hasArtifact/value	
@@ -18,7 +18,7 @@ path	@id
 /hasOutput/@id	
 /hasOutput/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasOutput/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasOutput/hasArtifact	
+/hasOutput/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasOutput/hasArtifact/@type	
 /hasOutput/hasArtifact/@id	
 /hasOutput/hasArtifact/value	

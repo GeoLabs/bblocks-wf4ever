@@ -1,5 +1,2 @@
 path
-/@id
-/@type
-/usedInput/@id
-/wasEnactedBy
+/usedInput/id

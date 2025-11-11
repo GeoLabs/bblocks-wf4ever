@@ -1,5 +1,5 @@
 
-# ro:AggregatedAnnotation (Schema)
+# ro:AggregatedAnnotation (Datatype)
 
 `ogc.bbr.wf4ever.ro.AggregatedAnnotation` *v1.0*
 

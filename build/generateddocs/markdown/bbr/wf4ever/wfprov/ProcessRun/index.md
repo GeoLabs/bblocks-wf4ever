@@ -1,5 +1,5 @@
 
-# wfprov:ProcessRun (Schema)
+# wfprov:ProcessRun (Datatype)
 
 `ogc.bbr.wf4ever.wfprov.ProcessRun` *v1.0*
 
@@ -128,10 +128,10 @@ A **ProcessRun** represents an execution instance of a process. It captures what
     wfprov:describedByProcess <file:///github/workspace/#ndvi-process> ;
     wfprov:usedInput <file:///github/workspace/artifact/landsat_band4.tif>,
         <file:///github/workspace/artifact/landsat_band5.tif> ;
-    wfprov:wasEnactedBy "#zoo-wps-engine" ;
     wfprov:wasPartOfWorkflowRun <file:///github/workspace/#ndvi-workflow-run-1> ;
     prov:endedAtTime "2025-11-07T10:05:00+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-07T10:00:00+00:00"^^xsd:dateTime .
+    prov:startedAtTime "2025-11-07T10:00:00+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <file:///github/workspace/#zoo-wps-engine> .
 
 
 ```
@@ -140,18 +140,18 @@ A **ProcessRun** represents an execution instance of a process. It captures what
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
-description: An execution instance of a process
+description: An execution instance of a process (based on prov:Activity)
 type: object
 properties:
-  '@id':
+  id:
     type: string
     format: uri
     description: Unique identifier for the process run
-  '@type':
-    oneOf:
-    - const: ProcessRun
-    - const: WorkflowRun
-    description: Type of execution (ProcessRun or WorkflowRun for workflow executions)
+    x-jsonld-id: '@id'
+  type:
+    type: string
+    description: Type indicator (Activity or sub-type)
+    x-jsonld-id: '@type'
   describedByProcess:
     type: string
     format: uri
@@ -163,11 +163,11 @@ properties:
     items:
       type: object
       properties:
-        '@id':
+        id:
           type: string
           format: uri
       required:
-      - '@id'
+      - id
     description: Input artifacts used by this process run
     x-jsonld-id: http://purl.org/wf4ever/wfprov#usedInput
     x-jsonld-type: '@id'
@@ -194,9 +194,10 @@ properties:
     type: string
     format: uri
     description: The workflow engine that enacted this process run
+    x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith
+    x-jsonld-type: '@id'
 required:
-- '@id'
-- describedByProcess
+- id
 x-jsonld-extra-terms:
   ProcessRun: http://purl.org/wf4ever/wfprov#ProcessRun
   WorkflowRun: http://purl.org/wf4ever/wfprov#WorkflowRun
@@ -231,6 +232,8 @@ Links to the schema:
       "@type": "@id",
       "@container": "@set"
     },
+    "id": "@id",
+    "type": "@type",
     "describedByProcess": {
       "@id": "wfprov:describedByProcess",
       "@type": "@id"
@@ -250,6 +253,10 @@ Links to the schema:
     },
     "wasPartOfWorkflowRun": {
       "@id": "wfprov:wasPartOfWorkflowRun",
+      "@type": "@id"
+    },
+    "wasEnactedBy": {
+      "@id": "prov:wasAssociatedWith",
       "@type": "@id"
     },
     "wfprov": "http://purl.org/wf4ever/wfprov#",

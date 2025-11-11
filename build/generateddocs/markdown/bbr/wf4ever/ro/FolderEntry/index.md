@@ -1,5 +1,5 @@
 
-# ro:FolderEntry (Schema)
+# ro:FolderEntry (Datatype)
 
 `ogc.bbr.wf4ever.ro.FolderEntry` *v1.0*
 

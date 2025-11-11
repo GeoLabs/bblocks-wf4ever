@@ -1,16 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "A data entity used or generated during workflow execution",
+  "description": "A data entity used or generated during workflow execution (based on prov:Entity)",
   "type": "object",
   "properties": {
-    "@id": {
+    "id": {
       "type": "string",
       "format": "uri",
-      "description": "Unique identifier for the artifact"
+      "description": "Unique identifier for the artifact",
+      "x-jsonld-id": "@id"
     },
-    "@type": {
-      "const": "Artifact",
-      "description": "Type of the entity (must be Artifact)"
+    "type": {
+      "type": "string",
+      "description": "Type indicator (Entity or sub-type)",
+      "x-jsonld-id": "@type"
     },
     "describedByParameter": {
       "type": "string",
@@ -27,7 +29,7 @@
       "type": "string",
       "format": "uri",
       "description": "The process run that generated this artifact",
-      "x-jsonld-id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "x-jsonld-id": "http://purl.org/wf4ever/wfprov#wasOutputFrom",
       "x-jsonld-type": "@id"
     },
     "checksum": {
@@ -51,8 +53,7 @@
     }
   },
   "required": [
-    "@id",
-    "@type"
+    "id"
   ],
   "x-jsonld-extra-terms": {
     "Artifact": "http://purl.org/wf4ever/wfprov#Artifact"

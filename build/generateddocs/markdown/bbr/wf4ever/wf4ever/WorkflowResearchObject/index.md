@@ -1,5 +1,5 @@
 
-# wf4ever:WorkflowResearchObject (Schema)
+# wf4ever:WorkflowResearchObject (Datatype)
 
 `ogc.bbr.wf4ever.wf4ever.WorkflowResearchObject` *v1.0*
 

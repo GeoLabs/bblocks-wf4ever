@@ -1,5 +1,5 @@
 
-# ro:Resource (Schema)
+# ro:Resource (Datatype)
 
 `ogc.bbr.wf4ever.ro.Resource` *v1.0*
 

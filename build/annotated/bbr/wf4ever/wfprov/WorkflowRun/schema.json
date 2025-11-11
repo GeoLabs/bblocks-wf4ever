@@ -8,9 +8,6 @@
     {
       "type": "object",
       "properties": {
-        "@type": {
-          "const": "WorkflowRun"
-        },
         "describedByWorkflow": {
           "type": "string",
           "format": "uri",
@@ -23,13 +20,13 @@
           "items": {
             "type": "object",
             "properties": {
-              "@id": {
+              "id": {
                 "type": "string",
                 "format": "uri"
               }
             },
             "required": [
-              "@id"
+              "id"
             ]
           },
           "description": "The process runs that were part of this workflow execution",
@@ -44,7 +41,10 @@
           "x-jsonld-id": "http://www.w3.org/ns/prov#wasAssociatedWith",
           "x-jsonld-type": "@id"
         }
-      }
+      },
+      "required": [
+        "describedByWorkflow"
+      ]
     }
   ],
   "x-jsonld-extra-terms": {

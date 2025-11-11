@@ -4,8 +4,6 @@ allOf:
 - $ref: https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/ProcessRun/schema.yaml
 - type: object
   properties:
-    '@type':
-      const: WorkflowRun
     describedByWorkflow:
       type: string
       format: uri
@@ -17,11 +15,11 @@ allOf:
       items:
         type: object
         properties:
-          '@id':
+          id:
             type: string
             format: uri
         required:
-        - '@id'
+        - id
       description: The process runs that were part of this workflow execution
       x-jsonld-reverse: wfprov:wasPartOfWorkflowRun
       x-jsonld-type: '@id'
@@ -32,6 +30,8 @@ allOf:
       description: The workflow engine that executed this workflow
       x-jsonld-id: http://www.w3.org/ns/prov#wasAssociatedWith
       x-jsonld-type: '@id'
+  required:
+  - describedByWorkflow
 x-jsonld-extra-terms:
   WorkflowRun: http://purl.org/wf4ever/wfprov#WorkflowRun
 x-jsonld-vocab: http://purl.org/wf4ever/wfprov#

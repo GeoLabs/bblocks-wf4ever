@@ -1,5 +1,5 @@
 
-# wf4ever:Document (Schema)
+# wf4ever:Document (Datatype)
 
 `ogc.bbr.wf4ever.wf4ever.Document` *v1.0*
 

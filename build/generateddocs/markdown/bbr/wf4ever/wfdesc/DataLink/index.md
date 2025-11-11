@@ -1,5 +1,5 @@
 
-# wfdesc:DataLink (Schema)
+# wfdesc:DataLink (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.DataLink` *v1.0*
 
@@ -171,10 +171,22 @@ Links to the schema:
   "@context": {
     "DataLink": "wfdesc:DataLink",
     "hasSource": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasSource",
       "@type": "@id"
     },
     "hasSink": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasSink",
       "@type": "@id"
     },

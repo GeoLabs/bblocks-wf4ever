@@ -8,7 +8,7 @@ path	@id
 /hasInput/@id	
 /hasInput/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasInput/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasInput/hasArtifact	
+/hasInput/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasInput/hasArtifact/@type	
 /hasInput/hasArtifact/@id	
 /hasInput/hasArtifact/value	
@@ -18,7 +18,7 @@ path	@id
 /hasOutput/@id	
 /hasOutput/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasOutput/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasOutput/hasArtifact	
+/hasOutput/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasOutput/hasArtifact/@type	
 /hasOutput/hasArtifact/@id	
 /hasOutput/hasArtifact/value	
@@ -33,7 +33,7 @@ path	@id
 /hasSubProcess/hasInput/@id	
 /hasSubProcess/hasInput/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasSubProcess/hasInput/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasSubProcess/hasInput/hasArtifact	
+/hasSubProcess/hasInput/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasSubProcess/hasInput/hasArtifact/@type	
 /hasSubProcess/hasInput/hasArtifact/@id	
 /hasSubProcess/hasInput/hasArtifact/value	
@@ -43,7 +43,7 @@ path	@id
 /hasSubProcess/hasOutput/@id	
 /hasSubProcess/hasOutput/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasSubProcess/hasOutput/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasSubProcess/hasOutput/hasArtifact	
+/hasSubProcess/hasOutput/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasSubProcess/hasOutput/hasArtifact/@type	
 /hasSubProcess/hasOutput/hasArtifact/@id	
 /hasSubProcess/hasOutput/hasArtifact/value	
@@ -56,7 +56,7 @@ path	@id
 /hasDataLink/hasSource/@id	
 /hasDataLink/hasSource/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasDataLink/hasSource/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasDataLink/hasSource/hasArtifact	
+/hasDataLink/hasSource/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasDataLink/hasSource/hasArtifact/@type	
 /hasDataLink/hasSource/hasArtifact/@id	
 /hasDataLink/hasSource/hasArtifact/value	
@@ -66,7 +66,7 @@ path	@id
 /hasDataLink/hasSink/@id	
 /hasDataLink/hasSink/name	http://www.w3.org/2000/01/rdf-schema#label
 /hasDataLink/hasSink/description	http://www.w3.org/2000/01/rdf-schema#comment
-/hasDataLink/hasSink/hasArtifact	
+/hasDataLink/hasSink/hasArtifact	http://purl.org/wf4ever/wfdesc#hasArtifact
 /hasDataLink/hasSink/hasArtifact/@type	
 /hasDataLink/hasSink/hasArtifact/@id	
 /hasDataLink/hasSink/hasArtifact/value	

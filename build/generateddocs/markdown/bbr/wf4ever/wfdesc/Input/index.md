@@ -1,5 +1,5 @@
 
-# wfdesc:Input (Schema)
+# wfdesc:Input (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.Input` *v1.0*
 
@@ -155,6 +155,10 @@ Links to the schema:
     "Parameter": "wfdesc:Parameter",
     "name": "rdfs:label",
     "description": "rdfs:comment",
+    "hasArtifact": {
+      "@id": "wfdesc:hasArtifact",
+      "@type": "@id"
+    },
     "Input": "wfdesc:Input",
     "wfdesc": "http://purl.org/wf4ever/wfdesc#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",

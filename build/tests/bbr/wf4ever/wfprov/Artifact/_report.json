@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.bbr.wf4ever.wfprov.Artifact - wfprov:Artifact",
   "bblockName": "wfprov:Artifact",
   "bblockId": "ogc.bbr.wf4ever.wfprov.Artifact",
-  "generated": "2025-11-07T23:42:06.678681+00:00",
-  "result": true,
+  "generated": "2025-11-11T12:31:28.823954+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -52,9 +52,11 @@
           "entries": [
             {
               "op": "validation",
-              "result": true,
-              "isError": false,
-              "message": "Validation passed"
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'id' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'id' is a required property\n\nFailed validating 'required' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'description': 'A data entity used or generated during workflow '\n                    'execution (based on prov:Entity)',\n     'properties': {'checksum': {'description': 'Checksum information for '\n                                                'data integrity',\n                                 'properties': {'algorithm': {'enum': ['MD5',\n                                                                       'SHA-1',\n                                                                       'SHA-256',\n                                                                       'SHA-512'],\n                                                              'type': 'string'},\n                                                'value': {'type': 'string',\n                                                          'x-jsonld-id': 'http://www.w3.org/ns/prov#value'}},\n                                 'type': 'object'},\n                    'describedByParameter': {'description': 'Links to the '\n                                                            'parameter '\n                                                            'description '\n                                                            '(Input or '\n                                                            'Output) that '\n                                                            'this artifact '\n                                                            'corresponds '\n                                                            'to',\n                                             'format': 'uri',\n                                             'type': 'string',\n                                             'x-jsonld-id': 'http://purl.org/wf4ever/wfprov#describedByParameter',\n                                             'x-jsonld-type': '@id'},\n                    'id': {'description': 'Unique identifier for the '\n                                          'artifact',\n                           'format': 'uri',\n                           'type': 'string',\n                           'x-jsonld-id': '@id'},\n                    'type': {'description': 'Type indicator (Entity or '\n                                            'sub-type)',\n                             'type': 'string',\n                             'x-jsonld-id': '@type'},\n                    'value': {'description': 'The actual value or '\n                                             'reference to the artifact '\n                                             'data',\n                              'x-jsonld-id': 'http://www.w3.org/ns/prov#value'},\n                    'wasOutputFrom': {'description': 'The process run that '\n                                                     'generated this '\n                                                     'artifact',\n                                      'format': 'uri',\n                                      'type': 'string',\n                                      'x-jsonld-id': 'http://purl.org/wf4ever/wfprov#wasOutputFrom',\n                                      'x-jsonld-type': '@id'}},\n     'required': ['id'],\n     'type': 'object',\n     'x-jsonld-extra-terms': {'Artifact': 'http://purl.org/wf4ever/wfprov#Artifact'},\n     'x-jsonld-prefixes': {'prov': 'http://www.w3.org/ns/prov#',\n                           'wfdesc': 'http://purl.org/wf4ever/wfdesc#',\n                           'wfprov': 'http://purl.org/wf4ever/wfprov#'},\n     'x-jsonld-vocab': 'http://purl.org/wf4ever/wfprov#'}\n\nOn instance:\n    {'@id': 'artifact/landsat_band4.tif',\n     '@type': 'Artifact',\n     'describedByParameter': '#band4-input',\n     'value': 'file:///data/landsat_band4.tif'}"
             }
           ]
         }
@@ -70,7 +72,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -107,9 +109,11 @@
           "entries": [
             {
               "op": "validation",
-              "result": true,
-              "isError": false,
-              "message": "Validation passed"
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'id' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'id' is a required property\n\nFailed validating 'required' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'description': 'A data entity used or generated during workflow '\n                    'execution (based on prov:Entity)',\n     'properties': {'checksum': {'description': 'Checksum information for '\n                                                'data integrity',\n                                 'properties': {'algorithm': {'enum': ['MD5',\n                                                                       'SHA-1',\n                                                                       'SHA-256',\n                                                                       'SHA-512'],\n                                                              'type': 'string'},\n                                                'value': {'type': 'string',\n                                                          'x-jsonld-id': 'http://www.w3.org/ns/prov#value'}},\n                                 'type': 'object'},\n                    'describedByParameter': {'description': 'Links to the '\n                                                            'parameter '\n                                                            'description '\n                                                            '(Input or '\n                                                            'Output) that '\n                                                            'this artifact '\n                                                            'corresponds '\n                                                            'to',\n                                             'format': 'uri',\n                                             'type': 'string',\n                                             'x-jsonld-id': 'http://purl.org/wf4ever/wfprov#describedByParameter',\n                                             'x-jsonld-type': '@id'},\n                    'id': {'description': 'Unique identifier for the '\n                                          'artifact',\n                           'format': 'uri',\n                           'type': 'string',\n                           'x-jsonld-id': '@id'},\n                    'type': {'description': 'Type indicator (Entity or '\n                                            'sub-type)',\n                             'type': 'string',\n                             'x-jsonld-id': '@type'},\n                    'value': {'description': 'The actual value or '\n                                             'reference to the artifact '\n                                             'data',\n                              'x-jsonld-id': 'http://www.w3.org/ns/prov#value'},\n                    'wasOutputFrom': {'description': 'The process run that '\n                                                     'generated this '\n                                                     'artifact',\n                                      'format': 'uri',\n                                      'type': 'string',\n                                      'x-jsonld-id': 'http://purl.org/wf4ever/wfprov#wasOutputFrom',\n                                      'x-jsonld-type': '@id'}},\n     'required': ['id'],\n     'type': 'object',\n     'x-jsonld-extra-terms': {'Artifact': 'http://purl.org/wf4ever/wfprov#Artifact'},\n     'x-jsonld-prefixes': {'prov': 'http://www.w3.org/ns/prov#',\n                           'wfdesc': 'http://purl.org/wf4ever/wfdesc#',\n                           'wfprov': 'http://purl.org/wf4ever/wfprov#'},\n     'x-jsonld-vocab': 'http://purl.org/wf4ever/wfprov#'}\n\nOn instance:\n    {'@id': 'artifact/ndvi_result.tif',\n     '@type': 'Artifact',\n     'describedByParameter': '#ndvi-output',\n     'value': 'file:///data/ndvi_result.tif',\n     'wasOutputFrom': '#ndvi-process-run-1'}"
             }
           ]
         }
@@ -125,7 +129,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -162,9 +166,11 @@
           "entries": [
             {
               "op": "validation",
-              "result": true,
-              "isError": false,
-              "message": "Validation passed"
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'id' is a required property",
+              "isError": true,
+              "message": "ValidationError: 'id' is a required property\n\nFailed validating 'required' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'description': 'A data entity used or generated during workflow '\n                    'execution (based on prov:Entity)',\n     'properties': {'checksum': {'description': 'Checksum information for '\n                                                'data integrity',\n                                 'properties': {'algorithm': {'enum': ['MD5',\n                                                                       'SHA-1',\n                                                                       'SHA-256',\n                                                                       'SHA-512'],\n                                                              'type': 'string'},\n                                                'value': {'type': 'string',\n                                                          'x-jsonld-id': 'http://www.w3.org/ns/prov#value'}},\n                                 'type': 'object'},\n                    'describedByParameter': {'description': 'Links to the '\n                                                            'parameter '\n                                                            'description '\n                                                            '(Input or '\n                                                            'Output) that '\n                                                            'this artifact '\n                                                            'corresponds '\n                                                            'to',\n                                             'format': 'uri',\n                                             'type': 'string',\n                                             'x-jsonld-id': 'http://purl.org/wf4ever/wfprov#describedByParameter',\n                                             'x-jsonld-type': '@id'},\n                    'id': {'description': 'Unique identifier for the '\n                                          'artifact',\n                           'format': 'uri',\n                           'type': 'string',\n                           'x-jsonld-id': '@id'},\n                    'type': {'description': 'Type indicator (Entity or '\n                                            'sub-type)',\n                             'type': 'string',\n                             'x-jsonld-id': '@type'},\n                    'value': {'description': 'The actual value or '\n                                             'reference to the artifact '\n                                             'data',\n                              'x-jsonld-id': 'http://www.w3.org/ns/prov#value'},\n                    'wasOutputFrom': {'description': 'The process run that '\n                                                     'generated this '\n                                                     'artifact',\n                                      'format': 'uri',\n                                      'type': 'string',\n                                      'x-jsonld-id': 'http://purl.org/wf4ever/wfprov#wasOutputFrom',\n                                      'x-jsonld-type': '@id'}},\n     'required': ['id'],\n     'type': 'object',\n     'x-jsonld-extra-terms': {'Artifact': 'http://purl.org/wf4ever/wfprov#Artifact'},\n     'x-jsonld-prefixes': {'prov': 'http://www.w3.org/ns/prov#',\n                           'wfdesc': 'http://purl.org/wf4ever/wfdesc#',\n                           'wfprov': 'http://purl.org/wf4ever/wfprov#'},\n     'x-jsonld-vocab': 'http://purl.org/wf4ever/wfprov#'}\n\nOn instance:\n    {'@id': 'urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439',\n     '@type': 'Artifact',\n     'describedByParameter': '#output-result',\n     'mediatype': \"text/plain; charset='UTF-8'\",\n     'value': 'arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439',\n     'wasOutputFrom': 'urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c'}"
             }
           ]
         }
@@ -174,7 +180,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 3,
-    "failed": 0
+    "passed": 0,
+    "failed": 3
   }
 }

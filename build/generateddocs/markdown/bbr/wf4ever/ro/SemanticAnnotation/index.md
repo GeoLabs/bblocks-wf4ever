@@ -1,5 +1,5 @@
 
-# ro:SemanticAnnotation (Schema)
+# ro:SemanticAnnotation (Datatype)
 
 `ogc.bbr.wf4ever.ro.SemanticAnnotation` *v1.0*
 

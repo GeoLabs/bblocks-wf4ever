@@ -1,5 +1,5 @@
 
-# wf4ever:WebServiceProcess (Schema)
+# wf4ever:WebServiceProcess (Datatype)
 
 `ogc.bbr.wf4ever.wf4ever.WebServiceProcess` *v1.0*
 

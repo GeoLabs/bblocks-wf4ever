@@ -43,7 +43,9 @@
       },
       "required": [
         "@type"
-      ]
+      ],
+      "x-jsonld-id": "http://purl.org/wf4ever/wfdesc#hasArtifact",
+      "x-jsonld-type": "@id"
     }
   },
   "x-jsonld-extra-terms": {

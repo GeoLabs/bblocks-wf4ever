@@ -1,14 +1,16 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-description: A data entity used or generated during workflow execution
+description: A data entity used or generated during workflow execution (based on prov:Entity)
 type: object
 properties:
-  '@id':
+  id:
     type: string
     format: uri
     description: Unique identifier for the artifact
-  '@type':
-    const: Artifact
-    description: Type of the entity (must be Artifact)
+    x-jsonld-id: '@id'
+  type:
+    type: string
+    description: Type indicator (Entity or sub-type)
+    x-jsonld-id: '@type'
   describedByParameter:
     type: string
     format: uri
@@ -23,7 +25,7 @@ properties:
     type: string
     format: uri
     description: The process run that generated this artifact
-    x-jsonld-id: http://www.w3.org/ns/prov#wasGeneratedBy
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#wasOutputFrom
     x-jsonld-type: '@id'
   checksum:
     type: object
@@ -40,8 +42,7 @@ properties:
         x-jsonld-id: http://www.w3.org/ns/prov#value
     description: Checksum information for data integrity
 required:
-- '@id'
-- '@type'
+- id
 x-jsonld-extra-terms:
   Artifact: http://purl.org/wf4ever/wfprov#Artifact
 x-jsonld-vocab: http://purl.org/wf4ever/wfprov#

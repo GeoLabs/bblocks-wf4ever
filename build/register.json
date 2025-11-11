@@ -2,12 +2,12 @@
   "name": "Wf4Ever Building Blocks",
   "abstract": "Building blocks for the Wf4Ever ontologies suite (wfdesc, wfprov, ro, wf4ever) enabling\nworkflow description, provenance tracking, research object aggregation, and specialized artifact types.\n",
   "description": "This repository contains four separate building blocks for the **Wf4Ever ontologies**:\n\n- **wfdesc**: Workflow Description Ontology for describing workflow structure (prospective provenance)\n- **wfprov**: Workflow Provenance Ontology for tracking execution traces (retrospective provenance)\n- **ro**: Research Object Ontology for packaging and aggregating research artifacts\n- **wf4ever**: Extension ontology providing specialized artifact types (File, Dataset, Document, Image) and process types (WebServiceProcess, WorkflowResearchObject)\n\nAll examples are based on real CWL (Common Workflow Language) provenance data from\nscientific workflow executions.\n",
-  "modified": "2025-11-07T23:41:59.789081",
+  "modified": "2025-11-11T12:31:20.598918",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"598e6af1ecd2fc2eefbaad074647ce30cbd54a8b",
-      "shortCommitId": "\"598e6a",
-      "date": "2025-11-07T09:19:51+00:00\""
+      "commitId": "\"4fa4cc94cf7d37823107d163051f795337c61afb",
+      "shortCommitId": "\"4fa4cc",
+      "date": "2025-11-11T09:16:12+00:00\""
     }
   },
   "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
@@ -15,10 +15,12 @@
   "baseURL": "https://geolabs.github.io/bblocks-wf4ever/",
   "viewerURL": "https://geolabs.github.io/bblocks-wf4ever/",
   "validationReport": "https://geolabs.github.io/bblocks-wf4ever/build/tests/report.html",
+  "validationReportJson": "https://geolabs.github.io/bblocks-wf4ever/build/tests/report.json",
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json",
     "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/register.json",
     "https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json",
+    "https://ogcincubator.github.io/bblock-prov-schema/build/register.json",
     "https://ogcincubator.github.io/bblocks-cwl/build/register.json"
   ],
   "bblocks": [
@@ -28,10 +30,10 @@
       "abstract": "A semantic annotation is a specialization of ao:Annotation which requires that the annotation body points to an RDF Graph containing semantic information about the annotated resource.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - SemanticAnnotation",
@@ -79,10 +81,10 @@
       "abstract": "A resource that can be aggregated in a Research Object. Resources represent any artifact that contributes to the research outcome, such as data files, workflows, documentation, or external references.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - Resource",
@@ -133,7 +135,7 @@
       "itemClass": "schema",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology",
@@ -188,10 +190,10 @@
       "abstract": "An artifact representing a data value, file, or resource that can be used as input or generated as output by workflow processes. Artifacts provide concrete data representations for parameter binding.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [],
       "sources": [
         {
@@ -243,7 +245,7 @@
       "itemClass": "schema",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Workflow Description Ontology",
@@ -293,10 +295,10 @@
       "abstract": "A software agent that executes workflows. The WorkflowEngine is responsible for enacting workflow and process executions, managing the execution environment and resources.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Workflow Provenance Ontology - WorkflowEngine",
@@ -345,10 +347,10 @@
       "abstract": "An annotation about resources within a Research Object. Annotations provide additional metadata, provenance information, or contextual details about aggregated resources, stored as part of the Research Object itself.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - AggregatedAnnotation",
@@ -400,10 +402,10 @@
       "abstract": "A folder that organizes resources within a Research Object. Folders provide hierarchical structure, similar to filesystem directories, allowing logical grouping of related resources.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - Folder",
@@ -454,10 +456,10 @@
       "abstract": "A manifest that describes the structure and contents of a Research Object. The manifest provides metadata about the Research Object, its aggregated resources, annotations, and organizational structure.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - Manifest",
@@ -508,10 +510,10 @@
       "abstract": "A dataset artifact - a collection of data values or files representing a scientific dataset.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology - Dataset",
@@ -560,10 +562,10 @@
       "abstract": "A document artifact - textual or formatted content such as PDF, HTML, or text files.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology - Document",
@@ -612,10 +614,10 @@
       "abstract": "A file artifact - a specialization of wfdesc:Artifact representing a file-based data entity used or produced by workflow execution.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology - File",
@@ -664,10 +666,10 @@
       "abstract": "An image artifact - visual representation such as PNG, JPEG, or raster geospatial imagery.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology - Image",
@@ -716,10 +718,10 @@
       "abstract": "A parameter (input or output) of a workflow process. This is the base class for Input, Output, and Configuration.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
         "ogc.bbr.wf4ever.wfdesc.Artifact"
       ],
@@ -774,7 +776,7 @@
       "itemClass": "schema",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Workflow Provenance Ontology",
@@ -833,10 +835,10 @@
       "abstract": "An entry within a folder that associates a name with a resource. FolderEntries provide the mapping between folder paths and actual resources, similar to filesystem directory entries.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - FolderEntry",
@@ -846,8 +848,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.bbr.wf4ever.ro.Resource",
-        "ogc.bbr.wf4ever.ro.Folder"
+        "ogc.bbr.wf4ever.ro.Folder",
+        "ogc.bbr.wf4ever.ro.Resource"
       ],
       "tags": [
         "ro",
@@ -889,10 +891,10 @@
       "highlighted": true,
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Research Object Ontology - ResearchObject",
@@ -902,8 +904,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.bbr.wf4ever.ro.Resource",
-        "ogc.bbr.wf4ever.ro.Manifest"
+        "ogc.bbr.wf4ever.ro.Manifest",
+        "ogc.bbr.wf4ever.ro.Resource"
       ],
       "tags": [
         "ro",
@@ -944,10 +946,10 @@
       "abstract": "An input parameter to a workflow process. Inputs receive data from external sources or from outputs of other processes via DataLinks.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
         "ogc.bbr.wf4ever.wfdesc.Parameter"
       ],
@@ -999,10 +1001,10 @@
       "abstract": "An output parameter from a workflow process. Outputs produce data that can be consumed by inputs of other processes or as final workflow results.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
         "ogc.bbr.wf4ever.wfdesc.Parameter"
       ],
@@ -1054,10 +1056,10 @@
       "abstract": "A data entity that was used as input or generated as output during a workflow execution. Artifacts are the data products consumed or produced by process runs.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
         "ogc.bbr.wf4ever.wfdesc.Parameter"
       ],
@@ -1086,7 +1088,7 @@
       "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/Artifact/context.jsonld",
       "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/Artifact/",
       "rdfData": [],
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/wfprov/Artifact/",
       "documentation": {
         "markdown": {
@@ -1112,7 +1114,7 @@
       "itemClass": "schema",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology",
@@ -1122,8 +1124,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.bbr.wf4ever.wfdesc",
         "ogc.bbr.wf4ever.wfprov",
+        "ogc.bbr.wf4ever.wfdesc",
         "ogc.bbr.wf4ever.ro"
       ],
       "tags": [
@@ -1164,13 +1166,13 @@
       "abstract": "A connection between processes in a workflow, linking an output of one process to an input of another process. DataLinks define the data flow in a workflow.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
-        "ogc.bbr.wf4ever.wfdesc.Input",
-        "ogc.bbr.wf4ever.wfdesc.Output"
+        "ogc.bbr.wf4ever.wfdesc.Output",
+        "ogc.bbr.wf4ever.wfdesc.Input"
       ],
       "sources": [
         {
@@ -1220,13 +1222,13 @@
       "abstract": "A computational process or task in a workflow. Processes have inputs, outputs, and perform computations. This is the base class for atomic processes and composite Workflows.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
-        "ogc.bbr.wf4ever.wfdesc.Input",
-        "ogc.bbr.wf4ever.wfdesc.Output"
+        "ogc.bbr.wf4ever.wfdesc.Output",
+        "ogc.bbr.wf4ever.wfdesc.Input"
       ],
       "sources": [
         {
@@ -1276,10 +1278,10 @@
       "abstract": "A web service process - a process description whose enactment involves making a web service call.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology - WebServiceProcess",
@@ -1329,13 +1331,14 @@
       "highlighted": true,
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
+        "ogc.bbr.wf4ever.wfdesc.DataLink",
         "ogc.bbr.wf4ever.wfdesc.Process",
-        "ogc.bbr.wf4ever.wfdesc.DataLink"
+        "ogc.api.processes.v1.schemas.process"
       ],
       "sources": [
         {
@@ -1385,10 +1388,10 @@
       "abstract": "An execution instance of a process. A ProcessRun represents the actual execution of a process described by wfdesc:Process, tracking what happened during that execution including inputs used, outputs generated, and timing information.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Workflow Provenance Ontology - ProcessRun",
@@ -1419,7 +1422,7 @@
       "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/ProcessRun/context.jsonld",
       "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/wfprov/ProcessRun/",
       "rdfData": [],
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/wfprov/ProcessRun/",
       "documentation": {
         "markdown": {
@@ -1443,10 +1446,10 @@
       "highlighted": true,
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Wf4Ever Ontology - WorkflowResearchObject",
@@ -1456,8 +1459,8 @@
       "maturity": "development",
       "scope": "unstable",
       "dependsOn": [
-        "ogc.bbr.wf4ever.ro.ResearchObject",
-        "ogc.bbr.wf4ever.wfdesc.Workflow"
+        "ogc.bbr.wf4ever.wfdesc.Workflow",
+        "ogc.bbr.wf4ever.ro.ResearchObject"
       ],
       "tags": [
         "wf4ever",
@@ -1496,10 +1499,10 @@
       "abstract": "A specialized workflow description that includes all concrete data, parameters, and settings required to execute a specific workflow run. It bridges the gap between abstract workflow descriptions and concrete workflow executions.",
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "dependsOn": [
         "ogc.bbr.wf4ever.wfdesc.Workflow"
       ],
@@ -1551,10 +1554,10 @@
       "highlighted": true,
       "status": "under-development",
       "dateTimeAddition": "2025-11-07T00:00:00Z",
-      "itemClass": "schema",
+      "itemClass": "datatype",
       "register": "ogc-wf4ever",
       "version": "1.0",
-      "dateOfLastChange": "2025-11-07",
+      "dateOfLastChange": "2025-11-11",
       "sources": [
         {
           "title": "Workflow Provenance Ontology - WorkflowRun",

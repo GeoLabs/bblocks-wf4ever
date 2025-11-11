@@ -1,5 +1,5 @@
 
-# wfprov:Artifact (Schema)
+# wfprov:Artifact (Datatype)
 
 `ogc.bbr.wf4ever.wfprov.Artifact` *v1.0*
 
@@ -91,8 +91,8 @@ An **Artifact** represents a data entity that was used as input or generated as 
 
 <file:///github/workspace/artifact/ndvi_result.tif> a wfprov:Artifact ;
     wfprov:describedByParameter <file:///github/workspace/#ndvi-output> ;
-    prov:value "file:///data/ndvi_result.tif" ;
-    prov:wasGeneratedBy <file:///github/workspace/#ndvi-process-run-1> .
+    wfprov:wasOutputFrom <file:///github/workspace/#ndvi-process-run-1> ;
+    prov:value "file:///data/ndvi_result.tif" .
 
 
 ```
@@ -133,8 +133,8 @@ An **Artifact** represents a data entity that was used as input or generated as 
 <urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> a wfprov:Artifact ;
     wfprov:describedByParameter <file:///github/workspace/#output-result> ;
     wfprov:mediatype "text/plain; charset='UTF-8'" ;
-    prov:value "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ;
-    prov:wasGeneratedBy <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> .
+    wfprov:wasOutputFrom <urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> ;
+    prov:value "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439" .
 
 
 ```
@@ -143,16 +143,18 @@ An **Artifact** represents a data entity that was used as input or generated as 
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
-description: A data entity used or generated during workflow execution
+description: A data entity used or generated during workflow execution (based on prov:Entity)
 type: object
 properties:
-  '@id':
+  id:
     type: string
     format: uri
     description: Unique identifier for the artifact
-  '@type':
-    const: Artifact
-    description: Type of the entity (must be Artifact)
+    x-jsonld-id: '@id'
+  type:
+    type: string
+    description: Type indicator (Entity or sub-type)
+    x-jsonld-id: '@type'
   describedByParameter:
     type: string
     format: uri
@@ -167,7 +169,7 @@ properties:
     type: string
     format: uri
     description: The process run that generated this artifact
-    x-jsonld-id: http://www.w3.org/ns/prov#wasGeneratedBy
+    x-jsonld-id: http://purl.org/wf4ever/wfprov#wasOutputFrom
     x-jsonld-type: '@id'
   checksum:
     type: object
@@ -184,8 +186,7 @@ properties:
         x-jsonld-id: http://www.w3.org/ns/prov#value
     description: Checksum information for data integrity
 required:
-- '@id'
-- '@type'
+- id
 x-jsonld-extra-terms:
   Artifact: http://purl.org/wf4ever/wfprov#Artifact
 x-jsonld-vocab: http://purl.org/wf4ever/wfprov#
@@ -209,13 +210,15 @@ Links to the schema:
   "@context": {
     "@vocab": "http://purl.org/wf4ever/wfprov#",
     "Artifact": "wfprov:Artifact",
+    "id": "@id",
+    "type": "@type",
     "describedByParameter": {
       "@id": "wfprov:describedByParameter",
       "@type": "@id"
     },
     "value": "prov:value",
     "wasOutputFrom": {
-      "@id": "prov:wasGeneratedBy",
+      "@id": "wfprov:wasOutputFrom",
       "@type": "@id"
     },
     "wfprov": "http://purl.org/wf4ever/wfprov#",

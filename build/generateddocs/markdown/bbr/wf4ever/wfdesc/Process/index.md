@@ -1,5 +1,5 @@
 
-# wfdesc:Process (Schema)
+# wfdesc:Process (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.Process` *v1.0*
 
@@ -617,11 +617,23 @@ Links to the schema:
     "name": "rdfs:label",
     "description": "rdfs:comment",
     "hasInput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasInput",
       "@type": "@id",
       "@container": "@set"
     },
     "hasOutput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasOutput",
       "@type": "@id",
       "@container": "@set"

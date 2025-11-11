@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-07",
+  "dateOfLastChange": "2025-11-11",
   "sources": [
     {
       "title": "Wf4Ever Ontology",
@@ -19,8 +19,8 @@
   "maturity": "development",
   "scope": "unstable",
   "dependsOn": [
-    "ogc.bbr.wf4ever.wfdesc",
     "ogc.bbr.wf4ever.wfprov",
+    "ogc.bbr.wf4ever.wfdesc",
     "ogc.bbr.wf4ever.ro"
   ],
   "tags": [

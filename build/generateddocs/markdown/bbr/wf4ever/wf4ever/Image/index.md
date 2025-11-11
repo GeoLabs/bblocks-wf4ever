@@ -1,5 +1,5 @@
 
-# wf4ever:Image (Schema)
+# wf4ever:Image (Datatype)
 
 `ogc.bbr.wf4ever.wf4ever.Image` *v1.0*
 

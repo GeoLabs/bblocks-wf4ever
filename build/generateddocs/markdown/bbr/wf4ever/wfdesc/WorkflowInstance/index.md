@@ -1,5 +1,5 @@
 
-# wfdesc:WorkflowInstance (Schema)
+# wfdesc:WorkflowInstance (Datatype)
 
 `ogc.bbr.wf4ever.wfdesc.WorkflowInstance` *v1.0*
 

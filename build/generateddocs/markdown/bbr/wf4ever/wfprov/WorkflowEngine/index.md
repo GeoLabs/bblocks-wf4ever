@@ -1,5 +1,5 @@
 
-# wfprov:WorkflowEngine (Schema)
+# wfprov:WorkflowEngine (Datatype)
 
 `ogc.bbr.wf4ever.wfprov.WorkflowEngine` *v1.0*
 

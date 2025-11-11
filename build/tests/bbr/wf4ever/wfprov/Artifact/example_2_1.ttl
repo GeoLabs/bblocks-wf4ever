@@ -3,6 +3,6 @@
 
 <file:///github/workspace/artifact/ndvi_result.tif> a wfprov:Artifact ;
     wfprov:describedByParameter <file:///github/workspace/#ndvi-output> ;
-    prov:value "file:///data/ndvi_result.tif" ;
-    prov:wasGeneratedBy <file:///github/workspace/#ndvi-process-run-1> .
+    wfprov:wasOutputFrom <file:///github/workspace/#ndvi-process-run-1> ;
+    prov:value "file:///data/ndvi_result.tif" .
 

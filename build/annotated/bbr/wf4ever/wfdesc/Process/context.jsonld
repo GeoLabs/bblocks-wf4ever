@@ -6,11 +6,23 @@
     "name": "rdfs:label",
     "description": "rdfs:comment",
     "hasInput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasInput",
       "@type": "@id",
       "@container": "@set"
     },
     "hasOutput": {
+      "@context": {
+        "hasArtifact": {
+          "@id": "wfdesc:hasArtifact",
+          "@type": "@id"
+        }
+      },
       "@id": "wfdesc:hasOutput",
       "@type": "@id",
       "@container": "@set"

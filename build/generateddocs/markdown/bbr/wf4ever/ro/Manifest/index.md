@@ -1,5 +1,5 @@
 
-# ro:Manifest (Schema)
+# ro:Manifest (Datatype)
 
 `ogc.bbr.wf4ever.ro.Manifest` *v1.0*
 
