@@ -15,9 +15,11 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "dependsOn": [
-    "ogc.bbr.wf4ever.ro.Resource",
+  "profileOf": [
     "ogc.bbr.wf4ever.ro.SemanticAnnotation"
+  ],
+  "dependsOn": [
+    "ogc.bbr.wf4ever.ro.Resource"
   ],
   "tags": [
     "ro",

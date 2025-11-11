@@ -1,7 +1,0 @@
-{
-  "@id": "#cwl-runner",
-  "@type": "WorkflowEngine",
-  "name": "cwltool",
-  "version": "3.1.20231114134824",
-  "description": "Reference implementation of the Common Workflow Language"
-}

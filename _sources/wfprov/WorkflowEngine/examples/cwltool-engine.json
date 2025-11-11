@@ -1,7 +1,0 @@
-{
-  "@id": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
-  "@type": "WorkflowEngine",
-  "name": "cwltool",
-  "version": "3.1.20251031082601",
-  "description": "Common Workflow Language reference implementation with provenance tracking support"
-}

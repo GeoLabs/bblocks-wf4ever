@@ -15,7 +15,7 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "dependsOn": [
+  "profileOf": [
     "ogc.bbr.wf4ever.wfdesc.Artifact"
   ],
   "tags": [
