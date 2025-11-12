@@ -16,9 +16,6 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "profileOf": [
-    "ogc.bbr.wf4ever.wfprov.ProcessRun"
-  ],
   "dependsOn": [
     "ogc.bbr.wf4ever.wfdesc.Workflow"
   ],
