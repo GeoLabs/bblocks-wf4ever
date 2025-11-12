@@ -15,9 +15,6 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "profileOf": [
-    "ogc.bbr.wf4ever.ro.SemanticAnnotation"
-  ],
   "dependsOn": [
     "ogc.bbr.wf4ever.ro.Resource"
   ],

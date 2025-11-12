@@ -8,9 +8,6 @@
   "register": "ogc-wf4ever",
   "version": "1.0",
   "dateOfLastChange": "2025-11-07",
-  "profileOf": [
-    "ogc.bbr.wf4ever.wfdesc.Workflow"
-  ],
   "sources": [
     {
       "title": "Workflow Description Ontology - WorkflowInstance",
