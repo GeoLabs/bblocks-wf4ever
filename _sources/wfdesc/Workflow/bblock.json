@@ -9,9 +9,6 @@
   "register": "ogc-wf4ever",
   "version": "1.0",
   "dateOfLastChange": "2025-11-07",
-  "profileOf": [
-    "ogc.bbr.wf4ever.wfdesc.Process"
-  ],
   "dependsOn": [
     "ogc.bbr.wf4ever.wfdesc.DataLink",
     "ogc.api.processes.v1.schemas.process"
