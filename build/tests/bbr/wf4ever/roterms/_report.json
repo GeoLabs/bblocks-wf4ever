@@ -1,0 +1,281 @@
+{
+  "title": "Validation report for ogc.bbr.wf4ever.roterms - Research Object Terms (roterms)",
+  "bblockName": "Research Object Terms (roterms)",
+  "bblockId": "ogc.bbr.wf4ever.roterms",
+  "generated": "2025-12-10T11:19:01.919084+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/wf4ever/roterms/example_1_1.json",
+        "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'wfdesc:Input' is not one of ['roterms:Hypothesis', 'roterms:Conclusion', 'roterms:ExperimentalDesign', 'roterms:ScientificMethod', 'roterms:Sketch', 'roterms:Note', 'roterms:ProspectivePlan', 'roterms:Software', 'roterms:WebService', 'roterms:QualityAnnotation', 'roterms:Review', 'roterms:Rating', 'roterms:Task']",
+              "isError": true,
+              "message": "ValidationError: 'wfdesc:Input' is not one of ['roterms:Hypothesis', 'roterms:Conclusion', 'roterms:ExperimentalDesign', 'roterms:ScientificMethod', 'roterms:Sketch', 'roterms:Note', 'roterms:ProspectivePlan', 'roterms:Software', 'roterms:WebService', 'roterms:QualityAnnotation', 'roterms:Review', 'roterms:Rating', 'roterms:Task']\n\nFailed validating 'enum' in schema[0]:\n    {'enum': ['roterms:Hypothesis',\n              'roterms:Conclusion',\n              'roterms:ExperimentalDesign',\n              'roterms:ScientificMethod',\n              'roterms:Sketch',\n              'roterms:Note',\n              'roterms:ProspectivePlan',\n              'roterms:Software',\n              'roterms:WebService',\n              'roterms:QualityAnnotation',\n              'roterms:Review',\n              'roterms:Rating',\n              'roterms:Task'],\n     'type': 'string'}\n\nOn instance:\n    'wfdesc:Input'"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "HTTPError",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 196, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 203, in _load_graph\n    graph = Graph().parse(data=json.dumps(jsonld_uplifted), format='json-ld', base=base_uri)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1494, in parse\n    parser.parse(source, self, **args)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 119, in parse\n    to_rdf(data, conj_sink, base, context_data, version, generalized_rdf,\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 141, in to_rdf\n    return parser.parse(data, context, dataset)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 163, in parse\n    context.load(local_context, context.base)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 403, in load\n    self._prep_sources(base, source, sources, referenced_contexts)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 432, in _prep_sources\n    new_ctx = self._fetch_context(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 477, in _fetch_context\n    source = source_to_json(source_url)  # type: ignore[assignment]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/util.py\", line 44, in source_to_json\n    source = create_input_source(source, format=\"json-ld\")\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 478, in _create_input_source_from_location\n    input_source = URLInputSource(absolute_location, format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 285, in __init__\n    response: addinfourl = _urlopen(req)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 272, in _urlopen\n    return urlopen(req)\n,  File \"/src/ogc/bblocks/http_interceptor.py\", line 97, in mock_urlopen\n    return _original_urlopen(request, *args, **kwargs)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\n,urllib.error.HTTPError: HTTP Error 404: Not Found\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/wf4ever/roterms/example_2_1.json",
+        "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_2_1.json",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_2_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'wfdesc:Process' is not one of ['roterms:Hypothesis', 'roterms:Conclusion', 'roterms:ExperimentalDesign', 'roterms:ScientificMethod', 'roterms:Sketch', 'roterms:Note', 'roterms:ProspectivePlan', 'roterms:Software', 'roterms:WebService', 'roterms:QualityAnnotation', 'roterms:Review', 'roterms:Rating', 'roterms:Task']",
+              "isError": true,
+              "message": "ValidationError: 'wfdesc:Process' is not one of ['roterms:Hypothesis', 'roterms:Conclusion', 'roterms:ExperimentalDesign', 'roterms:ScientificMethod', 'roterms:Sketch', 'roterms:Note', 'roterms:ProspectivePlan', 'roterms:Software', 'roterms:WebService', 'roterms:QualityAnnotation', 'roterms:Review', 'roterms:Rating', 'roterms:Task']\n\nFailed validating 'enum' in schema[0]:\n    {'enum': ['roterms:Hypothesis',\n              'roterms:Conclusion',\n              'roterms:ExperimentalDesign',\n              'roterms:ScientificMethod',\n              'roterms:Sketch',\n              'roterms:Note',\n              'roterms:ProspectivePlan',\n              'roterms:Software',\n              'roterms:WebService',\n              'roterms:QualityAnnotation',\n              'roterms:Review',\n              'roterms:Rating',\n              'roterms:Task'],\n     'type': 'string'}\n\nOn instance:\n    'wfdesc:Process'"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "HTTPError",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 196, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 203, in _load_graph\n    graph = Graph().parse(data=json.dumps(jsonld_uplifted), format='json-ld', base=base_uri)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1494, in parse\n    parser.parse(source, self, **args)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 119, in parse\n    to_rdf(data, conj_sink, base, context_data, version, generalized_rdf,\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 141, in to_rdf\n    return parser.parse(data, context, dataset)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 163, in parse\n    context.load(local_context, context.base)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 403, in load\n    self._prep_sources(base, source, sources, referenced_contexts)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 432, in _prep_sources\n    new_ctx = self._fetch_context(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 477, in _fetch_context\n    source = source_to_json(source_url)  # type: ignore[assignment]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/util.py\", line 44, in source_to_json\n    source = create_input_source(source, format=\"json-ld\")\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 478, in _create_input_source_from_location\n    input_source = URLInputSource(absolute_location, format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 285, in __init__\n    response: addinfourl = _urlopen(req)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 272, in _urlopen\n    return urlopen(req)\n,  File \"/src/ogc/bblocks/http_interceptor.py\", line 97, in mock_urlopen\n    return _original_urlopen(request, *args, **kwargs)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\n,urllib.error.HTTPError: HTTP Error 404: Not Found\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/wf4ever/roterms/example_3_1.json",
+        "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_3_1.json",
+        "exampleIndex": 3,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_3_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'ro:ResearchObject' is not one of ['roterms:Hypothesis', 'roterms:Conclusion', 'roterms:ExperimentalDesign', 'roterms:ScientificMethod', 'roterms:Sketch', 'roterms:Note', 'roterms:ProspectivePlan', 'roterms:Software', 'roterms:WebService', 'roterms:QualityAnnotation', 'roterms:Review', 'roterms:Rating', 'roterms:Task']",
+              "isError": true,
+              "message": "ValidationError: 'ro:ResearchObject' is not one of ['roterms:Hypothesis', 'roterms:Conclusion', 'roterms:ExperimentalDesign', 'roterms:ScientificMethod', 'roterms:Sketch', 'roterms:Note', 'roterms:ProspectivePlan', 'roterms:Software', 'roterms:WebService', 'roterms:QualityAnnotation', 'roterms:Review', 'roterms:Rating', 'roterms:Task']\n\nFailed validating 'enum' in schema[0]:\n    {'enum': ['roterms:Hypothesis',\n              'roterms:Conclusion',\n              'roterms:ExperimentalDesign',\n              'roterms:ScientificMethod',\n              'roterms:Sketch',\n              'roterms:Note',\n              'roterms:ProspectivePlan',\n              'roterms:Software',\n              'roterms:WebService',\n              'roterms:QualityAnnotation',\n              'roterms:Review',\n              'roterms:Rating',\n              'roterms:Task'],\n     'type': 'string'}\n\nOn instance:\n    'ro:ResearchObject'"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "HTTPError",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 196, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 203, in _load_graph\n    graph = Graph().parse(data=json.dumps(jsonld_uplifted), format='json-ld', base=base_uri)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1494, in parse\n    parser.parse(source, self, **args)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 119, in parse\n    to_rdf(data, conj_sink, base, context_data, version, generalized_rdf,\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 141, in to_rdf\n    return parser.parse(data, context, dataset)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 163, in parse\n    context.load(local_context, context.base)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 403, in load\n    self._prep_sources(base, source, sources, referenced_contexts)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 432, in _prep_sources\n    new_ctx = self._fetch_context(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 477, in _fetch_context\n    source = source_to_json(source_url)  # type: ignore[assignment]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/util.py\", line 44, in source_to_json\n    source = create_input_source(source, format=\"json-ld\")\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 478, in _create_input_source_from_location\n    input_source = URLInputSource(absolute_location, format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 285, in __init__\n    response: addinfourl = _urlopen(req)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 272, in _urlopen\n    return urlopen(req)\n,  File \"/src/ogc/bblocks/http_interceptor.py\", line 97, in mock_urlopen\n    return _original_urlopen(request, *args, **kwargs)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\n,urllib.error.HTTPError: HTTP Error 404: Not Found\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/wf4ever/roterms/example_4_1.json",
+        "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_4_1.json",
+        "exampleIndex": 4,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_4_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "HTTPError",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 196, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 203, in _load_graph\n    graph = Graph().parse(data=json.dumps(jsonld_uplifted), format='json-ld', base=base_uri)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1494, in parse\n    parser.parse(source, self, **args)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 119, in parse\n    to_rdf(data, conj_sink, base, context_data, version, generalized_rdf,\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 141, in to_rdf\n    return parser.parse(data, context, dataset)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 163, in parse\n    context.load(local_context, context.base)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 403, in load\n    self._prep_sources(base, source, sources, referenced_contexts)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 432, in _prep_sources\n    new_ctx = self._fetch_context(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 477, in _fetch_context\n    source = source_to_json(source_url)  # type: ignore[assignment]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/util.py\", line 44, in source_to_json\n    source = create_input_source(source, format=\"json-ld\")\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 478, in _create_input_source_from_location\n    input_source = URLInputSource(absolute_location, format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 285, in __init__\n    response: addinfourl = _urlopen(req)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 272, in _urlopen\n    return urlopen(req)\n,  File \"/src/ogc/bblocks/http_interceptor.py\", line 97, in mock_urlopen\n    return _original_urlopen(request, *args, **kwargs)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\n,urllib.error.HTTPError: HTTP Error 404: Not Found\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/bbr/wf4ever/roterms/example_5_1.json",
+        "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_5_1.json",
+        "exampleIndex": 5,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_5_1.json from examples"
+            },
+            {
+              "op": "jsonld-uplift",
+              "isError": false,
+              "message": "JSON-LD context is present - uplifting"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "HTTPError",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 196, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 203, in _load_graph\n    graph = Graph().parse(data=json.dumps(jsonld_uplifted), format='json-ld', base=base_uri)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1494, in parse\n    parser.parse(source, self, **args)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 119, in parse\n    to_rdf(data, conj_sink, base, context_data, version, generalized_rdf,\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 141, in to_rdf\n    return parser.parse(data, context, dataset)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py\", line 163, in parse\n    context.load(local_context, context.base)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 403, in load\n    self._prep_sources(base, source, sources, referenced_contexts)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 432, in _prep_sources\n    new_ctx = self._fetch_context(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py\", line 477, in _fetch_context\n    source = source_to_json(source_url)  # type: ignore[assignment]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/util.py\", line 44, in source_to_json\n    source = create_input_source(source, format=\"json-ld\")\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 478, in _create_input_source_from_location\n    input_source = URLInputSource(absolute_location, format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 285, in __init__\n    response: addinfourl = _urlopen(req)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 272, in _urlopen\n    return urlopen(req)\n,  File \"/src/ogc/bblocks/http_interceptor.py\", line 97, in mock_urlopen\n    return _original_urlopen(request, *args, **kwargs)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n,  File \"/usr/local/lib/python3.10/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\n,urllib.error.HTTPError: HTTP Error 404: Not Found\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 5,
+    "passed": 0,
+    "failed": 5
+  }
+}

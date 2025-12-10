@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.Paper",
+  "name": "roterms:Paper",
+  "abstract": "Represents a scientific paper in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - Paper",
+      "link": "http://purl.org/wf4ever/roterms#Paper"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-entity"
+  ],
+  "tags": [
+    "roterms",
+    "paper",
+    "publication"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Paper/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Paper/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Paper/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Paper/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Paper/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Paper/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# Paper (roterms)\n\nThis Building Block represents the `Paper` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#Paper`\n- **Description**: Represents a scientific paper in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: Paper\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the paper.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the paper.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  Paper: http://purl.org/wf4ever/roterms#Paper\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/Paper"
+}

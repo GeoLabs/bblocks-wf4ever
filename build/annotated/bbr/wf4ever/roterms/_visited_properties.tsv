@@ -1,0 +1,27 @@
+path	@id
+/@type	
+/roterms:exampleValue	
+/roterms:defaultValue	
+/roterms:sampleSize	
+/roterms:performsTask	
+/roterms:performsTask/@type	
+/roterms:performsTask/label	
+/roterms:performsTask/description	
+/roterms:requiresHardware	
+/roterms:requiresSoftware	
+/roterms:wasInputTo	
+/roterms:wasInputTo/@id	
+/roterms:wasOutputFrom	
+/roterms:authoredBy	
+/roterms:authoredBy/@type	
+/roterms:authoredBy/name	
+/roterms:authoredOn	
+/roterms:hypothesis	
+/roterms:hypothesis/@type	
+/roterms:hypothesis/description	
+/roterms:supports	
+/roterms:refutes	
+/roterms:methodology	
+/roterms:technicalStandard	
+/roterms:validatedBy	
+/roterms:qualityScore	

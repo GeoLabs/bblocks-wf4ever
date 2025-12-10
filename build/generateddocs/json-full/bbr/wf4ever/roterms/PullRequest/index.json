@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.PullRequest",
+  "name": "roterms:PullRequest",
+  "abstract": "Represents a pull request in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - PullRequest",
+      "link": "http://purl.org/wf4ever/roterms#PullRequest"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "pull-request",
+    "collaboration"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/PullRequest/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/PullRequest/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/PullRequest/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/PullRequest/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/PullRequest/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/PullRequest/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# PullRequest (roterms)\n\nThis Building Block represents the `PullRequest` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#PullRequest`\n- **Description**: Represents a pull request in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: PullRequest\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the pull request.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the pull request.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  PullRequest:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#PullRequest\n    x-jsonld-type: '@id'\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  prov: http://www.w3.org/ns/prov#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/PullRequest"
+}

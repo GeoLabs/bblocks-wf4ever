@@ -1,0 +1,25 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: http://purl.org/wf4ever/roterms
+title: Comment
+type: object
+properties:
+  name:
+    type: string
+    description: Title of the comment.
+    x-jsonld-id: http://purl.org/dc/terms/title
+  description:
+    type: string
+    description: Content of the comment.
+    x-jsonld-id: http://purl.org/dc/terms/description
+required:
+- description
+x-jsonld-extra-terms:
+  Comment:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#Comment
+    x-jsonld-type: '@id'
+x-jsonld-vocab: http://purl.org/wf4ever/roterms#
+x-jsonld-prefixes:
+  roterms: http://purl.org/wf4ever/roterms#
+  dcterms: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  prov: http://www.w3.org/ns/prov#

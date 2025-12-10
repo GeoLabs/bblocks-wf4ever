@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "ResearchObject": "ro:ResearchObject",
+    "Resource": "ro:Resource",
+    "Folder": "ro:Folder",
+    "FolderEntry": "ro:FolderEntry",
+    "AggregatedAnnotation": "ro:AggregatedAnnotation",
+    "Manifest": "ro:Manifest",
+    "@type": {
+      "@context": {}
+    },
+    "name": "rdfs:label",
+    "aggregates": {
+      "@id": "ore:aggregates",
+      "@type": "@id"
+    },
+    "rootFolder": {
+      "@id": "ro:rootFolder",
+      "@type": "@id"
+    },
+    "entryName": "ro:entryName",
+    "annotatesAggregatedResource": {
+      "@id": "ro:annotatesAggregatedResource",
+      "@type": "@id"
+    },
+    "manifest": {
+      "@id": "ro:manifest",
+      "@type": "@id"
+    },
+    "isDescribedBy": {
+      "@id": "ore:isDescribedBy",
+      "@type": "@id"
+    },
+    "LiveRO": "roevo:LiveRO",
+    "SnapshotRO": "roevo:SnapshotRO",
+    "ArchivedRO": "roevo:ArchivedRO",
+    "VersionableResource": "roevo:VersionableResource",
+    "VersionInfo": "roevo:VersionInfo",
+    "ChangeSpecification": "roevo:ChangeSpecification",
+    "hasVersion": {
+      "@id": "roevo:hasVersion",
+      "@type": "@id"
+    },
+    "isVersionOf": {
+      "@id": "roevo:isVersionOf",
+      "@type": "@id"
+    },
+    "wasSnapshotOf": {
+      "@id": "roevo:wasSnapshotOf",
+      "@type": "@id"
+    },
+    "wasArchivedFrom": {
+      "@id": "roevo:wasArchivedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "createdAtTime": {
+      "@id": "roevo:createdAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "modifiedAtTime": {
+      "@id": "roevo:modifiedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "archivedAtTime": {
+      "@id": "roevo:archivedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "hasChangeLog": {
+      "@id": "roevo:hasChangeLog",
+      "@type": "@id"
+    },
+    "hasAdditions": {
+      "@id": "roevo:hasAdditions",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasRemovals": {
+      "@id": "roevo:hasRemovals",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasModifications": {
+      "@id": "roevo:hasModifications",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "archiveLocation": {
+      "@id": "roevo:archiveLocation",
+      "@type": "@id"
+    },
+    "@id": {
+      "@context": {}
+    },
+    "roevo:hasVersion": {},
+    "roevo:wasSnapshotOf": {},
+    "roevo:wasArchivedFrom": {},
+    "roevo:createdAtTime": {},
+    "roevo:modifiedAtTime": {},
+    "roevo:archivedAtTime": {},
+    "roevo:hasChangeLog": {},
+    "roevo:hasAdditions": {},
+    "roevo:hasRemovals": {},
+    "roevo:hasModifications": {},
+    "ro": "http://purl.org/wf4ever/ro#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ore": "http://www.openarchives.org/ore/terms/",
+    "roevo": "http://purl.org/wf4ever/roevo#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "@version": 1.1
+  }
+}

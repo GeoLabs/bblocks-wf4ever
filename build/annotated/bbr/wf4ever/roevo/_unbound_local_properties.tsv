@@ -1,0 +1,12 @@
+path
+/@type
+/roevo:hasVersion
+/roevo:wasSnapshotOf
+/roevo:wasArchivedFrom
+/roevo:createdAtTime
+/roevo:modifiedAtTime
+/roevo:archivedAtTime
+/roevo:hasChangeLog
+/roevo:hasAdditions
+/roevo:hasRemovals
+/roevo:hasModifications

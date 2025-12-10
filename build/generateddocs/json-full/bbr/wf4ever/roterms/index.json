@@ -1,0 +1,113 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms",
+  "name": "Research Object Terms (roterms)",
+  "abstract": "The Research Object Terms vocabulary defines classes and properties for annotations on Research Objects and their resources.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-11-28T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms",
+      "link": "http://purl.org/wf4ever/roterms"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "research-object",
+    "roterms",
+    "vocabulary",
+    "annotation",
+    "metadata",
+    "wf4ever"
+  ],
+  "dependsOn": [
+    "ogc.bbr.wf4ever.ro",
+    "ogc.ogc-utils.prov"
+  ],
+  "group": "Wf4Ever Ontologies",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/context.jsonld",
+  "ontology": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ontology.ttl",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/",
+  "rdfData": [],
+  "validationPassed": false,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/roterms/",
+  "description": "# Research Object Terms (roterms)\n\n## Overview\n\nThe Research Object Terms vocabulary (`roterms`) defines classes and properties that may be used with annotations on Research Objects and their resources. It provides a rich vocabulary for describing scientific concepts, tasks, hypotheses, and quality metrics.\n\n## Namespace\n\n`http://purl.org/wf4ever/roterms#`\n\n## Key Classes\n\n### Scientific Concepts\n\n- **Hypothesis** - A scientific hypothesis being tested or explored\n- **Conclusion** - A conclusion drawn from research\n- **ExperimentalDesign** - Description of experimental methodology\n- **ScientificMethod** - A specific scientific method or approach\n\n### Resource Types\n\n- **Sketch** - A sketch or preliminary design\n- **Note** - A research note or annotation\n- **ProspectivePlan** - A plan for future research\n- **Software** - Software or code artifact\n- **WebService** - A web service used in research\n\n### Quality and Review\n\n- **QualityAnnotation** - Annotation about quality aspects\n- **Review** - A peer review or assessment\n- **Rating** - A quality rating\n\n## Key Properties\n\n### Descriptive Properties\n\n- **exampleValue** - Provides an example value for a parameter or input\n  - Domain: Any resource\n  - Range: Literal or Resource\n  - Usage: Document expected input formats\n\n- **defaultValue** - Specifies a default value\n  - Domain: Parameter or Input\n  - Range: Literal or Resource\n\n- **sampleSize** - Sample size for statistical analysis\n  - Domain: Dataset or Analysis\n  - Range: Integer\n\n### Functional Properties\n\n- **performsTask** - Describes the task performed by a process or workflow\n  - Domain: Process, Workflow, or Software\n  - Range: Task or Literal description\n  - Usage: Semantic description of functionality\n\n- **requiresHardware** - Hardware requirements for execution\n  - Domain: Software or Process\n  - Range: Hardware specification\n\n- **requiresSoftware** - Software dependencies\n  - Domain: Software or Workflow\n  - Range: Software package\n\n### Provenance Properties\n\n- **wasInputTo** - Resource was input to a process\n  - Domain: Resource or Artifact\n  - Range: Process or Activity\n\n- **wasOutputFrom** - Resource was output from a process\n  - Domain: Resource or Artifact\n  - Range: Process or Activity\n\n- **authoredBy** - Created by a specific person or agent\n  - Domain: Any resource\n  - Range: Agent (Person or Organization)\n\n- **authoredOn** - Date/time of authoring\n  - Domain: Any resource\n  - Range: DateTime\n\n### Scientific Properties\n\n- **hypothesis** - Links to a hypothesis being tested\n  - Domain: Experiment or Research Object\n  - Range: Hypothesis\n\n- **supports** - Evidence that supports a claim or hypothesis\n  - Domain: Artifact or Result\n  - Range: Hypothesis or Claim\n\n- **refutes** - Evidence that refutes a claim or hypothesis\n  - Domain: Artifact or Result\n  - Range: Hypothesis or Claim\n\n- **methodology** - Research methodology employed\n  - Domain: Research Object or Experiment\n  - Range: ScientificMethod or ExperimentalDesign\n\n### Quality Properties\n\n- **technicalStandard** - Technical standard conformed to\n  - Domain: Resource\n  - Range: Standard specification\n\n- **validatedBy** - Validation process or tool used\n  - Domain: Resource or Artifact\n  - Range: Validation method\n\n- **qualityScore** - Numerical quality score\n  - Domain: Any resource\n  - Range: Float (0-1 or 0-100)\n\n## Usage Examples\n\n### Example Values for Parameters\n\n```json\n{\n  \"@context\": \"http://purl.org/wf4ever/roterms\",\n  \"@type\": \"wfdesc:Input\",\n  \"name\": \"threshold\",\n  \"roterms:exampleValue\": 0.95,\n  \"roterms:defaultValue\": 0.8,\n  \"description\": \"Confidence threshold for classification\"\n}\n```\n\n### Task Description\n\n```json\n{\n  \"@context\": \"http://purl.org/wf4ever/roterms\",\n  \"@type\": \"wfdesc:Process\",\n  \"name\": \"ImageClassifier\",\n  \"roterms:performsTask\": {\n    \"@type\": \"roterms:Task\",\n    \"label\": \"Image Classification\",\n    \"description\": \"Classifies images using deep learning\"\n  },\n  \"roterms:requiresSoftware\": \"TensorFlow 2.0+\"\n}\n```\n\n### Hypothesis Testing\n\n```json\n{\n  \"@context\": \"http://purl.org/wf4ever/roterms\",\n  \"@type\": \"ro:ResearchObject\",\n  \"roterms:hypothesis\": {\n    \"@type\": \"roterms:Hypothesis\",\n    \"description\": \"Higher temperature increases reaction rate\",\n    \"@id\": \"urn:uuid:hypothesis-001\"\n  },\n  \"aggregates\": [\n    {\n      \"@id\": \"results.csv\",\n      \"@type\": \"wf4ever:Dataset\",\n      \"roterms:supports\": \"urn:uuid:hypothesis-001\"\n    }\n  ]\n}\n```\n\n### Quality Annotation\n\n```json\n{\n  \"@context\": \"http://purl.org/wf4ever/roterms\",\n  \"@type\": \"roterms:QualityAnnotation\",\n  \"annotates\": \"workflow.cwl\",\n  \"roterms:qualityScore\": 0.87,\n  \"roterms:validatedBy\": \"CWL Validator 1.2\",\n  \"roterms:technicalStandard\": \"CWL v1.2\"\n}\n```\n\n## Integration with Other Vocabularies\n\n### Dublin Core Terms\n\nroterms complements Dublin Core with research-specific terms:\n\n- Use `dcterms:creator` for general authorship\n- Use `roterms:authoredBy` for explicit research authorship with provenance\n\n### PROV-O\n\nroterms extends PROV-O provenance:\n\n- `roterms:wasInputTo` / `roterms:wasOutputFrom` complement PROV relationships\n- Provides domain-specific provenance for scientific workflows\n\n### Schema.org\n\nroterms can be used alongside schema.org vocabulary for better web discoverability.\n\n## Use Cases\n\n### Documentation\n\nProvide comprehensive documentation of workflow parameters with examples and defaults.\n\n### Reproducibility\n\nDocument exact software versions, hardware requirements, and methodology for reproducible research.\n\n### Quality Assurance\n\nTrack validation results, quality scores, and conformance to standards.\n\n### Scientific Communication\n\nExplicitly link research objects to hypotheses, conclusions, and scientific methods.\n\n### Semantic Search\n\nEnable semantic queries like \"find all workflows that perform image classification\" using `roterms:performsTask`.\n\n## Best Practices\n\n1. **Use exampleValue liberally** - Help users understand expected inputs\n2. **Document dependencies** - Always specify software/hardware requirements\n3. **Link to hypotheses** - Make scientific reasoning explicit\n4. **Include quality metrics** - Document validation and quality scores\n5. **Be specific with tasks** - Use controlled vocabularies for task descriptions\n\n## References\n\n- [Research Object Ontology](http://purl.org/wf4ever/ro)\n- [Wf4Ever Research Object Model](http://wf4ever.github.io/ro/)\n- [PROV-O](https://www.w3.org/TR/prov-o/)\n- [Dublin Core Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)\n",
+  "examples": [
+    {
+      "title": "Workflow Parameter with Example Value",
+      "description": "Document expected input format with example value",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/parameter-example.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/context.jsonld\",\n  \"@id\": \"threshold-param\",\n  \"@type\": \"wfdesc:Input\",\n  \"dcterms:title\": \"Confidence Threshold\",\n  \"dcterms:description\": \"Minimum confidence level for classification\",\n  \"roterms:exampleValue\": 0.95,\n  \"roterms:defaultValue\": 0.8\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_1_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Process with Task Description",
+      "description": "Semantic description of process functionality",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/task-description.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/context.jsonld\",\n  \"@id\": \"image-classifier\",\n  \"@type\": \"wfdesc:Process\",\n  \"dcterms:title\": \"Image Classifier\",\n  \"roterms:performsTask\": {\n    \"@type\": \"roterms:Task\",\n    \"label\": \"Image Classification\",\n    \"description\": \"Classifies images using deep learning model\"\n  },\n  \"roterms:requiresSoftware\": [\n    \"TensorFlow 2.0+\",\n    \"Python 3.8+\"\n  ],\n  \"roterms:requiresHardware\": \"GPU with 8GB VRAM minimum\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_2_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Research Object with Hypothesis",
+      "description": "Linking research to scientific hypothesis",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/hypothesis.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/context.jsonld\",\n  \"@id\": \"experiment-001\",\n  \"@type\": \"ro:ResearchObject\",\n  \"dcterms:title\": \"Temperature Effect on Reaction Rate\",\n  \"roterms:hypothesis\": {\n    \"@id\": \"hypothesis-001\",\n    \"@type\": \"roterms:Hypothesis\",\n    \"description\": \"Higher temperature increases chemical reaction rate exponentially\"\n  },\n  \"roterms:methodology\": \"Controlled laboratory experiment with varying temperature\",\n  \"aggregates\": [\n    {\n      \"@id\": \"results.csv\",\n      \"@type\": \"wf4ever:Dataset\",\n      \"roterms:supports\": \"hypothesis-001\",\n      \"roterms:sampleSize\": 100\n    }\n  ]\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_3_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Quality Annotation",
+      "description": "Quality assessment with validation information",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/quality-annotation.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/context.jsonld\",\n  \"@id\": \"quality-annotation-001\",\n  \"@type\": \"roterms:QualityAnnotation\",\n  \"annotates\": \"workflow.cwl\",\n  \"roterms:qualityScore\": 0.87,\n  \"roterms:validatedBy\": \"CWL Validator 1.2\",\n  \"roterms:technicalStandard\": \"CWL v1.2 Specification\",\n  \"dcterms:created\": \"2025-11-28T10:00:00Z\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_4_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Software Resource with Dependencies",
+      "description": "Software artifact with requirements",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/software.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/context.jsonld\",\n  \"@id\": \"analysis-tool\",\n  \"@type\": \"roterms:Software\",\n  \"dcterms:title\": \"Genomic Analysis Tool\",\n  \"dcterms:version\": \"2.1.0\",\n  \"roterms:requiresSoftware\": [\n    \"R >= 4.0\",\n    \"Bioconductor >= 3.12\"\n  ],\n  \"roterms:performsTask\": \"Gene expression analysis\",\n  \"roterms:authoredBy\": {\n    \"@type\": \"foaf:Person\",\n    \"foaf:name\": \"Dr. Alice Johnson\"\n  },\n  \"roterms:authoredOn\": \"2025-06-15T00:00:00Z\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roterms/example_5_1.json"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: Research Object Terms\ndescription: Schema for Research Object Terms vocabulary providing annotation properties\ntype: object\nproperties:\n  '@type':\n    oneOf:\n    - type: string\n      enum:\n      - roterms:Hypothesis\n      - roterms:Conclusion\n      - roterms:ExperimentalDesign\n      - roterms:ScientificMethod\n      - roterms:Sketch\n      - roterms:Note\n      - roterms:ProspectivePlan\n      - roterms:Software\n      - roterms:WebService\n      - roterms:QualityAnnotation\n      - roterms:Review\n      - roterms:Rating\n      - roterms:Task\n    - type: array\n      items:\n        type: string\n  roterms:exampleValue:\n    description: Example value for a parameter or input\n  roterms:defaultValue:\n    description: Default value for a parameter\n  roterms:sampleSize:\n    description: Sample size for statistical analysis\n    type: integer\n    minimum: 0\n  roterms:performsTask:\n    description: Task performed by a process or workflow\n    oneOf:\n    - type: string\n    - type: object\n      properties:\n        '@type':\n          const: roterms:Task\n        label:\n          type: string\n        description:\n          type: string\n  roterms:requiresHardware:\n    description: Hardware requirements for execution\n    type: string\n  roterms:requiresSoftware:\n    description: Software dependencies\n    oneOf:\n    - type: string\n    - type: array\n      items:\n        type: string\n  roterms:wasInputTo:\n    description: Process this resource was input to\n    $ref: '#/$defs/ResourceReference'\n  roterms:wasOutputFrom:\n    description: Process this resource was output from\n    $ref: '#/$defs/ResourceReference'\n  roterms:authoredBy:\n    description: Author of this resource\n    $ref: '#/$defs/AgentReference'\n  roterms:authoredOn:\n    description: Date/time of authoring\n    type: string\n    format: date-time\n  roterms:hypothesis:\n    description: Hypothesis being tested\n    oneOf:\n    - $ref: '#/$defs/ResourceReference'\n    - type: object\n      properties:\n        '@type':\n          const: roterms:Hypothesis\n        description:\n          type: string\n      required:\n      - description\n  roterms:supports:\n    description: Hypothesis or claim this evidence supports\n    $ref: '#/$defs/ResourceReference'\n  roterms:refutes:\n    description: Hypothesis or claim this evidence refutes\n    $ref: '#/$defs/ResourceReference'\n  roterms:methodology:\n    description: Research methodology employed\n    type: string\n  roterms:technicalStandard:\n    description: Technical standard conformed to\n    type: string\n  roterms:validatedBy:\n    description: Validation process or tool used\n    type: string\n  roterms:qualityScore:\n    description: Numerical quality score\n    type: number\n    minimum: 0\n    maximum: 1\n$defs:\n  ResourceReference:\n    oneOf:\n    - type: string\n      format: uri\n    - type: object\n      required:\n      - '@id'\n      properties:\n        '@id':\n          type: string\n          format: uri\n  AgentReference:\n    oneOf:\n    - type: string\n    - type: object\n      properties:\n        '@type':\n          enum:\n          - foaf:Person\n          - foaf:Organization\n          - prov:Agent\n        name:\n          type: string\nx-jsonld-extra-terms:\n  Hypothesis: http://purl.org/wf4ever/roterms#Hypothesis\n  Conclusion: http://purl.org/wf4ever/roterms#Conclusion\n  ExperimentalDesign: http://purl.org/wf4ever/roterms#ExperimentalDesign\n  ScientificMethod: http://purl.org/wf4ever/roterms#ScientificMethod\n  Sketch: http://purl.org/wf4ever/roterms#Sketch\n  Note: http://purl.org/wf4ever/roterms#Note\n  ProspectivePlan: http://purl.org/wf4ever/roterms#ProspectivePlan\n  Software: http://purl.org/wf4ever/roterms#Software\n  WebService: http://purl.org/wf4ever/roterms#WebService\n  QualityAnnotation: http://purl.org/wf4ever/roterms#QualityAnnotation\n  Review: http://purl.org/wf4ever/roterms#Review\n  Rating: http://purl.org/wf4ever/roterms#Rating\n  Task: http://purl.org/wf4ever/roterms#Task\n  exampleValue: http://purl.org/wf4ever/roterms#exampleValue\n  defaultValue: http://purl.org/wf4ever/roterms#defaultValue\n  sampleSize:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#sampleSize\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer\n  performsTask:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#performsTask\n    x-jsonld-type: '@id'\n  requiresHardware: http://purl.org/wf4ever/roterms#requiresHardware\n  requiresSoftware:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#requiresSoftware\n    x-jsonld-container: '@set'\n  wasInputTo:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#wasInputTo\n    x-jsonld-type: '@id'\n  wasOutputFrom:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#wasOutputFrom\n    x-jsonld-type: '@id'\n  authoredBy:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#authoredBy\n    x-jsonld-type: '@id'\n  authoredOn:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#authoredOn\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  hypothesis:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#hypothesis\n    x-jsonld-type: '@id'\n  supports:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#supports\n    x-jsonld-type: '@id'\n  refutes:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#refutes\n    x-jsonld-type: '@id'\n  methodology: http://purl.org/wf4ever/roterms#methodology\n  technicalStandard: http://purl.org/wf4ever/roterms#technicalStandard\n  validatedBy: http://purl.org/wf4ever/roterms#validatedBy\n  qualityScore:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#qualityScore\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#float\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  xsd: http://www.w3.org/2001/XMLSchema#\n  ro: http://purl.org/wf4ever/ro#\n  wfdesc: http://purl.org/wf4ever/wfdesc#\n  prov: http://www.w3.org/ns/prov#\n  foaf: http://xmlns.com/foaf/0.1/\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms"
+}

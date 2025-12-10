@@ -1,0 +1,27 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: An archived Research Object
+type: object
+properties:
+  '@id':
+    type: string
+    format: uri
+    description: Identifier of the archived research object
+  '@type':
+    type: string
+    description: The RDF type of this object (roevo:ArchivedRO)
+  name:
+    type: string
+    description: Title of the archived research object
+    x-jsonld-id: http://purl.org/dc/terms/title
+  description:
+    type: string
+    description: Narrative description
+    x-jsonld-id: http://purl.org/dc/terms/description
+required:
+- '@id'
+x-jsonld-extra-terms:
+  ArchivedRO: http://purl.org/wf4ever/roevo#ArchivedRO
+x-jsonld-vocab: http://purl.org/wf4ever/roevo#
+x-jsonld-prefixes:
+  roevo: http://purl.org/wf4ever/roevo#
+  dcterms: http://purl.org/dc/terms/

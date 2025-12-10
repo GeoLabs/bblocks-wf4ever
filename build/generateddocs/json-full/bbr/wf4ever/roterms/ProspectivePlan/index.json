@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.ProspectivePlan",
+  "name": "roterms:ProspectivePlan",
+  "abstract": "A prospective plan outlining intended tasks or steps.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - ProspectivePlan",
+      "link": "http://purl.org/wf4ever/roterms#ProspectivePlan"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "plan",
+    "annotation"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ProspectivePlan/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ProspectivePlan/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ProspectivePlan/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ProspectivePlan/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ProspectivePlan/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ProspectivePlan/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roterms:ProspectivePlan\n\nA plan with intended tasks or steps.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A prospective plan\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier\n  '@type':\n    type: string\n    description: RDF type (roterms:ProspectivePlan)\n  name:\n    type: string\n    description: Title\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Narrative description\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  ProspectivePlan: http://purl.org/wf4ever/roterms#ProspectivePlan\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/ProspectivePlan"
+}

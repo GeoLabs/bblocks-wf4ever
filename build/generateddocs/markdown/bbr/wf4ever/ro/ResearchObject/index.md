@@ -1,5 +1,5 @@
 
-# ro:ResearchObject (Datatype)
+# ro:ResearchObject (Schema)
 
 `ogc.bbr.wf4ever.ro.ResearchObject` *v1.0*
 
@@ -32,8 +32,8 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
 #### json
 ```json
 {
-  "id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/",
-  "type": "ResearchObject",
+  "@id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/",
+  "@type": "ResearchObject",
   "conformsTo": "https://w3id.org/cwl/prov/0.6.0",
   "manifest": "metadata/manifest.json",
   "createdOn": "2025-11-03T15:14:17.166945",
@@ -43,7 +43,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
   },
   "aggregates": [
     {
-      "id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+      "@id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
       "bundledAs": {
         "uri": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
         "folder": "/data/e7/",
@@ -52,7 +52,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
       "mediatype": "text/plain; charset='UTF-8'"
     },
     {
-      "id": "metadata/provenance/primary.cwlprov.jsonld",
+      "@id": "../metadata/provenance/primary.cwlprov.jsonld",
       "mediatype": "application/ld+json",
       "conformsTo": [
         "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
@@ -65,7 +65,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
       }
     },
     {
-      "id": "workflow/packed.cwl",
+      "@id": "../workflow/packed.cwl",
       "mediatype": "text/x+yaml; charset=\"UTF-8\"",
       "conformsTo": "https://w3id.org/cwl/",
       "createdOn": "2025-11-03T15:14:17.167396",
@@ -77,7 +77,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
   ],
   "annotations": [
     {
-      "id": "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84",
+      "@id": "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84",
       "about": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
       "content": [
         "provenance/primary.cwlprov.nt",
@@ -86,20 +86,21 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
       ]
     },
     {
-      "id": "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999",
-      "about": "workflow/packed.cwl",
+      "@id": "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999",
+      "about": "../workflow/packed.cwl",
       "content": null
     }
   ]
 }
+
 ```
 
 #### jsonld
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/ResearchObject/context.jsonld",
-  "id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/",
-  "type": "ResearchObject",
+  "@id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/",
+  "@type": "ResearchObject",
   "conformsTo": "https://w3id.org/cwl/prov/0.6.0",
   "manifest": "metadata/manifest.json",
   "createdOn": "2025-11-03T15:14:17.166945",
@@ -109,7 +110,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
   },
   "aggregates": [
     {
-      "id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
+      "@id": "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
       "bundledAs": {
         "uri": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439",
         "folder": "/data/e7/",
@@ -118,7 +119,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
       "mediatype": "text/plain; charset='UTF-8'"
     },
     {
-      "id": "metadata/provenance/primary.cwlprov.jsonld",
+      "@id": "../metadata/provenance/primary.cwlprov.jsonld",
       "mediatype": "application/ld+json",
       "conformsTo": [
         "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
@@ -131,7 +132,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
       }
     },
     {
-      "id": "workflow/packed.cwl",
+      "@id": "../workflow/packed.cwl",
       "mediatype": "text/x+yaml; charset=\"UTF-8\"",
       "conformsTo": "https://w3id.org/cwl/",
       "createdOn": "2025-11-03T15:14:17.167396",
@@ -143,7 +144,7 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
   ],
   "annotations": [
     {
-      "id": "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84",
+      "@id": "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84",
       "about": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
       "content": [
         "provenance/primary.cwlprov.nt",
@@ -152,8 +153,8 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
       ]
     },
     {
-      "id": "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999",
-      "about": "workflow/packed.cwl",
+      "@id": "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999",
+      "about": "../workflow/packed.cwl",
       "content": null
     }
   ]
@@ -165,38 +166,42 @@ See the real-world example from a CWLProv 0.6.0 execution showing a complete Res
 @prefix ore: <http://www.openarchives.org/ore/terms/> .
 @prefix ro: <http://purl.org/wf4ever/ro#> .
 
-[] ro:annotations [ ro:about "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c" ;
-            ro:content "provenance/primary.cwlprov.json",
-                "provenance/primary.cwlprov.jsonld",
-                "provenance/primary.cwlprov.nt" ;
-            ro:id "urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84" ],
-        [ ro:about "workflow/packed.cwl" ;
-            ro:id "urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999" ] ;
+<arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/> a ro:ResearchObject ;
+    ro:annotations <urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84>,
+        <urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999> ;
     ro:conformsTo "https://w3id.org/cwl/prov/0.6.0" ;
     ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
             ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
     ro:createdOn "2025-11-03T15:14:17.166945" ;
-    ro:id "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/" ;
     ro:manifest <file:///github/workspace/metadata/manifest.json> ;
-    ro:type "ResearchObject" ;
-    ore:aggregates [ ro:conformsTo "https://w3id.org/cwl/" ;
-            ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
-                    ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
-            ro:createdOn "2025-11-03T15:14:17.167396" ;
-            ro:id "workflow/packed.cwl" ;
-            ro:mediatype "text/x+yaml; charset=\"UTF-8\"" ],
-        [ ro:conformsTo "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
-                "https://w3id.org/cwl/prov/0.6.0" ;
-            ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
-                    ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
-            ro:createdOn "2025-11-03T15:14:17.167324" ;
-            ro:id "metadata/provenance/primary.cwlprov.jsonld" ;
-            ro:mediatype "application/ld+json" ],
-        [ ro:bundledAs [ ro:filename "e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ;
-                    ro:folder "/data/e7/" ;
-                    ro:uri "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ] ;
-            ro:id "urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ;
-            ro:mediatype "text/plain; charset='UTF-8'" ] .
+    ore:aggregates <file:///github/metadata/provenance/primary.cwlprov.jsonld>,
+        <file:///github/workflow/packed.cwl>,
+        <urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> .
+
+<file:///github/metadata/provenance/primary.cwlprov.jsonld> ro:conformsTo "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+        "https://w3id.org/cwl/prov/0.6.0" ;
+    ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
+            ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
+    ro:createdOn "2025-11-03T15:14:17.167324" ;
+    ro:mediatype "application/ld+json" .
+
+<file:///github/workflow/packed.cwl> ro:conformsTo "https://w3id.org/cwl/" ;
+    ro:createdBy [ ro:name "cwltool 3.1.20251031082601" ;
+            ro:uri "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60" ] ;
+    ro:createdOn "2025-11-03T15:14:17.167396" ;
+    ro:mediatype "text/x+yaml; charset=\"UTF-8\"" .
+
+<urn:hash::sha1:e71003c6b7dd4093ce139ac0c51a6ba38d54a439> ro:bundledAs [ ro:filename "e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ;
+            ro:folder "/data/e7/" ;
+            ro:uri "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/data/e7/e71003c6b7dd4093ce139ac0c51a6ba38d54a439" ] ;
+    ro:mediatype "text/plain; charset='UTF-8'" .
+
+<urn:uuid:55443a59-6a39-4b4c-89de-871dbceb5b84> ro:about "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c" ;
+    ro:content "provenance/primary.cwlprov.json",
+        "provenance/primary.cwlprov.jsonld",
+        "provenance/primary.cwlprov.nt" .
+
+<urn:uuid:5ac7d6f3-79c4-4b27-988f-56232cbb9999> ro:about "../workflow/packed.cwl" .
 
 
 ```
@@ -293,9 +298,22 @@ Links to the schema:
   "@context": {
     "@vocab": "http://purl.org/wf4ever/ro#",
     "ResearchObject": "ro:ResearchObject",
+    "@id": {
+      "@context": {}
+    },
+    "id": {},
+    "@type": {
+      "@context": {}
+    },
+    "type": {},
     "title": "dcterms:title",
     "description": "dcterms:description",
     "aggregates": {
+      "@context": {
+        "@id": {
+          "@context": {}
+        }
+      },
       "@id": "ore:aggregates",
       "@type": "@id",
       "@container": "@set"

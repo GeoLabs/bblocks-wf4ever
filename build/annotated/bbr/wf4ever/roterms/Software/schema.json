@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Software referenced or used within the research object",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Identifier"
+    },
+    "@type": {
+      "type": "string",
+      "description": "RDF type (roterms:Software)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Title",
+      "x-jsonld-id": "http://purl.org/dc/terms/title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Narrative description",
+      "x-jsonld-id": "http://purl.org/dc/terms/description"
+    }
+  },
+  "required": [
+    "@id"
+  ],
+  "x-jsonld-extra-terms": {
+    "Software": {
+      "x-jsonld-id": "http://purl.org/wf4ever/roterms#Software",
+      "x-jsonld-type": "@id"
+    }
+  },
+  "x-jsonld-vocab": "http://purl.org/wf4ever/roterms#",
+  "x-jsonld-prefixes": {
+    "roterms": "http://purl.org/wf4ever/roterms#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "prov": "http://www.w3.org/ns/prov#"
+  }
+}

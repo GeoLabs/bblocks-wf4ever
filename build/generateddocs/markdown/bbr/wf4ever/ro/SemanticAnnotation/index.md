@@ -1,5 +1,5 @@
 
-# ro:SemanticAnnotation (Datatype)
+# ro:SemanticAnnotation (Schema)
 
 `ogc.bbr.wf4ever.ro.SemanticAnnotation` *v1.0*
 
@@ -87,6 +87,30 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/SemanticAnnotation/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/SemanticAnnotation/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@id": {
+      "@context": {}
+    },
+    "@type": {
+      "@context": {}
+    },
+    "body": {},
+    "annotatesResource": {},
+    "created": {},
+    "creator": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/SemanticAnnotation/context.jsonld)
 
 ## Sources
 

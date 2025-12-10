@@ -1,5 +1,5 @@
 
-# wfdesc:WorkflowInstance (Datatype)
+# wfdesc:WorkflowInstance (Schema)
 
 `ogc.bbr.wf4ever.wfdesc.WorkflowInstance` *v1.0*
 
@@ -245,6 +245,50 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/WorkflowInstance/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/WorkflowInstance/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@type": {
+      "@context": {}
+    },
+    "@id": {
+      "@context": {}
+    },
+    "name": {},
+    "description": {},
+    "describedBy": {},
+    "value": {},
+    "hasArtifact": {},
+    "hasInput": {},
+    "hasOutput": {},
+    "hasSubProcess": {},
+    "hasSource": {},
+    "hasSink": {},
+    "hasDataLink": {},
+    "engine": {},
+    "version": {},
+    "environment": {},
+    "scheduler": {},
+    "cpu": {},
+    "memory": {},
+    "disk": {},
+    "gpu": {},
+    "resources": {},
+    "executionSettings": {},
+    "readyForExecution": {},
+    "validatedAt": {},
+    "configurationHash": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/WorkflowInstance/context.jsonld)
 
 ## Sources
 

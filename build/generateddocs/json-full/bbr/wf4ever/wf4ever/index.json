@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-17",
+  "dateOfLastChange": "2025-12-10",
   "sources": [
     {
       "title": "Wf4Ever Ontology",
@@ -20,8 +20,8 @@
   "scope": "unstable",
   "dependsOn": [
     "ogc.bbr.wf4ever.wfdesc",
-    "ogc.bbr.wf4ever.wfprov",
-    "ogc.bbr.wf4ever.ro"
+    "ogc.bbr.wf4ever.ro",
+    "ogc.bbr.wf4ever.wfprov"
   ],
   "tags": [
     "wf4ever",
@@ -37,6 +37,7 @@
     "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/schema.json"
   },
   "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/wf4ever/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/context.jsonld",
   "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/wf4ever/",
   "rdfData": [],
   "validationPassed": true,

@@ -1,5 +1,5 @@
 
-# wf4ever:Document (Datatype)
+# wf4ever:Document (Schema)
 
 `ogc.bbr.wf4ever.wf4ever.Document` *v1.0*
 
@@ -40,6 +40,25 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Document/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Document/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@type": {
+      "@context": {}
+    },
+    "title": {},
+    "format": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Document/context.jsonld)
 
 ## Sources
 

@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.WebService",
+  "name": "roterms:WebService",
+  "abstract": "A web service referenced or used by the research object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - WebService",
+      "link": "http://purl.org/wf4ever/roterms#WebService"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "web-service",
+    "annotation"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/WebService/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/WebService/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/WebService/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/WebService/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/WebService/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/WebService/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# WebService (roterms)\n\nCe Building Block repr\u00e9sente la classe `WebService` de l'ontologie roterms.\n\n- **URI** : `http://purl.org/wf4ever/roterms#WebService`\n- **Description** : Repr\u00e9sente un service web dans le contexte des Research Objects.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A web service used or referenced by the research object\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier\n  '@type':\n    type: string\n    description: RDF type (roterms:WebService)\n  name:\n    type: string\n    description: Title\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Narrative description\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  WebService: http://purl.org/wf4ever/roterms#WebService\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/WebService"
+}

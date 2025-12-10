@@ -6,10 +6,10 @@
   "abstract": "A computational process or task in a workflow. Processes have inputs, outputs, and perform computations. This is the base class for atomic processes and composite Workflows.",
   "status": "under-development",
   "dateTimeAddition": "2025-11-07T00:00:00Z",
-  "itemClass": "datatype",
+  "itemClass": "schema",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-17",
+  "dateOfLastChange": "2025-12-10",
   "dependsOn": [
     "ogc.bbr.wf4ever.wfdesc.Output",
     "ogc.bbr.wf4ever.wfdesc.Input"

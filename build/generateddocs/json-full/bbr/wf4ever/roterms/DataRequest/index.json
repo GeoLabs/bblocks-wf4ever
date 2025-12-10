@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.DataRequest",
+  "name": "roterms:DataRequest",
+  "abstract": "Represents a data request in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - DataRequest",
+      "link": "http://purl.org/wf4ever/roterms#DataRequest"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "data",
+    "request"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/DataRequest/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/DataRequest/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/DataRequest/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/DataRequest/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/DataRequest/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/DataRequest/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# DataRequest (roterms)\n\nThis Building Block represents the `DataRequest` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#DataRequest`\n- **Description**: Represents a data request in the context of a Research Object.",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: DataRequest\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the data request.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the data request.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  DataRequest: http://purl.org/wf4ever/roterms#DataRequest\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/DataRequest"
+}

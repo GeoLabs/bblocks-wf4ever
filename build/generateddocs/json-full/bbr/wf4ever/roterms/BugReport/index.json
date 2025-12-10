@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.BugReport",
+  "name": "roterms:BugReport",
+  "abstract": "Represents a bug report in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - BugReport",
+      "link": "http://purl.org/wf4ever/roterms#BugReport"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "bug",
+    "tracking"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/BugReport/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/BugReport/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/BugReport/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/BugReport/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/BugReport/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/BugReport/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# BugReport (roterms)\n\nThis Building Block represents the `BugReport` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#BugReport`\n- **Description**: Represents a bug report in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: BugReport\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the bug report.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the bug.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  BugReport: http://purl.org/wf4ever/roterms#BugReport\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/BugReport"
+}

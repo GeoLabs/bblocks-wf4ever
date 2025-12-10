@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.Input",
+  "name": "roterms:Input",
+  "abstract": "Represents an input in the context of a Research Object workflow or process.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - Input",
+      "link": "http://purl.org/wf4ever/roterms#Input"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.bbr.wf4ever.wfdesc.Input"
+  ],
+  "tags": [
+    "roterms",
+    "input",
+    "workflow"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Input/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Input/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Input/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Input/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Input/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Input/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# Input (roterms)\n\nThis Building Block represents the `Input` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#Input`\n- **Description**: Represents an input in the context of a Research Object workflow or process.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: Input\ntype: object\nproperties:\n  name:\n    type: string\n    description: Name of the input.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the input.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  Input:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#Input\n    x-jsonld-type: '@id'\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  prov: http://www.w3.org/ns/prov#\n  wfdesc: http://purl.org/wf4ever/wfdesc#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/Input"
+}

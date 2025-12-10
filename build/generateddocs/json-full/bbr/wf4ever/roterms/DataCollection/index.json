@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.DataCollection",
+  "name": "roterms:DataCollection",
+  "abstract": "Represents a data collection in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - DataCollection",
+      "link": "http://purl.org/wf4ever/roterms#DataCollection"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-activity"
+  ],
+  "tags": [
+    "roterms",
+    "data",
+    "collection"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/DataCollection/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/DataCollection/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/DataCollection/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/DataCollection/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/DataCollection/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/DataCollection/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# DataCollection (roterms)\n\nThis Building Block represents the `DataCollection` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#DataCollection`\n- **Description**: Represents a data collection in the context of a Research Object.",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: DataCollection\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the data collection.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the data collection.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  DataCollection:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#DataCollection\n    x-jsonld-type: '@id'\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  prov: http://www.w3.org/ns/prov#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/DataCollection"
+}

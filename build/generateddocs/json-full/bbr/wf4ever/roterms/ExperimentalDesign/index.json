@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.ExperimentalDesign",
+  "name": "roterms:ExperimentalDesign",
+  "abstract": "An experimental design describing methodology, variables, and sample size.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - ExperimentalDesign",
+      "link": "http://purl.org/wf4ever/roterms#ExperimentalDesign"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-activity"
+  ],
+  "tags": [
+    "roterms",
+    "experimental-design",
+    "activity"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ExperimentalDesign/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ExperimentalDesign/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ExperimentalDesign/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ExperimentalDesign/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ExperimentalDesign/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ExperimentalDesign/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roterms:ExperimentalDesign\n\nAn experimental design specifying methodology, variables, and sample size.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: An experimental design\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier\n  '@type':\n    type: string\n    description: RDF type (roterms:ExperimentalDesign)\n  name:\n    type: string\n    description: Title\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Narrative description\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  ExperimentalDesign:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#ExperimentalDesign\n    x-jsonld-type: '@id'\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  prov: http://www.w3.org/ns/prov#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/ExperimentalDesign"
+}

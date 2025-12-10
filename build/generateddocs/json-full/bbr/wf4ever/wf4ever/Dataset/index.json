@@ -6,10 +6,10 @@
   "abstract": "A dataset artifact - a collection of data values or files representing a scientific dataset.",
   "status": "under-development",
   "dateTimeAddition": "2025-11-07T00:00:00Z",
-  "itemClass": "datatype",
+  "itemClass": "schema",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-17",
+  "dateOfLastChange": "2025-12-10",
   "sources": [
     {
       "title": "Wf4Ever Ontology - Dataset",
@@ -18,6 +18,9 @@
   ],
   "maturity": "development",
   "scope": "unstable",
+  "profileOf": [
+    "ogc.bbr.wf4ever.wfdesc.Artifact"
+  ],
   "tags": [
     "wf4ever",
     "artifact",
@@ -30,6 +33,7 @@
     "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Dataset/schema.json"
   },
   "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/wf4ever/Dataset/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Dataset/context.jsonld",
   "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/wf4ever/Dataset/",
   "rdfData": [],
   "validationPassed": true,

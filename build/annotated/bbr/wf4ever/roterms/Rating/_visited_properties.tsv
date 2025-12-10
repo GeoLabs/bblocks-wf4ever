@@ -1,0 +1,4 @@
+path	@id
+/name	http://purl.org/dc/terms/title
+/description	http://purl.org/dc/terms/description
+/value	http://purl.org/wf4ever/roterms#value

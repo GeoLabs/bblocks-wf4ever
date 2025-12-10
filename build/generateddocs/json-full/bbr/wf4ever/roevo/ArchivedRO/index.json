@@ -1,0 +1,46 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roevo.ArchivedRO",
+  "name": "roevo:ArchivedRO",
+  "abstract": "A Research Object that has been archived and is immutable, with associated archival metadata.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Evolution Ontology - ArchivedRO",
+      "link": "http://purl.org/wf4ever/roevo#ArchivedRO"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-entity",
+    "ogc.bbr.wf4ever.ro.ResearchObject"
+  ],
+  "tags": [
+    "roevo",
+    "archival",
+    "versioning"
+  ],
+  "group": "Wf4Ever - roevo",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/ArchivedRO/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/ArchivedRO/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/ArchivedRO/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/ArchivedRO/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/ArchivedRO/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/ArchivedRO/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roevo:ArchivedRO\n\nAn archived, immutable Research Object.\n\n- Purpose: preserve a long-term, fixed state.\n- Typical relations: `roevo:wasArchivedFrom`, `roevo:archivedAtTime`, `roevo:archiveLocation`.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: An archived Research Object\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier of the archived research object\n  '@type':\n    type: string\n    description: The RDF type of this object (roevo:ArchivedRO)\n  name:\n    type: string\n    description: Title of the archived research object\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Narrative description\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  ArchivedRO: http://purl.org/wf4ever/roevo#ArchivedRO\nx-jsonld-vocab: http://purl.org/wf4ever/roevo#\nx-jsonld-prefixes:\n  roevo: http://purl.org/wf4ever/roevo#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roevo/ArchivedRO"
+}

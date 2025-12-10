@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.Hypothesis",
+  "name": "roterms:Hypothesis",
+  "abstract": "A hypothesis formulated within a research object, to be supported or refuted by evidence.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - Hypothesis",
+      "link": "http://purl.org/wf4ever/roterms#Hypothesis"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-entity"
+  ],
+  "tags": [
+    "roterms",
+    "hypothesis",
+    "annotation"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Hypothesis/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Hypothesis/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Hypothesis/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Hypothesis/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Hypothesis/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Hypothesis/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roterms:Hypothesis\n\nA scientific hypothesis within a Research Object.\n\n- Links: may be `roterms:supports` or `roterms:refutes`.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A scientific hypothesis\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier\n  '@type':\n    type: string\n    description: RDF type (roterms:Hypothesis)\n  name:\n    type: string\n    description: Title\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Narrative description\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  Hypothesis: http://purl.org/wf4ever/roterms#Hypothesis\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/Hypothesis"
+}

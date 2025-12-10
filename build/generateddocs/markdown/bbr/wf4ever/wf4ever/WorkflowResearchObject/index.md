@@ -1,5 +1,5 @@
 
-# wf4ever:WorkflowResearchObject (Datatype)
+# wf4ever:WorkflowResearchObject (Schema)
 
 `ogc.bbr.wf4ever.wf4ever.WorkflowResearchObject` *v1.0*
 
@@ -44,6 +44,24 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/WorkflowResearchObject/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/WorkflowResearchObject/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@type": {
+      "@context": {}
+    },
+    "aggregates": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/WorkflowResearchObject/context.jsonld)
 
 ## Sources
 

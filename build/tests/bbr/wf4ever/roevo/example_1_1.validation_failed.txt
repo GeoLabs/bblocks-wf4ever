@@ -1,0 +1,63 @@
+Validation report for ogc.bbr.wf4ever.roevo - Research Object Evolution Ontology (roevo)
+Generated 2025-12-10T11:19:01.585507+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== Unknown errors ===
+
+** Validation error **
+Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 196, in _validate_resource
+    result = validator.validate(filename, output_filename, report,
+,  File "/src/ogc/bblocks/validation/rdf.py", line 316, in validate
+    graph = self._load_graph(filename, output_filename, report,
+,  File "/src/ogc/bblocks/validation/rdf.py", line 203, in _load_graph
+    graph = Graph().parse(data=json.dumps(jsonld_uplifted), format='json-ld', base=base_uri)
+,  File "/venv/lib/python3.10/site-packages/rdflib/graph.py", line 1494, in parse
+    parser.parse(source, self, **args)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py", line 119, in parse
+    to_rdf(data, conj_sink, base, context_data, version, generalized_rdf,
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py", line 141, in to_rdf
+    return parser.parse(data, context, dataset)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/parsers/jsonld.py", line 163, in parse
+    context.load(local_context, context.base)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py", line 403, in load
+    self._prep_sources(base, source, sources, referenced_contexts)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py", line 432, in _prep_sources
+    new_ctx = self._fetch_context(
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/context.py", line 477, in _fetch_context
+    source = source_to_json(source_url)  # type: ignore[assignment]
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/shared/jsonld/util.py", line 44, in source_to_json
+    source = create_input_source(source, format="json-ld")
+,  File "/venv/lib/python3.10/site-packages/rdflib/parser.py", line 416, in create_input_source
+    ) = _create_input_source_from_location(
+,  File "/venv/lib/python3.10/site-packages/rdflib/parser.py", line 478, in _create_input_source_from_location
+    input_source = URLInputSource(absolute_location, format)
+,  File "/venv/lib/python3.10/site-packages/rdflib/parser.py", line 285, in __init__
+    response: addinfourl = _urlopen(req)
+,  File "/venv/lib/python3.10/site-packages/rdflib/parser.py", line 272, in _urlopen
+    return urlopen(req)
+,  File "/src/ogc/bblocks/http_interceptor.py", line 97, in mock_urlopen
+    return _original_urlopen(request, *args, **kwargs)
+,  File "/usr/local/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+,  File "/usr/local/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+,  File "/usr/local/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+,  File "/usr/local/lib/python3.10/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+,  File "/usr/local/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+,  File "/usr/local/lib/python3.10/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+,urllib.error.HTTPError: HTTP Error 404: Not Found
+
+=== End Unknown errors ===
+

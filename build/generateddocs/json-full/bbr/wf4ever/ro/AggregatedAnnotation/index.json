@@ -6,10 +6,10 @@
   "abstract": "An annotation about resources within a Research Object. Annotations provide additional metadata, provenance information, or contextual details about aggregated resources, stored as part of the Research Object itself.",
   "status": "under-development",
   "dateTimeAddition": "2025-11-07T00:00:00Z",
-  "itemClass": "datatype",
+  "itemClass": "schema",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-17",
+  "dateOfLastChange": "2025-12-10",
   "sources": [
     {
       "title": "Research Object Ontology - AggregatedAnnotation",
@@ -18,6 +18,9 @@
   ],
   "maturity": "development",
   "scope": "unstable",
+  "profileOf": [
+    "ogc.bbr.wf4ever.ro.SemanticAnnotation"
+  ],
   "dependsOn": [
     "ogc.bbr.wf4ever.ro.Resource"
   ],

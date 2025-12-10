@@ -1,5 +1,5 @@
 
-# ro:Manifest (Datatype)
+# ro:Manifest (Schema)
 
 `ogc.bbr.wf4ever.ro.Manifest` *v1.0*
 
@@ -739,6 +739,12 @@ Links to the schema:
   "@context": {
     "@vocab": "http://purl.org/wf4ever/ro#",
     "Manifest": "ro:Manifest",
+    "@id": {
+      "@context": {}
+    },
+    "@type": {
+      "@context": {}
+    },
     "describes": {
       "@id": "ore:describes",
       "@type": "@id"

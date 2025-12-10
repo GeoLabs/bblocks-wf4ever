@@ -1,0 +1,25 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: http://purl.org/wf4ever/roterms
+title: Commit
+type: object
+properties:
+  name:
+    type: string
+    description: Commit message.
+    x-jsonld-id: http://purl.org/dc/terms/title
+  description:
+    type: string
+    description: Detailed description of the commit.
+    x-jsonld-id: http://purl.org/dc/terms/description
+  commitId:
+    type: string
+    description: Unique identifier for the commit.
+    x-jsonld-id: http://purl.org/dc/terms/identifier
+required:
+- commitId
+x-jsonld-extra-terms:
+  Commit: http://purl.org/wf4ever/roterms#Commit
+x-jsonld-vocab: http://purl.org/wf4ever/roterms#
+x-jsonld-prefixes:
+  roterms: http://purl.org/wf4ever/roterms#
+  dcterms: http://purl.org/dc/terms/

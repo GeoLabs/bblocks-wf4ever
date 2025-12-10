@@ -1,5 +1,5 @@
 
-# wf4ever:WebServiceProcess (Datatype)
+# wf4ever:WebServiceProcess (Schema)
 
 `ogc.bbr.wf4ever.wf4ever.WebServiceProcess` *v1.0*
 
@@ -42,6 +42,25 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/WebServiceProcess/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/WebServiceProcess/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@type": {
+      "@context": {}
+    },
+    "endpoint": {},
+    "method": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/WebServiceProcess/context.jsonld)
 
 ## Sources
 

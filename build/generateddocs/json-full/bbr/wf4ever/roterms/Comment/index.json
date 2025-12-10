@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.Comment",
+  "name": "roterms:Comment",
+  "abstract": "Represents a comment in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - Comment",
+      "link": "http://purl.org/wf4ever/roterms#Comment"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "comment",
+    "annotation"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Comment/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Comment/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Comment/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Comment/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Comment/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Comment/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# Comment (roterms)\n\nThis Building Block represents the `Comment` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#Comment`\n- **Description**: Represents a comment in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: Comment\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the comment.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Content of the comment.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- description\nx-jsonld-extra-terms:\n  Comment:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#Comment\n    x-jsonld-type: '@id'\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  prov: http://www.w3.org/ns/prov#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/Comment"
+}

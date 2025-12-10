@@ -1,0 +1,46 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roevo.LiveRO",
+  "name": "roevo:LiveRO",
+  "abstract": "A live Research Object that is mutable and can evolve over time before being snapshotted or archived.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Evolution Ontology - LiveRO",
+      "link": "http://purl.org/wf4ever/roevo#LiveRO"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-entity",
+    "ogc.bbr.wf4ever.ro.ResearchObject"
+  ],
+  "tags": [
+    "roevo",
+    "research-object",
+    "versioning"
+  ],
+  "group": "Wf4Ever - roevo",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/LiveRO/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/LiveRO/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/LiveRO/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/LiveRO/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/LiveRO/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/LiveRO/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roevo:LiveRO\n\nA live Research Object that is mutable and can evolve before being snapshotted or archived.\n\n- Purpose: represent an actively maintained RO.\n- Typical transitions: `roevo:hasVersion`, `roevo:wasSnapshotOf` (from a snapshot), archival via `roevo:wasArchivedFrom`.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A live Research Object under active evolution\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier of the live research object\n  '@type':\n    type: string\n    description: The RDF type of this object (roevo:LiveRO)\n  name:\n    type: string\n    description: Title of the live research object\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Narrative description\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  LiveRO: http://purl.org/wf4ever/roevo#LiveRO\nx-jsonld-vocab: http://purl.org/wf4ever/roevo#\nx-jsonld-prefixes:\n  roevo: http://purl.org/wf4ever/roevo#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roevo/LiveRO"
+}

@@ -1,0 +1,107 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roevo",
+  "name": "Research Object Evolution Ontology (roevo)",
+  "abstract": "The Research Object Evolution ontology (roevo) extends ro to capture lifecycle, versioning, and evolution of research objects using PROV-O.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-11-28T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Evolution Ontology",
+      "link": "http://purl.org/wf4ever/roevo"
+    },
+    {
+      "title": "PROV-O: The PROV Ontology",
+      "link": "https://www.w3.org/TR/prov-o/"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "research-object",
+    "roevo",
+    "evolution",
+    "versioning",
+    "lifecycle",
+    "prov",
+    "ontology",
+    "wf4ever"
+  ],
+  "dependsOn": [
+    "ogc.bbr.wf4ever.ro",
+    "ogc.ogc-utils.prov"
+  ],
+  "group": "Wf4Ever Ontologies",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/context.jsonld",
+  "ontology": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/ontology.ttl",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/",
+  "rdfData": [],
+  "validationPassed": false,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-wf4ever/blob/master/build/tests/bbr/wf4ever/roevo/",
+  "description": "# Research Object Evolution Ontology (roevo)\n\n## Overview\n\nThe Research Object Evolution ontology (roevo) extends the [ro ontology](http://purl.org/wf4ever/ro) to capture the lifecycle and versioning of research objects using [PROV-O](https://www.w3.org/TR/prov-o/).\n\nThis ontology enables tracking of:\n- Version history and evolution of research objects\n- Snapshots and archives of research objects at different points in time\n- Relationships between different versions (derivation, revision, etc.)\n- Lifecycle states and transitions\n\n## Namespace\n\n`http://purl.org/wf4ever/roevo#`\n\n## Key Classes\n\n### Core Evolution Classes\n\n- **VersionableResource** - A resource that can have multiple versions\n- **LiveRO** - A live (current/working) research object that can be modified\n- **SnapshotRO** - An immutable snapshot of a research object at a point in time\n- **ArchivedRO** - A long-term archived version of a research object\n\n### Versioning Classes\n\n- **VersionInfo** - Information about a specific version\n- **ChangeSpecification** - Specification of changes between versions\n\n## Key Properties\n\n### Versioning Properties\n\n- **hasVersion** - Links a versionable resource to its versions\n- **isVersionOf** - Inverse of hasVersion\n- **wasRevisionOf** - Links a version to its previous version\n- **wasSnapshotOf** - Links a snapshot to the live RO it was created from\n- **wasArchivedFrom** - Links an archive to the snapshot it was created from\n\n### Temporal Properties\n\n- **createdAtTime** - When a version was created\n- **modifiedAtTime** - When a resource was last modified\n- **archivedAtTime** - When a resource was archived\n\n### Change Tracking Properties\n\n- **hasChangeLog** - Links to a change log document\n- **hasAdditions** - Resources added in this version\n- **hasRemovals** - Resources removed in this version\n- **hasModifications** - Resources modified in this version\n\n## Usage Patterns\n\n### Creating a Snapshot\n\n```turtle\n@prefix roevo: <http://purl.org/wf4ever/roevo#> .\n@prefix ro: <http://purl.org/wf4ever/ro#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n\n# Live research object\n:myRO a roevo:LiveRO, ro:ResearchObject ;\n    roevo:hasVersion :myRO-v1, :myRO-v2 .\n\n# Snapshot created from live RO\n:myRO-v1 a roevo:SnapshotRO, ro:ResearchObject ;\n    roevo:wasSnapshotOf :myRO ;\n    roevo:createdAtTime \"2025-01-15T10:30:00Z\"^^xsd:dateTime ;\n    prov:wasRevisionOf :myRO-v0 .\n```\n\n### Tracking Evolution\n\n```turtle\n# Version 2 revised from version 1\n:myRO-v2 a roevo:SnapshotRO ;\n    roevo:wasSnapshotOf :myRO ;\n    prov:wasRevisionOf :myRO-v1 ;\n    roevo:createdAtTime \"2025-02-20T14:00:00Z\"^^xsd:dateTime ;\n    roevo:hasChangeLog :changelog-v2 .\n\n# Change specification\n:changelog-v2 a roevo:ChangeSpecification ;\n    roevo:hasAdditions :newWorkflow.cwl ;\n    roevo:hasModifications :existingData.csv ;\n    roevo:hasRemovals :oldScript.py .\n```\n\n### Archiving\n\n```turtle\n# Archived version for long-term preservation\n:myRO-v1-archived a roevo:ArchivedRO ;\n    roevo:wasArchivedFrom :myRO-v1 ;\n    roevo:archivedAtTime \"2025-12-31T23:59:59Z\"^^xsd:dateTime ;\n    roevo:archiveLocation <https://archive.example.org/ro/myRO-v1> .\n```\n\n## Integration with PROV-O\n\nroevo uses PROV-O concepts to provide provenance of research object evolution:\n\n- **prov:Entity** - Research objects and their versions are PROV entities\n- **prov:wasRevisionOf** - Links between versions\n- **prov:wasDerivedFrom** - Derivation relationships\n- **prov:generatedAtTime** - When a version was created\n- **prov:Agent** - Persons or organizations creating versions\n\n## Lifecycle States\n\nResearch objects can transition through different lifecycle states:\n\n1. **Draft/Live** (LiveRO) - Active development, can be modified\n2. **Snapshot** (SnapshotRO) - Point-in-time immutable copy\n3. **Archived** (ArchivedRO) - Long-term preservation copy\n\n## Use Cases\n\n### Scientific Reproducibility\n\nTrack different versions of experimental workflows and datasets to ensure reproducibility of scientific results.\n\n### Collaborative Research\n\nEnable multiple researchers to work on different versions of research objects while maintaining version history.\n\n### Long-term Preservation\n\nCreate immutable archived versions for institutional repositories and digital preservation.\n\n### Audit Trail\n\nMaintain complete change history for compliance and quality assurance in regulated research domains.\n\n## References\n\n- [W3C PROV-O](https://www.w3.org/TR/prov-o/)\n- [Research Object Ontology](http://purl.org/wf4ever/ro)\n- [Wf4Ever Research Object Model](http://wf4ever.github.io/ro/)\n",
+  "examples": [
+    {
+      "title": "Research Object Snapshot Example",
+      "description": "Example of creating a snapshot version of a live research object",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/snapshot.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/context.jsonld\",\n  \"@id\": \"http://example.org/ro/myRO-v1\",\n  \"@type\": [\"roevo:SnapshotRO\", \"ro:ResearchObject\"],\n  \"dcterms:title\": \"My Research Object - Version 1\",\n  \"roevo:wasSnapshotOf\": \"http://example.org/ro/myRO\",\n  \"roevo:createdAtTime\": \"2025-01-15T10:30:00Z\",\n  \"prov:wasRevisionOf\": \"http://example.org/ro/myRO-v0\",\n  \"aggregates\": [\n    {\n      \"@id\": \"workflow.cwl\",\n      \"@type\": \"wfdesc:Workflow\"\n    },\n    {\n      \"@id\": \"input-data.csv\",\n      \"@type\": \"wf4ever:Dataset\"\n    }\n  ]\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roevo/example_1_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Research Object with Change Log",
+      "description": "Version with detailed change tracking",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/changelog.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/context.jsonld\",\n  \"@id\": \"http://example.org/ro/myRO-v2\",\n  \"@type\": \"roevo:SnapshotRO\",\n  \"roevo:wasSnapshotOf\": \"http://example.org/ro/myRO\",\n  \"roevo:createdAtTime\": \"2025-02-20T14:00:00Z\",\n  \"prov:wasRevisionOf\": \"http://example.org/ro/myRO-v1\",\n  \"roevo:hasChangeLog\": {\n    \"@id\": \"changelog-v2\",\n    \"@type\": \"roevo:ChangeSpecification\",\n    \"roevo:hasAdditions\": [\n      \"new-workflow-step.cwl\",\n      \"additional-data.json\"\n    ],\n    \"roevo:hasModifications\": [\n      \"existing-data.csv\"\n    ],\n    \"roevo:hasRemovals\": [\n      \"old-script.py\"\n    ],\n    \"dcterms:description\": \"Added new processing step, updated data format, removed deprecated script\"\n  }\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roevo/example_2_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Archived Research Object",
+      "description": "Long-term archived version for preservation",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/archived.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/context.jsonld\",\n  \"@id\": \"http://example.org/ro/myRO-v1-archived\",\n  \"@type\": \"roevo:ArchivedRO\",\n  \"roevo:wasArchivedFrom\": \"http://example.org/ro/myRO-v1\",\n  \"roevo:archivedAtTime\": \"2025-12-31T23:59:59Z\",\n  \"roevo:archiveLocation\": \"https://archive.example.org/ro/myRO-v1\",\n  \"dcterms:description\": \"Archived for long-term preservation\",\n  \"dcterms:format\": \"application/zip\"\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roevo/example_3_1.json"
+        }
+      ]
+    },
+    {
+      "title": "Live Research Object with Version History",
+      "description": "Current working version with links to all versions",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/live-ro.json",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/context.jsonld\",\n  \"@id\": \"http://example.org/ro/myRO\",\n  \"@type\": [\"roevo:LiveRO\", \"ro:ResearchObject\"],\n  \"dcterms:title\": \"My Research Object\",\n  \"roevo:hasVersion\": [\n    \"http://example.org/ro/myRO-v0\",\n    \"http://example.org/ro/myRO-v1\",\n    \"http://example.org/ro/myRO-v2\"\n  ],\n  \"roevo:modifiedAtTime\": \"2025-11-28T12:00:00Z\",\n  \"dcterms:creator\": {\n    \"@type\": \"foaf:Person\",\n    \"foaf:name\": \"Dr. Jane Smith\"\n  }\n}\n",
+          "url": "https://geolabs.github.io/bblocks-wf4ever/build/tests/bbr/wf4ever/roevo/example_4_1.json"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roevo\ntitle: Research Object Evolution Ontology\ndescription: Schema for the Research Object Evolution ontology (roevo) providing lifecycle\n  and versioning concepts\ntype: object\nallOf:\n- $ref: https://ogcincubator.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/schema.json\nproperties:\n  '@type':\n    oneOf:\n    - type: string\n      enum:\n      - roevo:LiveRO\n      - roevo:SnapshotRO\n      - roevo:ArchivedRO\n      - roevo:VersionableResource\n      - roevo:VersionInfo\n      - roevo:ChangeSpecification\n    - type: array\n      items:\n        type: string\n  roevo:hasVersion:\n    description: Links a versionable resource to its versions\n    oneOf:\n    - $ref: '#/$defs/ResourceReference'\n    - type: array\n      items:\n        $ref: '#/$defs/ResourceReference'\n  roevo:wasSnapshotOf:\n    description: Links a snapshot to the live RO it was created from\n    $ref: '#/$defs/ResourceReference'\n  roevo:wasArchivedFrom:\n    description: Links an archive to the snapshot it was created from\n    $ref: '#/$defs/ResourceReference'\n  roevo:createdAtTime:\n    description: When a version was created\n    type: string\n    format: date-time\n  roevo:modifiedAtTime:\n    description: When a resource was last modified\n    type: string\n    format: date-time\n  roevo:archivedAtTime:\n    description: When a resource was archived\n    type: string\n    format: date-time\n  roevo:hasChangeLog:\n    description: Links to a change log document\n    $ref: '#/$defs/ResourceReference'\n  roevo:hasAdditions:\n    description: Resources added in this version\n    type: array\n    items:\n      $ref: '#/$defs/ResourceReference'\n  roevo:hasRemovals:\n    description: Resources removed in this version\n    type: array\n    items:\n      $ref: '#/$defs/ResourceReference'\n  roevo:hasModifications:\n    description: Resources modified in this version\n    type: array\n    items:\n      $ref: '#/$defs/ResourceReference'\n$defs:\n  ResourceReference:\n    oneOf:\n    - type: string\n      format: uri\n    - type: object\n      required:\n      - '@id'\n      properties:\n        '@id':\n          type: string\n          format: uri\nx-jsonld-extra-terms:\n  LiveRO: http://purl.org/wf4ever/roevo#LiveRO\n  SnapshotRO: http://purl.org/wf4ever/roevo#SnapshotRO\n  ArchivedRO: http://purl.org/wf4ever/roevo#ArchivedRO\n  VersionableResource: http://purl.org/wf4ever/roevo#VersionableResource\n  VersionInfo: http://purl.org/wf4ever/roevo#VersionInfo\n  ChangeSpecification: http://purl.org/wf4ever/roevo#ChangeSpecification\n  hasVersion:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#hasVersion\n    x-jsonld-type: '@id'\n  isVersionOf:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#isVersionOf\n    x-jsonld-type: '@id'\n  wasSnapshotOf:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#wasSnapshotOf\n    x-jsonld-type: '@id'\n  wasArchivedFrom:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#wasArchivedFrom\n    x-jsonld-type: '@id'\n  wasRevisionOf:\n    x-jsonld-id: http://www.w3.org/ns/prov#wasRevisionOf\n    x-jsonld-type: '@id'\n  createdAtTime:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#createdAtTime\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  modifiedAtTime:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#modifiedAtTime\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  archivedAtTime:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#archivedAtTime\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  hasChangeLog:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#hasChangeLog\n    x-jsonld-type: '@id'\n  hasAdditions:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#hasAdditions\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  hasRemovals:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#hasRemovals\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  hasModifications:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#hasModifications\n    x-jsonld-type: '@id'\n    x-jsonld-container: '@set'\n  archiveLocation:\n    x-jsonld-id: http://purl.org/wf4ever/roevo#archiveLocation\n    x-jsonld-type: '@id'\nx-jsonld-prefixes:\n  roevo: http://purl.org/wf4ever/roevo#\n  prov: http://www.w3.org/ns/prov#\n  xsd: http://www.w3.org/2001/XMLSchema#\n  ro: http://purl.org/wf4ever/ro#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roevo"
+}

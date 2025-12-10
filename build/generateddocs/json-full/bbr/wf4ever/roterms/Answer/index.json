@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.Answer",
+  "name": "roterms:Answer",
+  "abstract": "Represents an answer to a question in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - Answer",
+      "link": "http://purl.org/wf4ever/roterms#Answer"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "answer",
+    "collaboration"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Answer/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Answer/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Answer/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Answer/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Answer/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Answer/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# Answer (roterms)\n\nThis Building Block represents the `Answer` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#Answer`\n- **Description**: Represents an answer to a question in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: Answer\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the answer.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Content of the answer.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- description\nx-jsonld-extra-terms:\n  Answer: http://purl.org/wf4ever/roterms#Answer\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/Answer"
+}

@@ -1,0 +1,4 @@
+path	@id
+/name	http://purl.org/dc/terms/title
+/description	http://purl.org/dc/terms/description
+/commitId	http://purl.org/dc/terms/identifier

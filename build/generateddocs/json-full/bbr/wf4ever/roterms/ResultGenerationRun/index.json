@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.ResultGenerationRun",
+  "name": "roterms:ResultGenerationRun",
+  "abstract": "Represents a workflow run that generates research results in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - ResultGenerationRun",
+      "link": "http://purl.org/wf4ever/roterms#ResultGenerationRun"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.bbr.wf4ever.wfprov.WorkflowRun"
+  ],
+  "tags": [
+    "roterms",
+    "workflow",
+    "result"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ResultGenerationRun/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ResultGenerationRun/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/ResultGenerationRun/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ResultGenerationRun/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ResultGenerationRun/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/ResultGenerationRun/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# ResultGenerationRun (roterms)\n\nThis Building Block represents the `ResultGenerationRun` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#ResultGenerationRun`\n- **Description**: Represents a workflow run that generates research results in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: ResultGenerationRun\ntype: object\nproperties:\n  name:\n    type: string\n    description: Name of the result generation run.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the result generation run.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  ResultGenerationRun: http://purl.org/wf4ever/roterms#ResultGenerationRun\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/ResultGenerationRun"
+}

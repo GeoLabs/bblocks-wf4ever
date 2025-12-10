@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.bbr.wf4ever.roterms.Output - roterms:Output",
+  "bblockName": "roterms:Output",
+  "bblockId": "ogc.bbr.wf4ever.roterms.Output",
+  "generated": "2025-12-10T11:19:02.200145+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

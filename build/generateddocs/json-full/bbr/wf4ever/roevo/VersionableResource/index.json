@@ -1,0 +1,41 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roevo.VersionableResource",
+  "name": "roevo:VersionableResource",
+  "abstract": "A resource within an RO that can be versioned with change specifications.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Evolution Ontology - VersionableResource",
+      "link": "http://purl.org/wf4ever/roevo#VersionableResource"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roevo",
+    "versioning"
+  ],
+  "group": "Wf4Ever - roevo",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/VersionableResource/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/VersionableResource/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/VersionableResource/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/VersionableResource/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/VersionableResource/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/VersionableResource/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roevo:VersionableResource\n\nA resource within a Research Object that can be versioned.\n\n- Purpose: model items that change across RO versions.\n- Typical relations: `roevo:hasVersion`, `roevo:isVersionOf`.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: A resource that can have versions and associated changes\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier of the versionable resource\n  '@type':\n    type: string\n    description: The RDF type of this object (roevo:VersionableResource)\n  name:\n    type: string\n    description: Name of the resource\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the resource\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  VersionableResource: http://purl.org/wf4ever/roevo#VersionableResource\nx-jsonld-vocab: http://purl.org/wf4ever/roevo#\nx-jsonld-prefixes:\n  roevo: http://purl.org/wf4ever/roevo#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roevo/VersionableResource"
+}

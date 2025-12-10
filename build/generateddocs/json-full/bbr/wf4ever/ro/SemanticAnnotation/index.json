@@ -6,10 +6,10 @@
   "abstract": "A semantic annotation is a specialization of ao:Annotation which requires that the annotation body points to an RDF Graph containing semantic information about the annotated resource.",
   "status": "under-development",
   "dateTimeAddition": "2025-11-07T00:00:00Z",
-  "itemClass": "datatype",
+  "itemClass": "schema",
   "register": "ogc-wf4ever",
   "version": "1.0",
-  "dateOfLastChange": "2025-11-17",
+  "dateOfLastChange": "2025-12-10",
   "sources": [
     {
       "title": "Research Object Ontology - SemanticAnnotation",
@@ -18,6 +18,7 @@
   ],
   "maturity": "development",
   "scope": "unstable",
+  "dependsOn": [],
   "tags": [
     "ro",
     "research-object",
@@ -31,6 +32,7 @@
     "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/SemanticAnnotation/schema.json"
   },
   "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/SemanticAnnotation/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/ro/SemanticAnnotation/context.jsonld",
   "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/ro/SemanticAnnotation/",
   "rdfData": [],
   "validationPassed": true,

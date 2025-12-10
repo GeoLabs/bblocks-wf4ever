@@ -1,5 +1,5 @@
 
-# wf4ever:Image (Datatype)
+# wf4ever:Image (Schema)
 
 `ogc.bbr.wf4ever.wf4ever.Image` *v1.0*
 
@@ -42,6 +42,26 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Image/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Image/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@type": {
+      "@context": {}
+    },
+    "format": {},
+    "width": {},
+    "height": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wf4ever/Image/context.jsonld)
 
 ## Sources
 

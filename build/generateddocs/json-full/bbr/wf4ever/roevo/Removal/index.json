@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roevo.Removal",
+  "name": "roevo:Removal",
+  "abstract": "Represents the removal of a resource in the context of Research Object evolution.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Evolution - Removal",
+      "link": "http://purl.org/wf4ever/roevo#Removal"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.bbr.wf4ever.roevo.Change"
+  ],
+  "tags": [
+    "roevo",
+    "evolution",
+    "removal"
+  ],
+  "group": "Wf4Ever - roevo",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/Removal/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/Removal/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/Removal/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/Removal/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/Removal/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/Removal/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# Removal (roevo)\n\nThis Building Block represents the `Removal` class from the roevo ontology.\n\n- **URI**: `http://purl.org/wf4ever/roevo#Removal`\n- **Description**: Represents the removal of a resource in the context of Research Object evolution.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roevo\ntitle: Removal\ntype: object\nproperties:\n  name:\n    type: string\n    description: Name of the removal.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the removal.\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- name\nx-jsonld-extra-terms:\n  Removal: http://purl.org/wf4ever/roevo#Removal\nx-jsonld-vocab: http://purl.org/wf4ever/roevo#\nx-jsonld-prefixes:\n  roevo: http://purl.org/wf4ever/roevo#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roevo/Removal"
+}

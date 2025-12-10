@@ -1,0 +1,45 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.WorkflowValue",
+  "name": "roterms:WorkflowValue",
+  "abstract": "Represents a value associated with a workflow parameter in the context of a Research Object.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - WorkflowValue",
+      "link": "http://purl.org/wf4ever/roterms#WorkflowValue"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-entity"
+  ],
+  "tags": [
+    "roterms",
+    "workflow",
+    "value"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/WorkflowValue/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/WorkflowValue/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/WorkflowValue/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/WorkflowValue/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/WorkflowValue/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/WorkflowValue/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# WorkflowValue (roterms)\n\nThis Building Block represents the `WorkflowValue` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#WorkflowValue`\n- **Description**: Represents a value associated with a workflow parameter in the context of a Research Object.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: WorkflowValue\ntype: object\nproperties:\n  name:\n    type: string\n    description: Name of the workflow value.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  value:\n    description: The actual value.\n    x-jsonld-id: http://www.w3.org/1999/02/22-rdf-syntax-ns#value\nrequired:\n- value\nx-jsonld-extra-terms:\n  WorkflowValue:\n    x-jsonld-id: http://purl.org/wf4ever/roterms#WorkflowValue\n    x-jsonld-type: '@id'\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  prov: http://www.w3.org/ns/prov#\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/WorkflowValue"
+}

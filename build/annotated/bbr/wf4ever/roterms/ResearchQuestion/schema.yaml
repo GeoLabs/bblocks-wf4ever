@@ -1,0 +1,21 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: http://purl.org/wf4ever/roterms
+title: ResearchQuestion
+type: object
+properties:
+  name:
+    type: string
+    description: Title of the research question.
+    x-jsonld-id: http://purl.org/dc/terms/title
+  description:
+    type: string
+    description: Description of the research question.
+    x-jsonld-id: http://purl.org/dc/terms/description
+required:
+- name
+x-jsonld-extra-terms:
+  ResearchQuestion: http://purl.org/wf4ever/roterms#ResearchQuestion
+x-jsonld-vocab: http://purl.org/wf4ever/roterms#
+x-jsonld-prefixes:
+  roterms: http://purl.org/wf4ever/roterms#
+  dcterms: http://purl.org/dc/terms/

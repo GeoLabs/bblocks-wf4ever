@@ -28,16 +28,119 @@ The Workflow Provenance ontology (wfprov) extends PROV-O to describe workflow ex
 
 ## Key Properties
 
-- `wasPartOfWorkflowRun` - Links process run to workflow run
-- `usedInput` - Input artifacts used
-- `wasOutputFrom` - Output artifacts generated
-- `describedByWorkflow` - Links run to workflow description
-- `describedByProcess` - Links process run to process description
-- `wasEnactedBy` - Links run to workflow engine
+- `wfprov:wasPartOfWorkflowRun` - Object property; domain `wfprov:ProcessRun`, range `wfprov:WorkflowRun`; sub-property of `prov:wasInformedBy`.
+- `wfprov:usedInput` - Object property; domain `wfprov:ProcessRun`, range `wfprov:Artifact`; sub-property of `prov:used`.
+- `wfprov:wasOutputFrom` - Object property; domain `wfprov:Artifact`, range `wfprov:ProcessRun`; sub-property of `prov:wasGeneratedBy`.
+- `wfprov:describedByWorkflow` - Object property; domain `wfprov:WorkflowRun`, range `wfdesc:Workflow`.
+- `wfprov:describedByProcess` - Object property; domain `wfprov:ProcessRun`, range `wfdesc:Process`.
+- `wfprov:wasEnactedBy` - Object property; domain `wfprov:WorkflowRun`, range `wfprov:WorkflowEngine`; sub-property of `prov:wasAssociatedWith`.
+- `wfprov:describedByParameter` - Object property; domain `wfprov:Artifact`, range `wfdesc:Parameter`.
 
 ## Usage
 
 This ontology is used to describe the retrospective provenance of workflows - what actually happened during execution, linking it to the workflow description (wfdesc).
+
+## Examples
+
+### Workflow Run from CWL Execution
+#### json
+```json
+{
+  "@id": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
+  "@type": "WorkflowRun",
+  "name": "Run of workflow/packed.cwl#main",
+  "describedByWorkflow": {
+    "@id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main",
+    "@type": ["wfdesc:Workflow", "wfdesc:Process"]
+  },
+  "wasAssociatedWith": [
+    {
+      "@id": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+      "@type": "WorkflowEngine",
+      "name": "cwltool 3.1.20251031082601"
+    }
+  ],
+  "usedInput": [
+    {
+      "@type": "Artifact",
+      "@id": "urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d",
+      "value": 20.0
+    },
+    {
+      "@type": "Artifact",
+      "@id": "urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258",
+      "value": 90
+    }
+  ]
+}
+
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfprov/context.jsonld",
+  "@id": "urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c",
+  "@type": "WorkflowRun",
+  "name": "Run of workflow/packed.cwl#main",
+  "describedByWorkflow": {
+    "@id": "arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main",
+    "@type": [
+      "wfdesc:Workflow",
+      "wfdesc:Process"
+    ]
+  },
+  "wasAssociatedWith": [
+    {
+      "@id": "urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60",
+      "@type": "WorkflowEngine",
+      "name": "cwltool 3.1.20251031082601"
+    }
+  ],
+  "usedInput": [
+    {
+      "@type": "Artifact",
+      "@id": "urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d",
+      "value": 20.0
+    },
+    {
+      "@type": "Artifact",
+      "@id": "urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258",
+      "value": 90
+    }
+  ]
+}
+```
+
+#### ttl
+```ttl
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:uuid:f02b8997-a6b1-4909-9946-9129c2b3f10c> a wfprov:WorkflowRun ;
+    rdfs:label "Run of workflow/packed.cwl#main" ;
+    wfprov:describedByWorkflow <arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main> ;
+    wfprov:usedInput <urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d>,
+        <urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258> ;
+    prov:wasAssociatedWith <urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> .
+
+<arcp://uuid,f02b8997-a6b1-4909-9946-9129c2b3f10c/workflow/packed.cwl#main> a wfdesc:Process,
+        wfdesc:Workflow .
+
+<urn:uuid:192e18cb-9182-4147-ad13-03076e7a3b3d> a wfprov:Artifact ;
+    prov:value 2e+01 .
+
+<urn:uuid:5b925446-32a4-4104-9724-fa7360e1ef60> a wfprov:WorkflowEngine ;
+    rdfs:label "cwltool 3.1.20251031082601" .
+
+<urn:uuid:91b4ec49-d11a-4407-9685-032bf7e95258> a wfprov:Artifact ;
+    prov:value 90 .
+
+
+```
 
 ## Schema
 
@@ -133,6 +236,9 @@ Links to the schema:
     "ProcessRun": "wfprov:ProcessRun",
     "WorkflowEngine": "wfprov:WorkflowEngine",
     "Artifact": "wfprov:Artifact",
+    "@type": {
+      "@context": {}
+    },
     "name": "rdfs:label",
     "describedByWorkflow": {
       "@id": "wfprov:describedByWorkflow",

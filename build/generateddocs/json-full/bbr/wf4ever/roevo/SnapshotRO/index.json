@@ -1,0 +1,46 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roevo.SnapshotRO",
+  "name": "roevo:SnapshotRO",
+  "abstract": "An immutable snapshot of a Research Object at a given time.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-01T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Evolution Ontology - SnapshotRO",
+      "link": "http://purl.org/wf4ever/roevo#SnapshotRO"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "dependsOn": [
+    "ogc.ogc-utils.prov-entity",
+    "ogc.bbr.wf4ever.ro.ResearchObject"
+  ],
+  "tags": [
+    "roevo",
+    "snapshot",
+    "versioning"
+  ],
+  "group": "Wf4Ever - roevo",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/SnapshotRO/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/SnapshotRO/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roevo/SnapshotRO/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/SnapshotRO/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/SnapshotRO/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roevo/SnapshotRO/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# roevo:SnapshotRO\n\nAn immutable snapshot of a Research Object at a specific point in time.\n\n- Purpose: preserve a read-only state.\n- Typical relations: `roevo:wasSnapshotOf` (links to the live RO), `roevo:createdAtTime` (timestamp).\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: An immutable snapshot of a Research Object\ntype: object\nproperties:\n  '@id':\n    type: string\n    format: uri\n    description: Identifier of the snapshot\n  '@type':\n    type: string\n    description: The RDF type of this object (roevo:SnapshotRO)\n  name:\n    type: string\n    description: Title of the snapshot\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of what is captured by the snapshot\n    x-jsonld-id: http://purl.org/dc/terms/description\nrequired:\n- '@id'\nx-jsonld-extra-terms:\n  SnapshotRO: http://purl.org/wf4ever/roevo#SnapshotRO\nx-jsonld-vocab: http://purl.org/wf4ever/roevo#\nx-jsonld-prefixes:\n  roevo: http://purl.org/wf4ever/roevo#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roevo/SnapshotRO"
+}

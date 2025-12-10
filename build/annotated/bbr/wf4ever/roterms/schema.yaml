@@ -1,0 +1,186 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: http://purl.org/wf4ever/roterms
+title: Research Object Terms
+description: Schema for Research Object Terms vocabulary providing annotation properties
+type: object
+properties:
+  '@type':
+    oneOf:
+    - type: string
+      enum:
+      - roterms:Hypothesis
+      - roterms:Conclusion
+      - roterms:ExperimentalDesign
+      - roterms:ScientificMethod
+      - roterms:Sketch
+      - roterms:Note
+      - roterms:ProspectivePlan
+      - roterms:Software
+      - roterms:WebService
+      - roterms:QualityAnnotation
+      - roterms:Review
+      - roterms:Rating
+      - roterms:Task
+    - type: array
+      items:
+        type: string
+  roterms:exampleValue:
+    description: Example value for a parameter or input
+  roterms:defaultValue:
+    description: Default value for a parameter
+  roterms:sampleSize:
+    description: Sample size for statistical analysis
+    type: integer
+    minimum: 0
+  roterms:performsTask:
+    description: Task performed by a process or workflow
+    oneOf:
+    - type: string
+    - type: object
+      properties:
+        '@type':
+          const: roterms:Task
+        label:
+          type: string
+        description:
+          type: string
+  roterms:requiresHardware:
+    description: Hardware requirements for execution
+    type: string
+  roterms:requiresSoftware:
+    description: Software dependencies
+    oneOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+  roterms:wasInputTo:
+    description: Process this resource was input to
+    $ref: '#/$defs/ResourceReference'
+  roterms:wasOutputFrom:
+    description: Process this resource was output from
+    $ref: '#/$defs/ResourceReference'
+  roterms:authoredBy:
+    description: Author of this resource
+    $ref: '#/$defs/AgentReference'
+  roterms:authoredOn:
+    description: Date/time of authoring
+    type: string
+    format: date-time
+  roterms:hypothesis:
+    description: Hypothesis being tested
+    oneOf:
+    - $ref: '#/$defs/ResourceReference'
+    - type: object
+      properties:
+        '@type':
+          const: roterms:Hypothesis
+        description:
+          type: string
+      required:
+      - description
+  roterms:supports:
+    description: Hypothesis or claim this evidence supports
+    $ref: '#/$defs/ResourceReference'
+  roterms:refutes:
+    description: Hypothesis or claim this evidence refutes
+    $ref: '#/$defs/ResourceReference'
+  roterms:methodology:
+    description: Research methodology employed
+    type: string
+  roterms:technicalStandard:
+    description: Technical standard conformed to
+    type: string
+  roterms:validatedBy:
+    description: Validation process or tool used
+    type: string
+  roterms:qualityScore:
+    description: Numerical quality score
+    type: number
+    minimum: 0
+    maximum: 1
+$defs:
+  ResourceReference:
+    oneOf:
+    - type: string
+      format: uri
+    - type: object
+      required:
+      - '@id'
+      properties:
+        '@id':
+          type: string
+          format: uri
+  AgentReference:
+    oneOf:
+    - type: string
+    - type: object
+      properties:
+        '@type':
+          enum:
+          - foaf:Person
+          - foaf:Organization
+          - prov:Agent
+        name:
+          type: string
+x-jsonld-extra-terms:
+  Hypothesis: http://purl.org/wf4ever/roterms#Hypothesis
+  Conclusion: http://purl.org/wf4ever/roterms#Conclusion
+  ExperimentalDesign: http://purl.org/wf4ever/roterms#ExperimentalDesign
+  ScientificMethod: http://purl.org/wf4ever/roterms#ScientificMethod
+  Sketch: http://purl.org/wf4ever/roterms#Sketch
+  Note: http://purl.org/wf4ever/roterms#Note
+  ProspectivePlan: http://purl.org/wf4ever/roterms#ProspectivePlan
+  Software: http://purl.org/wf4ever/roterms#Software
+  WebService: http://purl.org/wf4ever/roterms#WebService
+  QualityAnnotation: http://purl.org/wf4ever/roterms#QualityAnnotation
+  Review: http://purl.org/wf4ever/roterms#Review
+  Rating: http://purl.org/wf4ever/roterms#Rating
+  Task: http://purl.org/wf4ever/roterms#Task
+  exampleValue: http://purl.org/wf4ever/roterms#exampleValue
+  defaultValue: http://purl.org/wf4ever/roterms#defaultValue
+  sampleSize:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#sampleSize
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#integer
+  performsTask:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#performsTask
+    x-jsonld-type: '@id'
+  requiresHardware: http://purl.org/wf4ever/roterms#requiresHardware
+  requiresSoftware:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#requiresSoftware
+    x-jsonld-container: '@set'
+  wasInputTo:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#wasInputTo
+    x-jsonld-type: '@id'
+  wasOutputFrom:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#wasOutputFrom
+    x-jsonld-type: '@id'
+  authoredBy:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#authoredBy
+    x-jsonld-type: '@id'
+  authoredOn:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#authoredOn
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime
+  hypothesis:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#hypothesis
+    x-jsonld-type: '@id'
+  supports:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#supports
+    x-jsonld-type: '@id'
+  refutes:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#refutes
+    x-jsonld-type: '@id'
+  methodology: http://purl.org/wf4ever/roterms#methodology
+  technicalStandard: http://purl.org/wf4ever/roterms#technicalStandard
+  validatedBy: http://purl.org/wf4ever/roterms#validatedBy
+  qualityScore:
+    x-jsonld-id: http://purl.org/wf4ever/roterms#qualityScore
+    x-jsonld-type: http://www.w3.org/2001/XMLSchema#float
+x-jsonld-prefixes:
+  roterms: http://purl.org/wf4ever/roterms#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  ro: http://purl.org/wf4ever/ro#
+  wfdesc: http://purl.org/wf4ever/wfdesc#
+  prov: http://www.w3.org/ns/prov#
+  foaf: http://xmlns.com/foaf/0.1/
+  dcterms: http://purl.org/dc/terms/

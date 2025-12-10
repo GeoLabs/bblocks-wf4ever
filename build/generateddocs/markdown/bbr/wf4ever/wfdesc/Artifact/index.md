@@ -1,5 +1,5 @@
 
-# wfdesc:Artifact (Datatype)
+# wfdesc:Artifact (Schema)
 
 `ogc.bbr.wf4ever.wfdesc.Artifact` *v1.0*
 
@@ -196,6 +196,37 @@ Links to the schema:
 
 * YAML version: [schema.yaml](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/Artifact/schema.json)
 * JSON version: [schema.json](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/Artifact/schema.yaml)
+
+
+# JSON-LD Context
+
+```jsonld
+{
+  "@context": {
+    "@type": {
+      "@context": {}
+    },
+    "@id": {
+      "@context": {}
+    },
+    "value": {},
+    "mediaType": {},
+    "size": {},
+    "algorithm": {},
+    "checksum": {},
+    "description": {},
+    "name": {},
+    "encoding": {},
+    "location": {},
+    "createdAt": {},
+    "modifiedAt": {},
+    "@version": 1.1
+  }
+}
+```
+
+You can find the full JSON-LD context here:
+[context.jsonld](https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/Artifact/context.jsonld)
 
 ## Sources
 

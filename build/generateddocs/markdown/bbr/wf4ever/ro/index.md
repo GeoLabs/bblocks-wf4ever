@@ -30,11 +30,10 @@ The Research Object ontology (ro) provides concepts for bundling and aggregating
 
 ## Key Properties
 
-- `aggregates` - Resources in the research object
-- `rootFolder` - Main folder
-- `entryName` - Name of a folder entry
-- `annotatesAggregatedResource` - Annotation target
-- `manifest` - Manifest of the research object
+- `ro:entryName` - Functional data property naming a `ro:FolderEntry` within a `ro:Folder` (range `xsd:string`).
+- `ro:annotatesAggregatedResource` - Object property linking a `ro:AggregatedAnnotation` to the annotated aggregated `ro:Resource`.
+
+Note: Other RO behaviours like aggregation (`ore:aggregates`) and manifests are defined via ORE/DC terms and not as RO-native properties in this ontology file.
 
 ## Usage
 
@@ -126,6 +125,9 @@ Links to the schema:
     "FolderEntry": "ro:FolderEntry",
     "AggregatedAnnotation": "ro:AggregatedAnnotation",
     "Manifest": "ro:Manifest",
+    "@type": {
+      "@context": {}
+    },
     "name": "rdfs:label",
     "aggregates": {
       "@id": "ore:aggregates",

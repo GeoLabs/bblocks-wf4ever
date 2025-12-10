@@ -32,18 +32,170 @@ The Workflow Description ontology (wfdesc) is part of the Wf4Ever Research Objec
 
 ## Key Properties
 
-- `hasInput` - Process has an input parameter
-- `hasOutput` - Process has an output parameter
-- `hasSubProcess` - Workflow contains a sub-process
-- `hasSubWorkflow` - Workflow contains a nested workflow (specialization of hasSubProcess)
-- `hasDataLink` - Workflow has data flow connection
-- `hasSource` - DataLink source output
-- `hasSink` - DataLink sink input
-- `hasArtifact` - Parameter associated with an artifact
+- `wfdesc:hasInput` - Object property; domain `wfdesc:Process`, range `wfdesc:Input`.
+- `wfdesc:hasOutput` - Object property; domain `wfdesc:Process`, range `wfdesc:Output`.
+- `wfdesc:hasSubProcess` - Object property; domain `wfdesc:Workflow`, range `wfdesc:Process`.
+- `wfdesc:hasSubWorkflow` - Object property; domain `wfdesc:Workflow`, range `wfdesc:Workflow`; sub-property of `wfdesc:hasSubProcess`.
+- `wfdesc:hasDataLink` - Object property; domain `wfdesc:Workflow`, range `wfdesc:DataLink`.
+- `wfdesc:hasSource` - Object property; domain `wfdesc:DataLink`, range `wfdesc:Output`.
+- `wfdesc:hasSink` - Object property; domain `wfdesc:DataLink`, range `wfdesc:Input`.
+- `wfdesc:hasArtifact` - Object property; domain `wfdesc:Parameter`, range `wfdesc:Artifact`.
 
 ## Usage
 
 This ontology is used to describe the prospective provenance of workflows - the structure and composition of a workflow before execution.
+
+## Examples
+
+### Simple Workflow Description
+#### json
+```json
+{
+  "@type": "Workflow",
+  "@id": "http://example.org/workflow/my-analysis",
+  "name": "Data Analysis Workflow",
+  "description": "A simple workflow for data analysis",
+  "hasInput": [
+    {
+      "@type": "Input",
+      "@id": "http://example.org/workflow/my-analysis/input/data",
+      "name": "input-data"
+    }
+  ],
+  "hasOutput": [
+    {
+      "@type": "Output",
+      "@id": "http://example.org/workflow/my-analysis/output/result",
+      "name": "analysis-result"
+    }
+  ],
+  "hasSubProcess": [
+    {
+      "@type": "Process",
+      "@id": "http://example.org/workflow/my-analysis/process/transform",
+      "name": "Data Transformation",
+      "hasInput": [
+        {
+          "@type": "Input",
+          "@id": "http://example.org/workflow/my-analysis/process/transform/input",
+          "name": "raw-data"
+        }
+      ],
+      "hasOutput": [
+        {
+          "@type": "Output",
+          "@id": "http://example.org/workflow/my-analysis/process/transform/output",
+          "name": "transformed-data"
+        }
+      ]
+    }
+  ],
+  "hasDataLink": [
+    {
+      "@type": "DataLink",
+      "hasSource": {
+        "@id": "http://example.org/workflow/my-analysis/input/data"
+      },
+      "hasSink": {
+        "@id": "http://example.org/workflow/my-analysis/process/transform/input"
+      }
+    }
+  ]
+}
+
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/wfdesc/context.jsonld",
+  "@type": "Workflow",
+  "@id": "http://example.org/workflow/my-analysis",
+  "name": "Data Analysis Workflow",
+  "description": "A simple workflow for data analysis",
+  "hasInput": [
+    {
+      "@type": "Input",
+      "@id": "http://example.org/workflow/my-analysis/input/data",
+      "name": "input-data"
+    }
+  ],
+  "hasOutput": [
+    {
+      "@type": "Output",
+      "@id": "http://example.org/workflow/my-analysis/output/result",
+      "name": "analysis-result"
+    }
+  ],
+  "hasSubProcess": [
+    {
+      "@type": "Process",
+      "@id": "http://example.org/workflow/my-analysis/process/transform",
+      "name": "Data Transformation",
+      "hasInput": [
+        {
+          "@type": "Input",
+          "@id": "http://example.org/workflow/my-analysis/process/transform/input",
+          "name": "raw-data"
+        }
+      ],
+      "hasOutput": [
+        {
+          "@type": "Output",
+          "@id": "http://example.org/workflow/my-analysis/process/transform/output",
+          "name": "transformed-data"
+        }
+      ]
+    }
+  ],
+  "hasDataLink": [
+    {
+      "@type": "DataLink",
+      "hasSource": {
+        "@id": "http://example.org/workflow/my-analysis/input/data"
+      },
+      "hasSink": {
+        "@id": "http://example.org/workflow/my-analysis/process/transform/input"
+      }
+    }
+  ]
+}
+```
+
+#### ttl
+```ttl
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+
+<http://example.org/workflow/my-analysis> a wfdesc:Workflow ;
+    rdfs:label "Data Analysis Workflow" ;
+    wfdesc:hasDataLink [ a wfdesc:DataLink ;
+            wfdesc:hasSink <http://example.org/workflow/my-analysis/process/transform/input> ;
+            wfdesc:hasSource <http://example.org/workflow/my-analysis/input/data> ] ;
+    wfdesc:hasInput <http://example.org/workflow/my-analysis/input/data> ;
+    wfdesc:hasOutput <http://example.org/workflow/my-analysis/output/result> ;
+    wfdesc:hasSubProcess <http://example.org/workflow/my-analysis/process/transform> ;
+    rdfs:comment "A simple workflow for data analysis" .
+
+<http://example.org/workflow/my-analysis/output/result> a wfdesc:Output ;
+    rdfs:label "analysis-result" .
+
+<http://example.org/workflow/my-analysis/process/transform> a wfdesc:Process ;
+    rdfs:label "Data Transformation" ;
+    wfdesc:hasInput <http://example.org/workflow/my-analysis/process/transform/input> ;
+    wfdesc:hasOutput <http://example.org/workflow/my-analysis/process/transform/output> .
+
+<http://example.org/workflow/my-analysis/process/transform/output> a wfdesc:Output ;
+    rdfs:label "transformed-data" .
+
+<http://example.org/workflow/my-analysis/input/data> a wfdesc:Input ;
+    rdfs:label "input-data" .
+
+<http://example.org/workflow/my-analysis/process/transform/input> a wfdesc:Input ;
+    rdfs:label "raw-data" .
+
+
+```
 
 ## Schema
 
@@ -144,6 +296,9 @@ Links to the schema:
     "Parameter": "wfdesc:Parameter",
     "DataLink": "wfdesc:DataLink",
     "Configuration": "wfdesc:Configuration",
+    "@type": {
+      "@context": {}
+    },
     "name": "rdfs:label",
     "description": "rdfs:comment",
     "hasInput": {

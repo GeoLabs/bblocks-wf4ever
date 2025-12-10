@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://purl.org/wf4ever/roterms",
+  "title": "Report",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Title of the report.",
+      "x-jsonld-id": "http://purl.org/dc/terms/title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the report.",
+      "x-jsonld-id": "http://purl.org/dc/terms/description"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "x-jsonld-extra-terms": {
+    "Report": "http://purl.org/wf4ever/roterms#Report"
+  },
+  "x-jsonld-vocab": "http://purl.org/wf4ever/roterms#",
+  "x-jsonld-prefixes": {
+    "roterms": "http://purl.org/wf4ever/roterms#",
+    "dcterms": "http://purl.org/dc/terms/"
+  }
+}

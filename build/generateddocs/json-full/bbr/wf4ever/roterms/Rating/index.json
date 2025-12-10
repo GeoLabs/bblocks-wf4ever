@@ -1,0 +1,42 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.wf4ever.roterms.Rating",
+  "name": "roterms:Rating",
+  "abstract": "Represents a rating or score assigned to a Research Object or its components.",
+  "status": "under-development",
+  "dateTimeAddition": "2025-12-02T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-wf4ever",
+  "version": "1.0",
+  "dateOfLastChange": "2025-12-10",
+  "sources": [
+    {
+      "title": "Research Object Terms - Rating",
+      "link": "http://purl.org/wf4ever/roterms#Rating"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "roterms",
+    "rating",
+    "evaluation"
+  ],
+  "group": "Wf4Ever - roterms",
+  "shaclShapes": {},
+  "ldContext": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Rating/context.jsonld",
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Rating/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-wf4ever/build/annotated/bbr/wf4ever/roterms/Rating/schema.json"
+  },
+  "sourceSchema": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Rating/schema.yaml",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Rating/context.jsonld",
+  "sourceFiles": "https://geolabs.github.io/bblocks-wf4ever/_sources/roterms/Rating/",
+  "rdfData": [],
+  "validationPassed": true,
+  "description": "# Rating (roterms)\n\nThis Building Block represents the `Rating` class from the roterms ontology.\n\n- **URI**: `http://purl.org/wf4ever/roterms#Rating`\n- **Description**: Represents a rating or score assigned to a Research Object or its components.",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$id: http://purl.org/wf4ever/roterms\ntitle: Rating\ntype: object\nproperties:\n  name:\n    type: string\n    description: Title of the rating.\n    x-jsonld-id: http://purl.org/dc/terms/title\n  description:\n    type: string\n    description: Description of the rating.\n    x-jsonld-id: http://purl.org/dc/terms/description\n  value:\n    type: number\n    description: Value of the rating or score.\n    x-jsonld-id: http://purl.org/wf4ever/roterms#value\nrequired:\n- name\n- value\nx-jsonld-extra-terms:\n  Rating: http://purl.org/wf4ever/roterms#Rating\nx-jsonld-vocab: http://purl.org/wf4ever/roterms#\nx-jsonld-prefixes:\n  roterms: http://purl.org/wf4ever/roterms#\n  dcterms: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-wf4ever",
+  "gitPath": "_sources/roterms/Rating"
+}
